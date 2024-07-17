@@ -1,0 +1,39 @@
+# Charts repository
+%if "%_repository" == "charts"
+Type: helm
+Repotype: none
+Patterntype: none
+Required: perl-YAML-LibYAML
+%endif
+
+# Container images are build in 'containers' repository
+# ISO images are build in 'containers' repository too
+%if %_repository == "containers"
+Required: elemental-post-build-extract-iso
+Repotype: staticlinks
+
+%ifarch aarch64
+# Configuration for the RPi image
+Required: elemental-post-build-generate-rpi-image
+Macros:
+# RPi seed image size in MB
+%img_size 1280
+:Macros
+%endif
+
+Type: docker
+BuildEngine: docker
+
+Prefer: registries-conf-suse
+Prefer: sles-release
+Prefer: kernel-default
+%endif
+
+%if %_repository == "containers" || "%_repository" == "charts"
+Macros:
+%img_repo %(echo registry.opensuse.org:%{_project}:containers | tr ":" "/" | tr '[:upper:]' '[:lower:]')
+%slmicro_version 6.0
+:Macros
+
+BuildFlags: dockerarg:SLMICRO_VERSION=6.0
+%endif
