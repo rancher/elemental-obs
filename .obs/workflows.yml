@@ -1,0 +1,10 @@
+sync:
+  steps:
+  - trigger_services:
+      project: home:dcassany:Elementalgit
+      package: _project
+  filters:
+    branches:
+      only:
+      - dev
+    event: push
