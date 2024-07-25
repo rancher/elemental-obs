@@ -115,8 +115,8 @@ echo "Done"
 echo -n "Preparing ${operatorimg} sources at ${BUILDER_OUTPUT}/${operatorimg} ..."
 mkdir -p "${BUILDER_OUTPUT}/${operatorimg}"
 
-# Copy the Dockerfile
-cp "${gitpath}/.obs/dockerfile/operator/Dockerfile" "${BUILDER_OUTPUT}/${operatorimg}"
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/operator/"* "${BUILDER_OUTPUT}/${operatorimg}"
 
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${operatorimg}"
@@ -131,8 +131,8 @@ echo "Done"
 echo -n "Preparing ${seedimg} sources at ${BUILDER_OUTPUT}/${seedimg} ..."
 mkdir -p "${BUILDER_OUTPUT}/${seedimg}"
 
-# Copy the Dockerfile
-cp "${gitpath}/.obs/dockerfile/seedimage/Dockerfile" "${BUILDER_OUTPUT}/${seedimg}"
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/seedimage/"* "${BUILDER_OUTPUT}/${seedimg}"
 
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${seedimg}"
