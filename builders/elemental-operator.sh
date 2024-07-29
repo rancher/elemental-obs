@@ -122,6 +122,9 @@ cp "${gitpath}/.obs/dockerfile/operator/"* "${BUILDER_OUTPUT}/${operatorimg}"
 cp "${scminfo}" "${BUILDER_OUTPUT}/${operatorimg}"
 cp "${changes}" "${BUILDER_OUTPUT}/${operatorimg}/${operatorimg}.changes.entry"
 
+# Apply version
+sed_substitution "%OPERATOR_VERSION%" "${version}" "${BUILDER_OUTPUT}/${operatorimg}/Dockerfile"
+
 echo "Done"
 
 
@@ -137,5 +140,8 @@ cp "${gitpath}/.obs/dockerfile/seedimage/"* "${BUILDER_OUTPUT}/${seedimg}"
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${seedimg}"
 cp "${changes}" "${BUILDER_OUTPUT}/${seedimg}/${seedimg}.changes.entry"
+
+# Apply version
+sed_substitution "%OPERATOR_VERSION%" "${version}" "${BUILDER_OUTPUT}/${seedimg}/Dockerfile"
 
 echo "Done"
