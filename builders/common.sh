@@ -214,7 +214,9 @@ function create_tarball {
   done
 
   pushd "$(dirname "${src}")" > /dev/null || _abort "${error_msg} popd failed"
-    tar caf "${basepath}.tar.xz" "${excludes[@]}" "${basepath}" 
+    tar --sort=name --mtime="@0" --owner=0 --group=0 \
+      --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
+      -caf "${basepath}.tar.xz" "${excludes[@]}" "${basepath}" 
   
     mkdir -p "${BUILDER_OUTPUT}/${dst}"
     mv "${basepath}.tar.xz" "${BUILDER_OUTPUT}/${dst}"
@@ -303,5 +305,29 @@ function cleanup {
 }
 
 
-rm -rf "${BUILDER_OUTPUT}" "${BUILDER_WORKDIR}"
+# update_changes takes a changes files and adds a new given entry. If the last entry in file was a tag
+# it is pre-appended or substituted otherwise.
+function update_changes {
+  local newchanges=$1
+  local changeslog=$2
+  local error_msg="error updating changes:"
+  local linenum
+
+  [ "$#" -eq 2 ] || _abort "${error_msg} two arguments are required"
+  [ -f "${newchanges}" ] || _abort "${error_msg} new changes file '${newchanges}' not found"
+  [ -f "${changeslog}" ] || _abort "${error_msg} previous changes file '${changeslog}' not found"
+
+  if head -n 4 "${newchanges}" | grep -q "Changes on top of"; then
+    if head -n 4 "${changeslog}" | grep -q "Changes on top of"; then
+      linenum="$(awk '/^--------+$/{ c++; if (c >=2) {print NR-1; exit} }' "${changeslog}")"
+      sed "1,${linenum} d" "${changeslog}" >> "${newchanges}"
+      return
+    fi
+  fi
+
+  cat "${changeslog}" >> "${newchanges}"
+}
+
+
+rm -rf "${BUILDER_WORKDIR}"
 trap cleanup EXIT

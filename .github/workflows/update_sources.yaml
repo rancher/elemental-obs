@@ -1,0 +1,97 @@
+name: Update OBS sources
+
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: 'Repository to update from'
+        required: true
+        type: string
+      
+      branch:
+        description: 'Branch to upgrade from'
+        required: true
+        default: 'main'
+        type: string
+
+      target_branch:
+        description: 'Target branch to upgrade in OBS'
+        required: true
+        default: 'dev'
+
+concurrency:
+  group: soucre-update-${{ inputs.target_branch }}
+
+permissions:
+  contents: write
+
+jobs:
+  update-sources:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout builders
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ inputs.target_branch }}
+        token: ${{ secrets.PAT }}
+    - name: Checkout builders
+      run: |
+        set -x
+        
+        [ -d builders ] && exit 1
+        [ -f Makefile ] && exit 1
+
+        git fetch origin +${{ github.ref_name }}:${{ github.ref_name }}
+        git checkout ${{ github.ref_name }} -- builders Makefile
+    - name: Run builder
+      env:
+        REPO: ${{ inputs.repository }}
+        BRANCH: ${{ inputs.branch }}
+        V_OFFSET: no
+        V_PARSE: patch
+      run: |
+        make prepare-sources
+    - name: Update sources
+      run: |
+        make update-sources 
+    - name: Clean paths
+      run: |
+        rm -rf builders
+        rm -f Makefile
+    - name: Checkout new branch ${{ inputs.target_branch }}_stage
+      id: commit
+      run: |
+        set -x
+
+        git config --global user.email "davidcassany@suse.com"
+        git config --global user.name "David Cassany"
+
+        git checkout -b ${{ inputs.target_branch }}_stage
+        git add .
+
+        if [ -z "$(git status --porcelain)" ]; then
+          echo "Clean work tree, nothing to do"
+          echo "clean=true" >> "${GITHUB_OUTPUT}"
+          exit 0
+        else
+          echo "clean=false" >> "${GITHUB_OUTPUT}"
+        fi
+
+        git commit -s -m "Update from ${{ inputs.repository }}/${{ inputs.branch }}"
+        git push origin ${{ inputs.target_branch }}_stage --force
+    - if: ${{ steps.commit.outputs.clean != 'true' }} 
+      name: Update/create PR
+      env:
+        GH_TOKEN: ${{ secrets.PAT }}
+      run: |
+        set -x
+
+        json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${{ inputs.target_branch }}_stage --base ${{ inputs.target_branch }} --limit 1)
+
+        if [ "$(echo "${json}" | jq length)" -eq 1 ]; then
+          number="$(echo "${json}" | jq '.[0].number')"
+          gh pr comment "${number}" --repo ${{ github.repository }} --body "Updating PR from sources"
+        else
+          gh pr create --repo ${{ github.repository }} --head ${{ inputs.target_branch }}_stage --base ${{ inputs.target_branch }} \
+            --body "Automated PR from GH client" --title "Update '${{ inputs.target_branch }}' OBS sources"
+        fi

@@ -55,7 +55,7 @@ cp "${gitpath}/.obs/specfile/${pkgname}.spec" "${rpmpath}"
 
 # Adding scminfo file, we add it in sources to keep it for reference
 cp "${scminfo}" "${rpmpath}"
-cp "${changes}" "${rpmpath}/${pkgname}.changes.entry"
+cp "${changes}" "${rpmpath}/${pkgname}.changes"
 
 # Update spec from SCM_INFO
 update_spec "${rpmpath}/${pkgname}.spec" "${scminfo}"
@@ -78,7 +78,7 @@ cp -r "${gitpath}/.obs/chartfile/crds/"* "${BUILDER_OUTPUT}/${crdchart}"
 
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${crdchart}"
-cp "${changes}" "${BUILDER_OUTPUT}/${crdchart}/${crdchart}.changes.entry"
+cp "${changes}" "${BUILDER_OUTPUT}/${crdchart}/${crdchart}.changes"
 
 # Apply version
 sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${crdchart}/Chart.yaml"
@@ -101,7 +101,7 @@ cp -r "${gitpath}/.obs/chartfile/operator/"* "${BUILDER_OUTPUT}/${chart}"
 
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${chart}"
-cp "${changes}" "${BUILDER_OUTPUT}/${chart}/${chart}.changes.entry"
+cp "${changes}" "${BUILDER_OUTPUT}/${chart}/${chart}.changes"
 
 # Apply version
 sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${chart}/Chart.yaml" "${BUILDER_OUTPUT}/${chart}/values.yaml" "${BUILDER_OUTPUT}/${chart}/questions.yaml"
@@ -120,7 +120,7 @@ cp "${gitpath}/.obs/dockerfile/operator/"* "${BUILDER_OUTPUT}/${operatorimg}"
 
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${operatorimg}"
-cp "${changes}" "${BUILDER_OUTPUT}/${operatorimg}/${operatorimg}.changes.entry"
+cp "${changes}" "${BUILDER_OUTPUT}/${operatorimg}/${operatorimg}.changes"
 
 # Apply version
 sed_substitution "%OPERATOR_VERSION%" "${version}" "${BUILDER_OUTPUT}/${operatorimg}/Dockerfile"
@@ -139,7 +139,7 @@ cp "${gitpath}/.obs/dockerfile/seedimage/"* "${BUILDER_OUTPUT}/${seedimg}"
 
 # Copy scminfo and changes entry files
 cp "${scminfo}" "${BUILDER_OUTPUT}/${seedimg}"
-cp "${changes}" "${BUILDER_OUTPUT}/${seedimg}/${seedimg}.changes.entry"
+cp "${changes}" "${BUILDER_OUTPUT}/${seedimg}/${seedimg}.changes"
 
 # Apply version
 sed_substitution "%OPERATOR_VERSION%" "${version}" "${BUILDER_OUTPUT}/${seedimg}/Dockerfile"
