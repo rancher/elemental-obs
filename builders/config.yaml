@@ -6,3 +6,5 @@ dev:
   branch: testing_obsgit
 - repo: davidcassany/elemental-operator
   branch: testing_obsgit
+- repo: davidcassany/elemental
+  branch: testing_obsgit

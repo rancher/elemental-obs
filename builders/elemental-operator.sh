@@ -47,7 +47,7 @@ version=$(OCIversion "${scminfo}")
 echo -n "Preparing ${pkgname} RPM sources at ${rpmpath} ..."
 mkdir -p "${rpmpath}"
 
-# Exclude tools and .git subfilders in generated tarball
+# Exclude tools and .git subfolders in generated tarball
 create_tarball "${gitpath}" "${pkgname}" "${pkgname}/tools" "${pkgname}/.git"
 
 # Adding new spec file
