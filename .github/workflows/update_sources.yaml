@@ -3,17 +3,6 @@ name: Update OBS sources
 on:
   workflow_dispatch:
     inputs:
-      repository:
-        description: 'Repository to update from'
-        required: true
-        type: string
-      
-      branch:
-        description: 'Branch to upgrade from'
-        required: true
-        default: 'main'
-        type: string
-
       target_branch:
         description: 'Target branch to upgrade in OBS'
         required: true
@@ -45,12 +34,19 @@ jobs:
         git checkout ${{ github.ref_name }} -- builders Makefile
     - name: Run builder
       env:
-        REPO: ${{ inputs.repository }}
-        BRANCH: ${{ inputs.branch }}
         V_OFFSET: no
         V_PARSE: patch
       run: |
-        make prepare-sources
+        set -x
+
+        count=$(yq ".${{ inputs.target_branch }} | length" builders/config.yaml)
+
+        for ((n=0;n<${count};n++)); do
+          export REPO="$(yq ".${{ inputs.target_branch }}.[${n}].repo" builders/config.yaml)"
+          export BRANCH="$(yq ".${{ inputs.target_branch }}.[${n}].branch" builders/config.yaml)"
+
+          make prepare-sources
+        done
     - name: Update sources
       run: |
         make update-sources 
@@ -75,7 +71,7 @@ jobs:
           echo "clean=false" >> "${GITHUB_OUTPUT}"
         fi
 
-        git commit -s -m "Update from ${{ inputs.repository }}/${{ inputs.branch }}"
+        git commit -s -m "Automated commit from GHA workflow"
         git push origin ${{ inputs.target_branch }}_stage --force
     - if: ${{ steps.commit.outputs.clean != 'true' }} 
       name: Update/create PR

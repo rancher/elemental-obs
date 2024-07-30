@@ -28,7 +28,7 @@ declare scminfo
 declare changes
 declare version
 
-rm -rf "${BUILDER_OUTPUT}" "${BUILDER_WORKDIR}"
+rm -rf "${BUILDER_WORKDIR}"
 trap cleanup EXIT
 
 # Checkout code, compute version and compute changes
@@ -44,8 +44,8 @@ version=$(OCIversion "${scminfo}")
 #########################################
 #        Elemental Operator RPM         #
 #########################################
-echo -n "Preparing ${pkgname} RPM sources at ${BUILDER_OUTPUT}/${pkgname} ..."
-mkdir -p "${BUILDER_OUTPUT}/${pkgname}"
+echo -n "Preparing ${pkgname} RPM sources at ${rpmpath} ..."
+mkdir -p "${rpmpath}"
 
 # Exclude tools and .git subfilders in generated tarball
 create_tarball "${gitpath}" "${pkgname}" "${pkgname}/tools" "${pkgname}/.git"

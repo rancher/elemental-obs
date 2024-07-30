@@ -23,6 +23,9 @@ declare rpmpath
 declare scminfo
 declare changes
 
+rm -rf "${BUILDER_WORKDIR}"
+trap cleanup EXIT
+
 # Checkout code, compute version and compute changes
 gitpath=$(checkout "${giturl}" "${gitbranch}")
 scminfo=$(create_scminfo "${gitpath}" "${versionoffset}" "${parseversion}")
@@ -35,8 +38,8 @@ rpmpath="${BUILDER_OUTPUT}/${pkgname}"
 #########################################
 #        Elemental Toolkit RPM         #
 #########################################
-echo -n "Preparing ${pkgname} RPM sources at ${BUILDER_OUTPUT}/${pkgname} ..."
-mkdir -p "${BUILDER_OUTPUT}/${pkgname}"
+echo -n "Preparing ${pkgname} RPM sources at ${rpmpath} ..."
+mkdir -p "${rpmpath}"
 
 # Exclude tools and .git subfilders in generated tarball
 create_tarball "${gitpath}" "${pkgname}" "${pkgname}/build" "${pkgname}/.git" "${pkgname}/tests"
