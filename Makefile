@@ -7,6 +7,8 @@ GH_REPO=https://github.com/$(REPO)
 
 ifeq ("$(findstring elemental-operator, $(REPO))","elemental-operator")
 BUILDER:=./builders/elemental-operator.sh
+else ifeq ("$(findstring elemental-toolkit, $(REPO))","elemental-toolkit") 
+BUILDER:=./builders/elemental-toolkit.sh
 endif
 
 .PHONY: prepare-sources

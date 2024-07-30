@@ -61,8 +61,6 @@ jobs:
     - name: Checkout new branch ${{ inputs.target_branch }}_stage
       id: commit
       run: |
-        set -x
-
         git config --global user.email "davidcassany@suse.com"
         git config --global user.name "David Cassany"
 
