@@ -1,0 +1,49 @@
+-------------------------------------------------------------------
+Fri Apr 26 12:05:11 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Update to v2.1.1
+
+-------------------------------------------------------------------
+Tue Mar 26 16:26:20 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Backport to v2.1.x few rename leftovers
+
+-------------------------------------------------------------------
+Fri Mar 22 16:50:38 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Backport rename to v2.1.x series
+
+-------------------------------------------------------------------
+-Thu Mar 21 16:49:07 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+ 
+- #!UseOBSRepositories
+
+-------------------------------------------------------------------
+Tue Mar 19 14:54:51 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to build-baremetal-iso-image
+
+-------------------------------------------------------------------
+Mon Jan 29 13:36:05 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to build-iso-image
+
+-------------------------------------------------------------------
+Tue Nov 28 17:08:17 UTC 2023 - dcassany@suse.com
+
+- Update to version 1.3-dev+git20231128.8fbf4f0:
+  * For some reason OBS complains of invalid format on SOURCEURL substitution
+  * Adding missing manifest for the base-iso image
+  * Align and update labels and tags with all images
+  * Remove obsolete images, sle micro variants are already in place
+  * Drop the 'for Rancher' suffix
+  * Revert to 'old' RPi firmware
+  * Fix SLEM4R OS build
+  * Remove some old teal references
+  * Remove Teal images
+  * tag with %VERSION%
+
+-------------------------------------------------------------------
+Tue Nov 28 16:44:48 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Adding changes file 

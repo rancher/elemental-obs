@@ -1,0 +1,75 @@
+-------------------------------------------------------------------
+Fri Apr 26 12:06:44 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Update to version v2.1.1
+
+-------------------------------------------------------------------
+Tue Mar 26 16:27:16 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Backport to v2.1.x few rename leftovers
+
+-------------------------------------------------------------------
+Fri Mar 22 13:26:20 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Backport rename to v2.1.x series
+
+-------------------------------------------------------------------
+Thu Mar 21 16:49:07 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- #!UseOBSRepositories
+
+-------------------------------------------------------------------
+Wed Mar 13 10:46:00 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- pull artifacts via _service
+
+-------------------------------------------------------------------
+Mon Jan 29 13:36:12 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to build-iso-kvm-image
+
+-------------------------------------------------------------------
+Thu Dec 28 11:19:16 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- Fix ISO name (base -> kvm)
+
+-------------------------------------------------------------------
+Wed Dec 27 14:33:37 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- branch build-iso-kvm from buid-iso-base
+
+-------------------------------------------------------------------
+Fri Dec 15 12:00:28 UTC 2023 - dcassany@suse.com
+
+- Update to version 2.0.2:
+  * Revert to 'old' RPi firmware
+
+-------------------------------------------------------------------
+Tue Dec 12 18:04:41 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Update to version 2.0.1 
+
+-------------------------------------------------------------------
+Fri Dec 01 13:33:08 UTC 2023 - dcassany@suse.com
+
+* Ensure the base iso name follows the OBS pattern
+
+-------------------------------------------------------------------
+Tue Nov 28 17:11:47 UTC 2023 - dcassany@suse.com
+
+- Update to version 2.0.0:
+  * For some reason OBS complains of invalid format on SOURCEURL substitution
+  * Adding missing manifest for the base-iso image
+  * Align and update labels and tags with all images
+  * Remove obsolete images, sle micro variants are already in place
+  * Drop the 'for Rancher' suffix
+  * Revert to 'old' RPi firmware
+  * Fix SLEM4R OS build
+  * Remove some old teal references
+  * Remove Teal images
+  * tag with %VERSION%
+
+-------------------------------------------------------------------
+Tue Nov 28 16:49:10 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Adding changes file 
