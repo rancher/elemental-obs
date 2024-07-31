@@ -186,6 +186,8 @@ function create_changes_entry {
         --date="format-local:${datef}" -s "HEAD"
       git log --no-patch --no-merges --cherry-pick --format="%w(77,2,12)* %h %s" \
 	"${scope}" -- . "${excludes[@]}"
+      # Add empty line
+      echo ""
     } > "${BUILDER_OUTPUT}/${CHANGES_ENTRY}" 
 
   popd > /dev/null || _abort "${error_msg} popd failed"
