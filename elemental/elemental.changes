@@ -1,8 +1,8 @@
 -------------------------------------------------------------------
-Tue Jul 30 17:24:02 CEST 2024 - David Cassany <dcassany@suse.com>
+Tue Jul 30 15:53:41 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v2.1.0-dev:
-  * c1800c9 Adapting spec to the gitified project
+  * 2198a04 Adapting spec to the gitified project
   * 6b285fe ci/cli: add daily rancher 2.9 CLI tests
   * 8b1dd2c ci: fix proxy tests for rancher 2.9
   * f70e3b2 ci/ui: Do not install rc ui version in 2.9 upgrade
