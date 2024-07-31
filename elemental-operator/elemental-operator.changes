@@ -1,0 +1,1152 @@
+-------------------------------------------------------------------
+Tue Jul 30 14:29:24 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Changes on top of v1.7.0-dev:
+  * c75cae01 Fine tune specfile
+  * 7489fa1c Adding _service files to .obs sources
+  * 4908496c Adapting specfile to new package format
+  * b8664194 [Airgap] fix unstable channel extraction
+  * d7a712d3 Update channels (#781)
+  * 7ce9f18b Bump docker/build-push-action from 6.1.0 to 6.2.0
+  * 0f59b146 Check crds chart is aligned with the main operator chart version
+  * bd959421 Workaround []byte equality check (#788)
+  * d940c48a Update k8s and Rancher versions for the e2e tests
+  * d80c1ab0 Add the new default channel
+  * f92a2de2 Block reinstall if crds are still pending to be deleted (#784)
+  * 6ee9211a Add development channel for OBS builds
+  * b18ff864 Add managedosversion finalizer (#775)
+  * d07b4f5f Add toggle to automatically delete no longer in sync versions
+            (#780)
+  * 27a785ea Remove flaky checksum test (#774)
+  * 6d5eecec Bump sigstore/cosign-installer from 2.8.0 to 3.5.0 (#700)
+  * d8a160d5 Bump docker/login-action from 3.1.0 to 3.2.0 (#746)
+  * 38b4b537 Bump docker/build-push-action from 5.3.0 to 6.1.0 (#778)
+  * 56185938 Use dynamic system agent applied dir (#763)
+  * 61e76e29 Ensure re-sync is triggered
+  * 7227947d operator: always update managedosversionchannel last sync time
+            (#772)
+  * 5ccde141 operator: fix ManagedOSVersionChannel sync (#769)
+  * c9099037 Use YAML content for Elemental Agent config (#765)
+  * 2c3f177f Revert "CI: fix CodeQL test (#655)" (#663)
+  * 0939fb06 Update deployment.yaml (#757)
+  * 9c8550fd Allow yip configs (#751)
+  * abbc0eae Flag no longer in sync ManagedOSVersions (#750)
+  * bc2f5cfc Let elemental-register digest system hardware data (#748)
+  * 3379c85c register: don't send new Disks and Controllers data (#741)
+  * 7f8f2e8b Remove CodeCov action (#738)
+  * 7c71dc9d Added the ability to create a node reset marker for unmanaged
+            hosts (#731)
+  * ccdd2044 Update golang.org/x/net to v0.23.0 (#734)
+  * 2bd467f3 Allow cross build of seed-image ISOs (#728)
+  * bf9db60b Deprecate install yq action (#730)
+  * a60fdad7 Deprecate release-action (#729)
+  * e475b750 Bump golangci/golangci-lint-action from 4 to 6
+  * 9a93cc91 Prevent system-upgrade-controller from using dotted names
+  * 35366160 chart: fix upstream-version metadata
+  * 5f2b96c2 seedimage: clean-up service on image download deadline (#719)
+  * ca0ed22f chart: add chart name and version to the operator deployment
+            (#694)
+  * a147e8a2 chart: add customizable security-context (#716)
+  * 8038dc68 Add Metadata CRD (#712)
+  * 05abb222 Update .obs/helper_scripts/README.md
+  * e2e9ac4e fine tune checkoimages.sh script
+  * 1e262561 Add scripts to list and check images from the registry
+  * a43c150c seedimage: use ClusterIP Services (#709)
+  * 47516fde Add dmidecode as Recommends to elemental-register (#702)
+  * 525b83f6 Bump docker/setup-buildx-action from 3.2.0 to 3.3.0
+  * 9020287b chart: fix label typo (#696)
+  * f5d9c70b unit-tests: minor cleanups
+  * dae5f912 unit-test: add register tests
+  * 695904cd unit-tests: add coverage for seedimage API
+-------------------------------------------------------------------
+Tue May 07 11:54:53 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.6.2:
+  * chart: add chart name and version to the operator deployment (#694)
+  * Add Metadata CRD (#717)
+
+-------------------------------------------------------------------
+Fri Apr 26 11:50:58 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.6.1:
+  * seedimage: use ClusterIP Services (#713)
+
+-------------------------------------------------------------------
+Fri Apr 05 09:11:23 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.6.0:
+  * chart: fix label typo (#696)
+  * unit-tests: minor cleanups
+  * unit-test: add register tests
+  * unit-tests: add coverage for seedimage API
+  * chart: add chart name and version to the operator deployment (#694)
+
+-------------------------------------------------------------------
+Fri Mar 22 13:41:46 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.5.0:
+  * Micro rename (#684)
+  * elemental-operator registration cleanups (#689)
+  * Sanitize elemental-operator dependencies (#690)
+  * github actions: add airgap script test
+  * [Airgap] minor: fix debug message
+  * [Airgap] add script tests
+  * Bump docker/setup-buildx-action from 3.1.0 to 3.2.0
+  * Bump docker/login-action from 3.0.0 to 3.1.0
+  * Bump docker/build-push-action from 5.2.0 to 5.3.0
+  * Add extension to seedimage url (#682)
+  * registration: allow dots in machineInventory names
+  * registration: decouple replacing data-labels from sanitizing strings
+  * registration: move sanitize code in sanitizeString()
+  * Fix ManagedOSImage cloudConfig (#671)
+  * New name is elemental-rootfs
+  * Use /run/elemental and elemental- services (#675)
+  * Update github.com/golang/protobuf
+  * Run make vendor
+  * Bump google.golang.org/protobuf from 1.31.0 to 1.33.0
+  * Bump docker/build-push-action from 5.1.0 to 5.2.0
+
+-------------------------------------------------------------------
+Wed Mar 13 21:07:12 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.5.0-dev:
+  * [Airgap] fix channel.json extraction (#669)
+  * [Airgap] fix "channel.image"/"channel.repository" value in "next steps" (#665)
+  * Align DrainSpec to system-upgrade-controller defaults (#668)
+  * operator/Dockerfile: tag IMAGE_REPO with :latest
+  * seedimage: add tag to IMG_REPO
+  * Dockerfile: SLE_VERSION -> SLEMICRO_VERSION
+  * operator: switch to toolbox for ALP
+  * seedimage: switch labelprefix to com.suse.elemental
+  * seedimage: Switch to toolbox for ALP
+  * Drain nodes by default on upgrade (#660)
+  * [Airgap] fix missing return code value
+  * [Airgap] Use bash test syntax
+  * [Airgap] make the script work with both legacy and newer charts
+  * [Airgap] fix the airgap script
+  * Tagging v1.5.0
+  * Enable ManagedOSImage updates (#658)
+  * Review omitempty flag on API json converter
+  * charts: backport changes from Rancher Marketplace chart (#652)
+  * Make snapshotter configurable (#651)
+  * [Airgap] fix the airgap script (#654)
+  * Bump docker/setup-buildx-action from 3.0.0 to 3.1.0
+  * [Airgap] add support to Hauler in the airgap script (#647)
+  * Fix channel synchronization
+  * Bump docker/metadata-action from 4.1.1 to 5.5.1
+  * Requeue reconcile loop for ongoing synchronizations
+  * elemental-register: collect OS data for MachineInventories annotations (#642)
+  * Bump go to 1.22 (#643)
+  * Make channel sync more robust (#638)
+  * Makefile/setup-full-cluster: build seedimage-builder image too (#639)
+  * Makefile: fix commit date for local builds (#631)
+  * Requeue after 1 second in case of failures
+  * Recover on syncer pod creation failures
+  * Bump docker/build-push-action from 3.2.0 to 5.1.0
+  * Bump docker/setup-buildx-action from 2.2.1 to 3.0.0
+  * Bump golangci/golangci-lint-action from 3 to 4
+  * Bump github/codeql-action from 2 to 3
+  * Update system-upgrade-controller test version (#630)
+  * Add dev baseimage build (#619)
+  * Test against k8s v1.27, rancher v2.8.2, and upgrade all test dependendencies (#628)
+  * Use go 1.20
+  * Use rancher/yip v1.4.10
+  * Use go.mod ginkgo version
+  * SeedImage builder arguments in wrong order
+  * Use newer xorriso (#624)
+  * Bump codecov/codecov-action from 3 to 4
+  * Bump docker/login-action from 2.1.0 to 3.0.0
+  * Bump actions/dependency-review-action from 2 to 4
+  * Update actions/labeler config
+  * Make linter happy
+  * Bump actions/labeler from 4 to 5
+  * README: drop legacy docs (#616)
+  * Add dependabot config for actions
+  * Bump github actions
+  * Do not adopt machineinventories undergoing deletion/reset (#605)
+  * Update seedimage build-disk command
+  * Fix inversed reset options (#604)
+  * Print system architecture (#603)
+  * hostname: set the hostname on the newer location too
+  * Charts/Makefile: fix default OS channel repo name (#594)
+  * Add hostname to system-data
+  * Add elemental-seedimage-hooks package (#592)
+  * Restrict package arch to x86_64 and aarch64
+  * Update copyright year (2024)
+  * Update copyright year (2024)
+  * Change raw SeedImage deploy-command
+  * Add target platform validation test
+  * Add kubebuilder example and validation
+  * Add TargetPlatform to SeedImageSpec
+  * Fix default values in questions.yaml file
+  * Bump golang.org/x/crypto to 0.17.0
+  * Add disable-boot-entry flag to reset command
+  * Always pull channel image on channel sync
+  * Fix channel sync bug
+  * Avoid repeating package name in summary
+  * Make summary start with a capital letter
+  * Unify all chart files under .obs/charfile
+  * Add warning if both device and device-selector set
+  * Add grub package to seedimage built in OBS (#568)
+  * Fix device-selector logic (#571)
+  * Add missing questions.yaml file
+  * Implement picking dynamic installation device (#561)
+  * Build raw disk images in SeedImage (#557)
+  * charts: fix annotations (#566)
+  * ci: fix SeedImage builder used image
+  * Bump github.com/docker/docker from 20.10.24+incompatible to 24.0.7+incompatible (#560)
+  * Update google.golang.org/grpc to v1.56.3
+  * Keep old output-name
+  * Add slem4r images in channel (#544)
+  * Bring your own SeedImage builder (#542)
+  * Make sure to not overlap with the already existing channel and use RT for tests
+  * Remove use of images from quay.io
+  * Prevent installing if previous CRDs are pending to be removed
+  * elemental-airgap: allow to just create the channel (#548)
+  * bump go to 1.20 or later
+  * Bump dependencies (#540)
+  * ci: bump k8s and Rancher Manager versions
+  * Use helm/kind-action to install kind
+  * ci: fix action versions used
+  * Disable local plan for elemental-system-agent
+  * Improve error management
+  * Patch already existing versions on channel sync
+  * Improve update events filtering to actually ignore status updates
+  * Add some improvements
+  * Run all syncers in a pod
+  * Fix e2e workflow
+  * elemental-airgap: fix skipping http/https URLs
+  * Use the proper format for command arguments
+  * Prevent recalling bootstrap.sh on 'systemctl restart elemental-system-agent'
+  * elemental-airgap: fix automatic image channel name (#521)
+  * register: add no-toolkit unit tests
+  * register: add os.unmanaged inventory annotation
+  * register: add no-toolkit option
+  * make verify: stay on mockgen v0.2.0 (#523)
+  * elemental-airgap: add support to OS images (#518)
+  * Small refactor to centralize registration config checks
+  * Ensure Elemental registration data includes the registration URL
+  * Remove --debug flag from helm pull
+  * Attempt to use charts from PR project in e2e tests
+  * Publish OBS charts to gh-pages
+  * elemental-airgap: allow to pass dev | staging | stable as argument
+  * elemental-airgap: pick the operator chart as an argument
+  * elemental-airgap: add script to help airgap deployment
+  * Apply a regex on tags to match the same criteria as in OBS
+  * Charts: fix OBS build
+  * Publish all OBS repositories on PRs
+  * Fix repository url
+  * Charts: always use camelCase for values (#507)
+  * Revert not-needed marker fix
+  * Set default spec.config.elemental.reset block for MachineRegistration
+  * Use elemental-register-reset service (#502)
+  * Use OBS PR builds for the e2e tests
+  * Build and publish charts for OBS/IBS artifacts in gh-pages
+
+-------------------------------------------------------------------
+Tue Nov 28 17:35:48 UTC 2023 - dcassany@suse.com
+
+- Update to version 1.3.2+git20230824.c90c1c8:
+  * Disable service triggers on staging (#498)
+  * Add CAPI cluster role to helm chart (#500)
+  * Charts: sync OBS charts
+  * tests: fix e2e workflow
+  * tests: fix chart workflow
+  * Makefile: add the REGISTRY_URL var
+  * Charts: add registry templating for custom airgap
+  * Charts: add README
+  * Charts: enforce templating on the channel resource
+  * Charts: update rancher annotations
+  * Bump github.com/docker/distribution from 2.8.1+incompatible to 2.8.2+incompatible (#442)
+  * Fixed a typo in the version string for elemental-teal-channel in helm chart (#495)
+  * Implement remote machines reset (#489)
+  * Remove custom default config-dir on installation media
+  * Remove SLE Micro reference from elemental-operator images
+  * Include crds chart in OBS workflow
+  * Update OBS workflow to the new project setup
+  * Make SLE Micro version from image references dynamic (#480)
+  * Recreate service account token secret if missing
+  * Adds ca-certificates and ca-certificates-mozilla in operator image
+  * Adapt .spec file to non-SUSE distributions (#482)
+  * Improve re-registration (#479)
+  * Do not make use of ServiceAccount.Secrets list
+  * Fix elemental managed label value to match backup operator expectations
+  * Make explicit elemental-operator image is under l3 support
+  * Add CONTRIBUTING.md (#472)
+  * Handle mkdir error
+  * Create registration config directory if not exist
+  * Persist registration state
+  * Omit confusing debug message
+  * Fix error formatting
+  * Handle MsgUpdate response on client side
+  * Remove unnecessary MsgUpdate payload. Rely on authentication data instead
+  * Handle sendUpdate error
+  * Do not terminate serveLoop on MsgUpdate
+  * - Check protocol version before sending MsgUpdate - Use MsgUpdate to notify registration update only
+  * Charts: add a new chart to host the pre-hook migration template
+  * Charts: add template checking crds installation
+  * Prevent registration update if MachineInventory is not found
+  * Do not retry registration when on installed system and using randomized TPM seed
+  * Do not retry registration when not on live system
+  * Check for live registration config when no arguments passed
+  * operator: copy cloud-config file not its link (#468)
+  * Update README installation section (#465)
+  * SeedImage: manage updates of builder Pod under deletion
+  * SeedImage: add ResourcesNotCreatedYet Ready condition
+  * SeedImage: reset download URL on Pod deletion
+  * SeedImage: allow the controller full control on configmaps
+  * SeedImage: isolate all the config map logic in a separate function
+  * SeedImage: on retriggerBuild delete owned SeedImage resources
+  * SeedImage: drop redundant set of retriggerBuild
+  * The job was missing a templated name for the serviceaccount to be fully consistent
+  * Update charts/crds/Chart.yaml
+  * Update .obs/chartfile/crds/Chart.yaml
+  * Add upgrade hook
+  * Include channel as part of the installation
+  * Adapt tests and Makefile
+  * Split chart into crds chart and operator chart
+  * websocket/trivial: messages: annotate version of introduction
+  * register client: make linter happy
+  * register client: annotate auth method used for registration
+  * register client: rework getHostMacAddr()
+  * register client: add 'mac' and 'sys-uuid' Plain Auth
+  * register client: set TPM as default authentication method
+  * operator: enable plain auth
+  * operator: add plain auth
+  * elemental api: add fields to support plain authentication
+  * Bump rancher and k8s for e2e tests (#449)
+  * OBS PR workflow: set the right project to disable images repo
+  * Fix OBS PR workflow
+  * goreleaser: fix releases CI (#444)
+  * Chart: add logo and  Rancher display-name annotation (#440)
+  * Add channel hook-failed delete policy
+  * Include display name field on ManagedOSVersions
+  * Add ISO type in ManagedOSVersions
+  * SeedImage: add to the github release workflow
+  * Fix template
+  * Include elemental-teal-channel by default on chart install
+  * Merge default command and image in containersSpec
+  * Add tests for containerized base ISO and utilities
+  * Pull iso as a container
+  * SeedImage extended API: drop debug log
+  * SeedImage: extended api doesn't expect the iso name anymore
+  * SeedImage: inject MachineRegistration and date in the built iso name
+  * httpfy: allow to serve single file
+  * SeedImage: pass whole SeedImage reference to fillBuildImagePod
+  * SeedImage: add more seedimage_controller tests
+  * Utils: generalize IsPodOwned func to IsObecjtOwned() and add tests
+  * SeedImage: make the linter happy...
+  * SeedImage: controller logic for the pod cleanup/retrigger
+  * SeedImage: add image timeout and retrigger fields
+  * httpfy: add timeout parameter
+  * Use config map in seedimage pod (#423)
+  * SeedImage: check OwnerReference in controller tests
+  * SeedImage: retrieve MachineRegistration just once
+  * SeedImage: set OwnerReferences
+  * Add seedimage-builder into the OBS workflow
+  * Feat: add CODEOWNERS
+  * OBS: build ssl default certificates in SeedImage build image
+  * Update default values file in OBS
+  * SeedImage: set build image PullPolicy from the operator chart
+  * unit-tests: cover MAC and Used Memory in labels test
+  * unit-tests/trivial: move server.go test to the new server_test.go file
+  * OBS: use SeedImage build image from OBS for the chart
+  * Bump github.com/docker/docker from 20.10.22+incompatible to 20.10.24+incompatible (#410)
+  * Update to go 1.19 (#408)
+  * SeedImage: add Dockerfile for OBS build
+  * httpfy: support automated building
+  * Build elemental-operator image from scratch
+  * Prevent a nil pointer dereference panic error
+  * Fix event filters
+  * Prevent retriggering a reconcile on ownership setup
+  * Do not start error messages with capital letters
+  * Extend unit tests for inventory and selector resources
+  * Adapt unit tests to new condition states
+  * Selector and inventory cleanup
+  * Ensure optimistic locking is set on machine selectors
+  * Adapt info and debug logging for the inventory and selector controllers
+  * Read machine inventory only once on selector reconcile
+  * Sets a validation process for Machine Inventory adoption
+  * Enble cache for MachineInventorySelector resources
+  * SeedImage: update OBS build recipes
+  * SeedImage: busybox base64 decodes with -d only
+  * SeedImage: pass the build image from the operator chart
+  * SeedImage: build image for the builder pod
+  * Add cloud-config support to seedImage (#399)
+  * SeedImage: fix registration yaml name (#394)
+  * operator: ensure elemental finalizers are removed if present (#393)
+  * SeedImage: move sync status with running pod to new func
+  * operator: allow seedimage download from the extended API
+  * SeedImage: add DownloadToken in the Status
+  * operator: return http 401 error on registration auth failure
+  * operator: report error on unrecognized auth websocket connections
+  * operator: drop build-image api (#389)
+  * unit-tests: ensure resources cleanup (#390)
+  * SeedImage: drop finalizer tests
+  * SeedImage: check conditions and return early when needed
+  * SeedImage: add more tests
+  * Adapt tests to drop finalizers
+  * Stop using finalizers if not extrictly needed
+  * operator: add SeedImage CRD (#377)
+  * Prevent MachineInventorySelector from being cached
+  * Set object not found as a debug message
+  * Update logs to not use info with custom depth
+  * operator: use opensuse nginx to serve build-img ISO (#369)
+  * Use variadic arguments in klog instead of slices
+  * operator: register the host IP in MachineInventory annotations (#350)
+  * Unify logging
+  * operator: labels minor improvements (#363)
+  * build-image API: add build job with single pod lifecycle (#362)
+  * Turn MachineInventoryRef into LocalObjectReference (#359)
+  * Remove branch filter on tag events (#361)
+  * Update actions/download-artifact to v3.0.2
+  * Filter inventory list with a labelSelector and not with a labels map (#358)
+  * Move system-data labels to templating
+  * operator: let build-image API GET to return the image URL (#351)
+  * register client: isolate TPM auth code (#346)
+  * operator: fix label name (#348)
+  * operator: fix MachineInventory search during registration (#342)
+  * operator: always use software UUID as default machine name (#340)
+  * Set default elemental-operator USER
+  * operator: add support to old register clients (#338)
+  * Lints
+  * Update wharfie to 0.5.3
+  * register client: allow to register against lower version operators (#332)
+  * Replace action engineerd/setup-kind (#328)
+  * Copyright date-range 2022 - 2023 (#327)
+  * Use go 1.18
+  * operator: expose build-image API (#315)
+  * Fix node-labels regression
+  * Do not store cpu info if not available (#321)
+  * docs: add ref to the official docs in the chart readme (#316)
+  * linter: fix go-header check (#319)
+  * unit-tests: disable parallelization (#312)
+  * Change tar-file layout in elemental-support
+  * Add default config-dir value (#313)
+  * Re-add config-dir install flag (#309)
+  * Return registration errors to client (#301)
+  * Properly sanitize extra system data (#307)
+  * Improve unit tests (#308)
+  * Derive TPM seed from system UUID (#297)
+  * Add disable-boot-entry flag in install structure (#302)
+  * Fetch commit and date from obsinfo file (#300)
+  * operator: add back debug logs for logrus (registration) (#299)
+  * [tpm] Set a random seed if emulated tpm seed is set to -1 (#282)
+  * Include _helmignore file (#295)
+  * Add OBS build repcipes into the repository (#294)
+  * Drop legacy catalog for tests (#291)
+  * Kubebuilder: fix MachineRegistration search during registration (#280) (#293)
+  * Send full system data on registration (#276)
+  * Bump rancher version in e2e tests (#290)
+  * Set default syncTime when not provided (#289)
+  * Remove invalid conditions from objects (#284)
+  * operator: don't try to patch an empty MachineInventory (#274)
+  * Backport minor fixes (#271)
+  * Merge all main logic in one file (#270)
+  * [controller_runtime] add registration protocol version (#266)
+  * Kubebuilder: Remove unused code (#267)
+  * [controller_runtime] operator/registration: switch to Kubebuilder client (#256)
+  * Refactor ManagedOsImage e2e tests (#263)
+  * Add a rate limiter to managedosversionchannel reconciler (#260)
+  * Refactor MachineRegistration e2e tests (#253)
+  * Drop requeuer, not needed anymore (#255)
+  * Improve syncer (#252)
+  * New syncer logic (#245)
+  * Fix make verify (#248)
+  * controller: add Secret name reference to the ServiceAccount (#247)
+  * Kubebuilder: Add "verify" workflow (#244)
+  * Add remaining controllers (#232)
+  * Kubebuilder: Add machine inventory selector controller (#224)
+  * Kubebuilder: Add remaining API types (#225)
+  * Kubebuilder: Add machine inventory controller (#221)
+  * Kubebuilder: Add machine registration controller (#206)
+  * Kubebuilder: Run new code and generate RBAC (#203)
+  * Kubebuilder: Add make tasks for different tools (#194)
+  * Add kubebuilder API definitions (#184)
+  * Change yaml-marshalling of node-labels file (#287)
+  * Remove yaml typo (#286)
+  * Add helm labels and annotations to all crds (#281)
+  * Set helm labels on CRDs (#277)
+  * Change the helm chart oci reference to be aligned with other elemental images (#268)
+  * Add version commands/flags for all binaries (#262)
+  * Use custom names in upgrade objects (#254)
+  * Several improvements to the support command (#258)
+  * Also trigger Dev rebuild on tag push (#249)
+  * Propagate inventory labels to node on bootstrap plan (#243)
+  * Add codeql + escape user input before processing (#237)
+  * Create dependency-review.yml (#236)
+  * Bump golangci action (#234)
+  * Stop elemental-system-agent when the node is ready (#231)
+  * Fix docker and gorelease jobs (#230)
+  * operator: improve logging of the MachineRegistration controller
+  * operator: move ServiceAccount creation to a separate func
+  * operator: drop duplicated import
+  * operator: enforce ServiceAccount's Secret link
+  * operator: create ServiceAccounts before their Secrets
+  * operator: unit-tests: add coverage for unauthenticatedResponse() (#217)
+  * coverity: make patch status informational (#219)
+  * tests: Add k8s 1.24 and default to rancher 2.6.9 (#220)
+  * tests: use latest url for rancher charts (#218)
+  * Elemental Operator: manage empty config in MachineRegistrations (#213)
+  * Label other objects created by elemental-operator (#216)
+  * Only read yaml files included in the given directories (#215)
+  * Label secrets managed by elemental-operator (#212)
+  * Allow custom config files for elemental-cli (#210)
+  * Collect operator logs after running tests (#204)
+  * Audit and update elemental-operator RBAC ClusterRole (#196)
+  * Add config for e2e tests (#201)
+  * Add OBS workflow to update elemental-operator package (#200)
+  * Add vendor for obs integration (#198)
+  * release: enhance release pipeline (#195)
+  * operator: drop duplicated import of elemental APIs (#199)
+  * Disable CGO under arm for register binaries + restore SBOM (#193)
+  * Revert "Add sbom to releases and attach to containers" (#191)
+  * Add elemental GlobalRole for Rancher UI (#187)
+  * Add reasons for conditions (#185)
+  * lint: dont overshadow var (#172)
+
+-------------------------------------------------------------------
+Mon Nov 28 11:13:36 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- elemental-register needs lvm2 for running blkdeactivate.
+
+-------------------------------------------------------------------
+Fri Sep 23 14:54:14 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.6.0+git20220923.ffdff84:
+  * Add v0.6.0 changelog (#182)
+
+-------------------------------------------------------------------
+Fri Sep 23 13:54:32 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.6.0+git20220923.f022acb:
+  * unit-tests: add support to Secrets in registraion's  OnChange()
+  * operator: log the creation of a new registration token
+  * operator: explicitly add Secrets to registration ServiceAccounts
+  * operator: return error when the ServiceAccount has no secrets
+
+-------------------------------------------------------------------
+Thu Sep 22 14:08:16 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.5.0+git20220922.17d9d21:
+  * support command improvements (#173)
+
+-------------------------------------------------------------------
+Mon Sep 12 16:59:41 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- make elemental-support a sub-package
+
+- disable chart building, was not packaged
+
+-------------------------------------------------------------------
+Mon Sep 12 13:23:42 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.5.0+git20220912.846c610:
+  * Add sbom to releases and attach to containers (#160)
+  * Use BCI Golang image to build image
+  * register: fix CGO build in Dockerfile
+  * register: build it with CGO (#169)
+  * tests(registration): More unit tests (#167)
+  * Rework client to accept a ClientInterface (#166)
+  * tests(inventory): Add unit tests for inventory methods (#164)
+  * register/operator: drop MachineInventory labels passed from the client
+  * unit-tests: check default machine name
+  * go mod tidy
+  * operator: change default MachineInventory name
+  * Add simple changelog (#158)
+
+-------------------------------------------------------------------
+Fri Sep 02 12:17:28 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.5.0+git20220902.3d28c5d:
+  * Configure custom smbios data (#157)
+
+-------------------------------------------------------------------
+Fri Sep 02 08:08:05 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.4+git20220902.64f4703:
+  * operator: ensure inventory.Labels is not nil before adding labels
+
+-------------------------------------------------------------------
+Fri Sep 02 06:07:40 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.4+git20220901.75792d6:
+  * Add extra labels with smbios data (#155)
+  * Fix secretname for the apiService (#153)
+  * unit-tests: add websocket coverage
+  * operator: add unit-test for mergeInventoryLabels()
+  * operator/register: drop unused code
+  * operator/register: rework the registration protocol
+  * websocket: add helper functions
+  * register: set a timeout for retrieving the installation config
+  * drop unused labels on bootstrap (#154)
+  * Fix missing cosign and run command (#151)
+  * Enable deploying operator replicas (#150)
+  * register: take control of the registration process
+  * bump github.com/rancher-sandbox/go-tpm
+  * fix linter: cyclomatic complexity of ServeHTTP is 16
+  * operator: move websocket management logic out of the tpm package
+  * minor: drop duplicated logging
+  * operator/http: check websocket upgrade header in HTTP connections
+
+-------------------------------------------------------------------
+Wed Aug 31 12:34:34 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.3+git20220831.7e58679:
+  * Add image signing to push jobs (#148)
+  * Add local plan to rancher-system-agent to stop elemental-system-agent (#146)
+
+-------------------------------------------------------------------
+Mon Aug 29 13:28:46 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.3+git20220822.f0bd8f4:
+  * log: report elemental installation completion
+  * Fix e2e discovery tests (#138)
+
+-------------------------------------------------------------------
+Fri Aug 12 09:24:33 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.3+git20220812.72971ff:
+  * Backwards compatibility for smbios headers (#137)
+  * Only decode some smbios data (#134)
+  * Drop uneeded files and add extra label (#135)
+  * Split header into 7Kb of data (#133)
+  * Add auto labeler (#125)
+  * Remove default value for flag and expand description (#126)
+  * [chart] only add default-registry if specified (#128)
+  * Store binary artifacts on PR/master (#127)
+  * [tests] fix nginx deploy url (#129)
+  * Bundle support bin with register (#124)
+
+-------------------------------------------------------------------
+Mon Aug  8 14:04:44 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- build elemental-operator without CGO_ENABLED (doesn't need tpm)
+
+-------------------------------------------------------------------
+Mon Aug 08 06:50:12 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220805.5b64a77:
+  * Set the proper namespace (#117)
+
+-------------------------------------------------------------------
+Fri Aug 05 14:32:22 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220805.485ff21:
+  * Add CAs to docker artifact (#120)
+
+-------------------------------------------------------------------
+Thu Aug 04 14:40:47 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220804.76f61f5:
+  * Store all registration data on installation (#116)
+
+-------------------------------------------------------------------
+Thu Aug 04 09:48:27 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220803.6d730d3:
+  * Set fixed hostname and make it persistent (#106)
+
+-------------------------------------------------------------------
+Wed Aug 03 11:15:05 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220803.f4ba471:
+  * Add 'support' to 'make build' (#111)
+
+-------------------------------------------------------------------
+Wed Aug 03 10:19:55 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220803.10d3621:
+  * Add a elemental-support binary (#109)
+
+-------------------------------------------------------------------
+Tue Aug 02 09:55:13 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220802.f243498:
+  * Add missing register command to bootstrap (#104)
+  * Couple of tests for config mapstructure (#102)
+
+-------------------------------------------------------------------
+Mon Aug 01 15:08:33 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220801.ea7884e:
+  * Produce 2 binaries instead of one (#99)
+  * Push master merges to elemental-operator-ci (#100)
+  * operator: pass all the registration fields on unauthenticated query
+
+-------------------------------------------------------------------
+Mon Aug 01 11:46:46 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.2+git20220801.846d313:
+  * Add missing mapstructure annotations to config (#101)
+  * operator: drop duplicated MachineInventory init code
+
+-------------------------------------------------------------------
+Mon Aug  1 08:20:55 UTC 2022 - Michal Jura <mjura@suse.com>
+
+- Update to version 0.4.2+git20220729.6b52b44
+
+-------------------------------------------------------------------
+Mon Aug  1 08:17:34 UTC 2022 - Michal Jura <mjura@suse.com>
+
+- Bump to v0.4.2
+
+-------------------------------------------------------------------
+Fri Jul 29 06:38:05 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.1+git20220729.6b52b44:
+  * Set a fixed name config for rke/k3s deployments (#97)
+
+-------------------------------------------------------------------
+Thu Jul 28 16:31:40 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.1+git20220728.896efee:
+  * mend
+  * Drop unneeded code
+
+-------------------------------------------------------------------
+Thu Jul 28 14:09:25 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.1+git20220728.38929d2:
+  * Update elemental api resources for upgrades (#95)
+
+-------------------------------------------------------------------
+Thu Jul 28 08:35:09 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.1+git20220728.b5c35b9:
+  * operator: fix adding machineInventoryLabels after initial registration
+
+-------------------------------------------------------------------
+Wed Jul 27 13:34:18 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.1+git20220727.68b87dd:
+  * Drop setting a custom providerID (#91)
+
+-------------------------------------------------------------------
+Wed Jul 27 08:33:18 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.0+git20220727.3241cfd:
+  * Bump rancher version (#89)
+
+-------------------------------------------------------------------
+Fri Jul 22 17:47:37 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.4.0+git20220722.ea618ea:
+  * elemental-operator register: keep system CAs when passing a custom CA
+  * elemental-operator register: add some more logging
+  * add github.com/sanity-io/litter module
+  * ensure all the structs include proper yaml labels
+  * Add a target to setup a clean cluster (#79)
+  * [register] Check for path error before doing anything (#80)
+  * Make /oem/registration the default configuration dir (#81)
+  * Add README to elemetal-operator helm chart (#56)
+  * Store registration yaml in installed system (#71)
+  * Fix "make unit-tests"
+
+-------------------------------------------------------------------
+Fri Jul 22 14:17:16 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220722.f2ab68c:
+  * [register] Check for path error before doing anything (#80)
+
+-------------------------------------------------------------------
+Fri Jul 22 13:15:19 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220722.cf20bc6:
+  * Make /oem/registration the default configuration dir (#81)
+
+-------------------------------------------------------------------
+Fri Jul 22 10:31:12 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220722.9b9844b:
+  * Add README to elemetal-operator helm chart (#56)
+
+-------------------------------------------------------------------
+Thu Jul 21 10:23:28 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220721.52c3cbb:
+  * Store registration yaml in installed system (#71)
+
+-------------------------------------------------------------------
+Thu Jul 21 09:56:23 UTC 2022 - David Cassany <dcassany@suse.com>
+
+- Remove elemental-operator.service, as this is now executed
+  as part of the cloud-config shipped with elemental. 
+  See https://github.com/rancher/elemental/pull/178
+
+-------------------------------------------------------------------
+Thu Jul 21 08:48:51 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220721.e15e76e:
+  * Fix "make unit-tests"
+  * Do note fetch cloud-config on unauthenticated registartion calls (#67)
+  * Change the default machine name to include the UUID
+
+-------------------------------------------------------------------
+Wed Jul 20 16:39:34 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- read config from /run/initramfs/live
+
+-------------------------------------------------------------------
+Wed Jul 20 13:34:35 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220720.90791e4:
+  * Update MachineRegistration example
+
+-------------------------------------------------------------------
+Wed Jul 20 09:06:05 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.3.0+git20220720.79d957e:
+  * Adds support for cloud-config data in machine registration (#61)
+
+-------------------------------------------------------------------
+Tue Jul 19 18:41:07 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.1+git20220719.489d40f:
+  * review elemental installer env vars (#59)
+
+-------------------------------------------------------------------
+Tue Jul 19 15:06:31 UTC 2022 - David Cassany <dcassany@suse.com>
+
+- Run elemental-operator.service after cos-setup-network.service
+  is completely done. Add back a dependency with multi-user.target
+  to ensure it is pulled by some target at boot.
+
+-------------------------------------------------------------------
+Tue Jul 19 09:32:56 UTC 2022 - David Cassany <dcassany@suse.com>
+
+- Run elemental-operator.service after mutli-user.target to ensure
+  it is executed after all boot services are ready
+
+-------------------------------------------------------------------
+Tue Jul 19 06:29:56 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- only run in live mode
+
+-------------------------------------------------------------------
+Mon Jul 18 15:34:48 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.1+git20220718.3530dc5:
+  * ensure install struct includes proper yaml labels (#57)
+
+-------------------------------------------------------------------
+Mon Jul 18 15:32:57 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.1+git20220718.6e2f20f:
+  * Pass debug flag to elemental client if requested (#58)
+
+-------------------------------------------------------------------
+Fri Jul 15 15:17:36 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.1+git20220715.2381ebc:
+  * Do not attempt to install in already installed systems (#55)
+  * Some fixes for the release pipelines (#53)
+
+-------------------------------------------------------------------
+Fri Jul 15 12:03:47 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- Update to 0.2.0
+
+-------------------------------------------------------------------
+Fri Jul 15 11:51:57 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220715.618d3c4:
+  * Log the version, commit and commit date on start (#43)
+
+-------------------------------------------------------------------
+Fri Jul 15 09:25:07 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220715.bd811be:
+  * Remove obsolete logic from former ros-installer (#45)
+
+-------------------------------------------------------------------
+Fri Jul 15 08:40:51 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- pass COMMITDATE to build
+
+-------------------------------------------------------------------
+Thu Jul 14 15:57:31 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220714.a05a2db:
+  * elemental-operator register: enable local plans
+
+-------------------------------------------------------------------
+Thu Jul 14 12:32:27 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220714.602178c:
+  * elemental-operator register: allow cacert passed as file or data (#44)
+  * Makefile: fix make build-docker (#41)
+
+-------------------------------------------------------------------
+Thu Jul 14 12:20:08 UTC 2022 - David Cassany <dcassany@suse.com>
+
+- On behalf of commit 62bac1d (#38) `elemental install` is called
+  within the `elemental-operator register` command, so the unit
+  file only needs to call `elemental-operator register`
+
+-------------------------------------------------------------------
+Thu Jul 14 09:51:05 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- drop elemental-installer and -chart subpackages
+- add elemental-operator.service file
+
+-------------------------------------------------------------------
+Thu Jul 14 07:18:46 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- build with TPM emulation
+
+-------------------------------------------------------------------
+Wed Jul 13 18:50:45 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220713.adfff7c:
+  * Some register fixes (#40)
+  * elemental-operator register: add elemental cli call (#38)
+  * Fix building the operator/installer with emulatedTPM (#39)
+  * Return a Config.Config in MachineInventory (#35)
+  * Use cacert from rancher and use serverl-url from rancher (#36)
+
+-------------------------------------------------------------------
+Wed Jul 13 11:40:56 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220713.bcfe4d0:
+  * Add test for chart values (#31)
+
+-------------------------------------------------------------------
+Tue Jul 12 15:16:10 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220712.14d4d95:
+  * Share installation configuration structures (#24)
+  * bump github.com/docker/distribution to 2.8.1 (#29)
+  * Bump image-spec to 1.0.2 (#28)
+  * Bump system-agent to 0.2.8 (#17)
+  * update testhelpers
+  * Update go.sum
+  * [ci] Up the go version and restore the proper cache
+  * Fix go.sum
+  * [test] Remove focus
+  * [lint] ignore generated files
+
+-------------------------------------------------------------------
+Fri Jul 08 12:11:24 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220707.39177e8:
+  * Rename RancherOS to Elemental in installer logic
+  * Merge elemental installer (#20)
+  * renamed to elemental-operator and switched to system agent
+  * Fix wrong key in example full reference
+  * Rename rancheros->elemental in README
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+
+-------------------------------------------------------------------
+Thu Jul 07 13:04:38 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.1+git20220707.1d97f14:
+  * Merge elemental installer (#20)
+  * renamed to elemental-operator and switched to system agent
+  * Fix wrong key in example full reference
+  * Rename rancheros->elemental in README
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+  * Be sure to not push same env multiple times
+
+-------------------------------------------------------------------
+Thu Jul 07 11:51:22 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.0+git20220707.0c6dcff:
+  * Adapat Dockerfile and golreleaser to keep releasing and building elemental-operator as they used to
+  * Update .github/workflows/unit-tests.yaml
+  * Update Makefile
+
+-------------------------------------------------------------------
+Thu Jul 07 09:43:44 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.0+git20220707.4b69306:
+  * Adding installer unit tests
+  * Add elemental-installer
+  * Move main into a cmd/operator package
+
+-------------------------------------------------------------------
+Mon Jul 04 17:17:02 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.0+git20220704.211ad46:
+  * renamed to elemental-operator and switched to system agent
+  * Fix wrong key in example full reference
+  * Rename elemental->elemental in README
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+  * Be sure to not push same env multiple times
+  * Update pkg/controllers/inventory/inventory.go
+
+-------------------------------------------------------------------
+Fri Jun 24 09:53:36 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- adapt machine-registration.yaml and create-cluster.yaml to system-agent
+
+-------------------------------------------------------------------
+Fri Jun 24 09:43:40 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220622.84e703a:
+  * added registration command and support for using elemental as a cluster api infrastructure provider
+  * wip
+  * renamed to elemental-operator and switched to system agent
+
+-------------------------------------------------------------------
+Fri Jun 24 08:53:32 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220603.19a5e9e:
+  * Fix wrong key in example full reference
+  * Rename elemental->elemental in README
+
+-------------------------------------------------------------------
+Mon Jun 13 10:56:33 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- rename binary to elemental-operator
+
+-------------------------------------------------------------------
+Fri Jun 03 09:09:00 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220420.6e6aa51:
+
+-------------------------------------------------------------------
+Wed Jun 01 08:52:11 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220525.9e1d451:
+  * rename pathes to 'elemental'
+  * rename files to 'elemental'
+  * rename directories to 'elemental'
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+  * Be sure to not push same env multiple times
+  * Update pkg/controllers/inventory/inventory.go
+
+-------------------------------------------------------------------
+Wed May 25 14:53:19 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- renamed the api spec in the sample .yaml files
+
+-------------------------------------------------------------------
+Wed May 25 12:18:48 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220525.9e1d451:
+  * rename pathes to 'elemental'
+  * rename files to 'elemental'
+  * rename directories to 'elemental'
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+  * Be sure to not push same env multiple times
+  * Update pkg/controllers/inventory/inventory.go
+
+-------------------------------------------------------------------
+Wed May 25 10:33:27 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220420.6e6aa51:
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+  * Be sure to not push same env multiple times
+  * Update pkg/controllers/inventory/inventory.go
+  * Rework
+  * Add events on errors
+  * e2e-ci: add some missing check on errors
+
+-------------------------------------------------------------------
+Tue May 24 11:58:56 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220518.f916493:
+  * rename to elemental-operator
+
+-------------------------------------------------------------------
+Wed May 11 10:33:52 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- update default kubernetesVersion to 1.22.7
+
+-------------------------------------------------------------------
+Tue May 10 13:57:42 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- Update machine-registration.yaml
+  * add hostname
+  * put 'install' section below 'elemental'
+
+-------------------------------------------------------------------
+Mon Apr 25 11:49:27 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0+git20220420.6e6aa51:
+  * tests: Use helpers from testlib
+  * tests: Add upgrades e2e test
+  * ci: detect when deployments are already there
+  * Update missing policy rule
+  * Sort env to avoid updating same bundle
+  * Be sure to not push same env multiple times
+  * Update pkg/controllers/inventory/inventory.go
+  * Rework
+  * Add events on errors
+
+-------------------------------------------------------------------
+Tue Apr 12 10:41:49 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.1.0-alpha23+git20220408.cd4553f:
+  * e2e-ci: add some missing check on errors
+  * Bump ele-testhelpers version
+  * e2e-ci: move some functions to ele-testhelpers
+  * Update README
+  * Do not make kube calls blocking
+  * Test env metadata injection
+  * Correctly annotate env vars from metadata
+  * Adapt tests, add test cases
+  * Respect upgradeContainerSpec from ManagedOSVersion
+  * Do allocate the event recorder once in the syncer
+  * Refactor out recorder boilerplate
+  * Collect errors when syncing
+  * Refactor out requeuer to not be blocking
+  * Add test for event broadcasting
+  * Set appropriate rules for broadcasting events
+  * go gen
+  * Record invalid specs back to the VersionChannel
+  * Build general event interface from raw k8s into client
+  * Add reconciler
+  * Wrong obs workflow name :facepalm:
+  * Add OBS workflow to trigger rpm build
+  * Use operator image for wait and display hook
+  * CLI fixups
+  * Allow to specify a mountpath
+  * Add requeue mechanism
+  * Disable mounting SA token by default on sync pod
+  * Implement Custom syncer
+  * Lower the ticker for testing
+  * Set the default update to 60m
+  * Add sync-interval flag
+  * Add owner reference on ManagedOSVersion
+  * Bump rancher version used in tests
+  * Don't watch over specific namespaces
+  * Add make target to test local changes in kind
+  * Enhance tests
+  * Allow to set a bridge ip
+  * Allow to selectively sync user-defined namespaces
+  * Add MachineOSVersionChannel JSON tests
+  * Implement JSON syncer logic
+  * Very basic sync service logic
+  * ManagedOSVersionChannel sync service
+  * Add ManagedOSVersionChannel and skeleton for sync service
+
+-------------------------------------------------------------------
+Mon Apr  4 15:20:56 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- Initial version 0.1.0~alpha23

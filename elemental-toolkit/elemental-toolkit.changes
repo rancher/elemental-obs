@@ -1,0 +1,895 @@
+-------------------------------------------------------------------
+Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Changes on top of v2.1.0-dev:
+  * fda00551 Adapting spec to the gitified OBS project
+  * d42f3c8b Bump github.com/onsi/ginkgo/v2 from 2.19.0 to 2.19.1
+  * 19a9ae32 Bump github.com/onsi/gomega from 1.33.1 to 1.34.0
+  * 3c885d2c Bump github.com/jaypipes/ghw
+  * 76caad5f Add test for auto disabled boot entry in Grub
+  * 615af35d Bump github.com/bramvdbogaerde/go-scp from 1.4.0 to 1.5.0
+  * afe3ed5a Bump github.com/containerd/containerd from 1.7.19 to 1.7.20
+  * c9c89b3c Bump k8s.io/mount-utils from 0.30.2 to 0.30.3
+  * 51a85a71 Remove unused steps in workflow
+  * 80bb6a22 Bump github.com/containerd/containerd from 1.7.18 to 1.7.19
+  * f54f6836 Fix cache cleaning for PRs and main pushes (#2144)
+  * 396e5aeb Bump golang.org/x/crypto from 0.24.0 to 0.25.0
+  * b9fc3e91 Bump github.com/google/go-containerregistry from 0.19.2 to
+            0.20.0
+  * 644cdc72 Refactor ci (#2137)
+  * 22996ef7 Allow insecure registries (#2131)
+  * 1a0903ab Fix nested permissions definition
+  * 3206436e Leftover from d3da1cf
+  * d3da1cf6 Fix workflows, permissions at top level
+  * 8b8ae120 Move permissions at top level
+  * 3d657c95 Set token to explicit content read permissions
+  * e2feafb9 Bump yip to 1.9.2
+  * b41f7d20 Bump tp yip 1.6.2
+  * 49ed9afd Bump github.com/bramvdbogaerde/go-scp from 1.2.1 to 1.4.0
+  * c7746687 Bump github.com/cenkalti/backoff/v4 from 4.2.1 to 4.3.0
+  * b3e17ba2 Bump golang.org/x/crypto from 0.22.0 to 0.24.0
+  * 72940f06 Bump github.com/onsi/ginkgo/v2 from 2.17.2 to 2.19.0
+  * 3f754032 Bump github.com/containerd/containerd from 1.7.12 to 1.7.18
+  * d0971ac5 Do not rebuild OS Images nightly (#2118)
+  * 17a0f7b4 Use nightly tag for ghcr.io nightly builds (#2117)
+  * d5eab7e7 Bump peaceiris/actions-hugo from 2 to 3
+  * 622babe8 Bump golangci/golangci-lint-action from 4 to 6
+  * a9bd0f1a Bump github.com/onsi/gomega from 1.30.0 to 1.33.1
+  * 884573cd Bump github.com/google/go-containerregistry from 0.19.0 to
+            0.19.2
+  * 31a8d413 Bump k8s.io/mount-utils from 0.30.1 to 0.30.2
+  * 19d2cb04 Bump github.com/spf13/cobra from 1.7.0 to 1.8.1
+  * b6a14cf1 Bump github.com/spf13/viper from 1.15.0 to 1.19.0
+  * 96506998 gomod package manager does not support 'vendor' key
+  * 2b23133c Bump mount utils (#2099)
+  * 15a10cc4 Make EFI partition size configurable at install time (#2105)
+  * 5e49bb96 Add orange and blue flavors for nightly builds
+  * 28c4e473 Use fake mounter in tests
+  * 897d872a Ensure subvolume snapshots is mounted to list snapshots
+  * 0b9170de Fix smoke test for orange flavor
+  * 97e8baf1 Always run tests for all distros
+  * f427491f Update example OSes to more recent versions
+  * fc923f42 Remove default network configuration
+  * 043a7dfd Add missing glibc-gconv package
+  * 9f2f2368 Remove pre-existing Elemental initrds
+  * fbe90421 Fix overlaydir setup
+  * e20e3829 Move green-rpi flavor to tumbleweed
+  * 29e909eb Longer retry during nightly pull
+  * f036b83c Fix status badge in README
+  * 48d6ca48 Refactor and test efi manager
+  * 2e56a099 Do not return error for efi.ReadLoadOption
+  * fa82c1b1 Fix recovery test (#2086)
+  * 8ce930a1 Remove obsolete flags for build-disk command (#2085)
+  * a1a22e83 Allow to compile for RPi (#2084)
+  * 54664f8c Solve few linter warnings
+  * f0d9cb30 Remove the work around for bsc#1210690 and simplify code
+  * ad4adb21 Disable codecov/codecov-action
+  * 5a840145 Bootloader-in-rootfs=true (#2071)
+  * 3f96b5e7 Relabel presistent paths only at first boot (#2080)
+  * f3d4cfd6 Ensure SELinux relabelling can be disabled in configfile
+  * 7686d121 Refine relabel step
+  * 3fd2046a Update SELinux docs (#2075)
+  * 6c301f2e Move mount config file to /run/elemental
+  * a4c414f5 Add extra-cmdline flag to build-iso command (#2072)
+  * 1c89db02 SELinux relabel on boot (#2074)
+  * c95aa381 Define layout with yaml format
+  * d7d208a1 Add branding for live CD (#2065)
+  * 6f0b28e1 Set legacy password for upgrade test
+  * a5f526d5 Allow key pair of ssh connection in tests
+  * 46a88e10 Change default root password
+  * f9934d75 Fix error return
+  * 23616f35 Reword bug_report issue template
+  * 22baf14e Fix stackable sources for build-iso (#2061)
+  * 786cfa63 Update embedded features docs
+  * 4d469e7f Enable SELinux for tumbleweed and green (#2052)
+  * 8baaef22 Disable boot entry if efivars is read-only (#2059)
+  * 91983af9 Retry pull-toolkit on failure
+  * ccf2acc7 Remove duplicate registry login step
+  * b04f5098 Refactor selinux method (#2057)
+  * dddb716b Add autologin feature (#2056)
+  * c6b391a8 Move green to tumbleweed
+  * c80eaa9b Bump golang.org/x/net in the go_modules group across 1 directory
+            (#2051)
+  * cccd8387 add symlink for missing binary on ubuntu 22.04+ (#2048)
+  * d0ad1014 Document cloud-config-defaults for SELinux support (#2046)
+  * 7feca1f4 Make squashfs defaults more consistent
+  * 127fa528 Snapshottable recovery system (#2032)
+  * 88a9d0cc Change description of boot assessment service (#2037)
+  * 8a67d522 Remove empty mount paths (#2036)
+  * d9931133 Wait for relevant elemental init stages
+  * e42bfb79 Fix the fix (#2033)
+  * 5f2cdb0e Backwards compatible recovery boot configuration
+  * 6e718162 Fix doc typo
+  * 1a6026e2 Iterate over passive snapshots on boot-assessment
+  * a9eeec6f Skip symlink if kernel already exists (#2028)
+  * 16255142 docs: fix build-iso example (#2026)
+  * 24e2c8fd Update github.com/canonical/go-efilib (#2019)
+  * 80bd8d81 make configurable boot-assessment checks (#2018)
+  * 4ff0f27b Turn off smm test
+  * 9a533095 Turn off secure boot test
+  * cd97d5c0 Use 2M firmware args
+  * b0f9752f Use secure boot firmware
+  * c14d044b Change test ISO firmware
+  * 1cc181ac Use ContainSubstring
+  * c0f39f2d Test qemu secure boot
+  * 4fb44d23 Fix passive snapshots listing in grub.cfg
+  * 39128d53 Bump github.com/docker/docker (#2020)
+  * d61a24c7 Extract recovery kernel (#2016)
+  * a2c4f0b3 Change location of bootargs.conf (#2013)
+  * 3116cf21 Use elemental instead of cos (#2014)
+  * 3028919a Remove flaky assert in downgrade test
+  * c618d581 Bump google.golang.org/protobuf from 1.32.0 to 1.33.0 (#2009)
+  * 9231c8f3 Remove deprecated feature immutable-rootfs (#2007)
+  * fd493864 Bump github.com/docker/docker (#2006)
+  * 92e0a02a Bump google/go-containerregistry (#2005)
+  * 31f164a1 Fix downgrade tests, there are no hooks when upgrading from
+            passive
+  * 0fe91877 Fix version check
+  * c44d0672 Fix recovery test
+  * fd757e61 Fix downgrade test
+  * bf4536c0 Use v2.0.0 reference image for tests
+  * d62ddfdb Switches tests to Ubuntu and KVM for tests
+  * a5a16a20 Update v2 linker args (#2000)
+  * a1c2e2d7 Fix unterminated quoted string (#1999)
+-------------------------------------------------------------------
+Thu Apr 11 08:44:39 UTC 2024 - fredrik.lonnegren@suse.com
+
+- Update to version 2.1.0:
+  * Make squashfs defaults more consistent
+  * Snapshottable recovery system (#2032)
+  * Change description of boot assessment service (#2037)
+  * Remove empty mount paths (#2036)
+  * Wait for relevant elemental init stages
+  * Fix the fix (#2033)
+  * Backwards compatible recovery boot configuration
+  * Fix doc typo
+  * Iterate over passive snapshots on boot-assessment
+  * Skip symlink if kernel already exists (#2028)
+  * docs: fix build-iso example (#2026)
+  * Update github.com/canonical/go-efilib (#2019)
+  * make configurable boot-assessment checks (#2018)
+  * Turn off smm test
+  * Turn off secure boot test
+  * Use 2M firmware args
+  * Use secure boot firmware
+  * Change test ISO firmware
+  * Use ContainSubstring
+  * Test qemu secure boot
+  * Fix passive snapshots listing in grub.cfg
+  * Bump github.com/docker/docker (#2020)
+  * Extract recovery kernel (#2016)
+  * Change location of bootargs.conf (#2013)
+  * Use elemental instead of cos (#2014)
+  * Remove flaky assert in downgrade test
+  * Bump google.golang.org/protobuf from 1.32.0 to 1.33.0 (#2009)
+  * Remove deprecated feature immutable-rootfs (#2007)
+  * Bump github.com/docker/docker (#2006)
+  * Bump google/go-containerregistry (#2005)
+  * Fix downgrade tests, there are no hooks when upgrading from passive
+  * Fix version check
+  * Fix recovery test
+  * Fix downgrade test
+  * Use v2.0.0 reference image for tests
+  * Switches tests to Ubuntu and KVM for tests
+  * Update v2 linker args (#2000)
+  * Fix unterminated quoted string (#1999)
+  * Tagging for new development version 2.1.0-dev
+
+-------------------------------------------------------------------
+Fri Mar 22 13:52:43 UTC 2024 - dcassany@suse.com
+
+- Update to version 2.0.0:
+  * Fix passive snapshots listing in grub.cfg
+
+-------------------------------------------------------------------
+Thu Mar 14 07:11:32 UTC 2024 - dcassany@suse.com
+
+- Update to version 2.0.0:
+  * Fix version check
+  * Fix recovery test
+  * Fix downgrade test
+  * Use v2.0.0 reference image for tests
+  * Switches tests to Ubuntu and KVM for tests
+  * Update v2 linker args (#2000)
+  * Fix unterminated quoted string (#1999)
+  * Tagging version v2.0.0
+  * bump elemental-toolkit to v2 (#1969)
+  * Align sysroot mount options with SLE Micro, which in turn is applying default mount options
+  * Fix racy workflows
+  * Fix build-disk action unit tests
+  * Make ext2 the default FS for recovery on disks (#1995)
+  * Fix unit tests
+  * Use working directory to set the snapper configuration
+  * Adding debug messages for snapper configuration
+  * Do not migrate legacy images if snapshots are already present (#1990)
+  * Fix Recovery only upgrades (#1988)
+  * Image variable includes full image path already
+  * fix broken link (#1985)
+  * Adding snapshotter.type flag install command
+  * Add support to /dev/disk/by-path device reference
+  * Keep previous behavior for persistent binded paths
+  * Add upgrade-recovery subcommand (#1974)
+  * Fix grub setup to properly set fallback (#1981)
+  * Fix recovery-system.uri env var mapping
+  * Fix env vars mapping for install and upgrade commands
+  * Relay on the snapshotter setup of the installed system for upgrades (#1979)
+  * Fix regression introduced in 547cb932 (#1977)
+  * Ensure /run/elemental/efi is RW for upgrades
+  * Make snapshotter root dynamic based on the reported mountpoint (#1971)
+  * Remove tumbleweed dracut patches (#1964)
+  * Regenerate docs
+  * Use backup legacy grub.cfg location (#1967)
+  * Build toolkit on nightly (#1965)
+  * Btrfs snapshotter implementation (#1957)
+  * Fix docs publishing error (#1963)
+  * Move elemental services to /etc (#1962)
+  * Embed file permissions for features (#1961)
+  * Improved upgrade test (#1960)
+  * Update README workflow
+  * Fix workflow dependencies (#1956)
+  * Add types for pull_request_target
+  * Cleanup packages after build
+  * Run zypper clean --all in examples
+  * Use pull_request_target
+  * Update workflows
+  * Umount OEM before switching root
+  * Build CLI on changes in go.mod
+  * Bump golang(API) to 1.22
+  * Update GO_VERSION
+  * Update BuildRequires in OBS spec
+  * Update copyright year (2024)
+  * Use go version 1.22
+  * Use at least xorriso 1.5.6
+  * Bump the go_modules group across 1 directories with 1 update
+  * Add formatting to log message
+  * Make linter happy
+  * Remove references to old ACTIVE and PASSIVE images
+  * Make persistent volume a nested structure of persistent data
+  * Add Volumes in Mount spec
+  * Prevent unnecessary copy of image tree to tmp folder
+  * Install podman in example Dockerfiles
+  * Bump github actions (#1933)
+  * Add back the BindPath for /oem
+  * Bump yip to v1.4.10 (#1926)
+  * Remove BindMount for /oem in initramfs stage (#1934)
+  * Bump the go_modules group across 1 directories with 1 update (#1932)
+  * Add dependabot config (#1929)
+  * Refactor to switch to snapshotter interface (#1906)
+  * This commit does removes the assumption of a /boot folder
+  * Test that persistence is working (#1919)
+  * Make mount setup more dynamic based on detected partitions
+  * Include elemental partitions in mount command
+  * Update dependencies (#1917)
+  * Use rancher/yip v1.4.8
+  * Imporve support for old boot arguments
+  * Bind mount /oem in elemental-setup-initramfs
+  * Use v1.3.0 as upgrade base image
+  * Install grub.cfg into EFI System Partition (#1904)
+  * Bump twpayne/vfs module to latest version
+  * Fix license template
+  * Include SUT utilities within the repository
+  * Mount readonly EFI partition to /run/elemental/efi (#1905)
+  * Move grub-config to /etc/elemental
+  * Fix partitions typo
+  * Change default rootfs feature
+  * Update copyright year (2024)
+  * Update github.com/go-git/go-git to v5.11.0
+  * Add default cloud-init-paths to build commands (#1893)
+  * Add loopdevice implementation (#1891)
+  * Split arm and x86_64 tests
+  * Adding new snapshotter interface
+  * Fix typo in Makefile build-rpi-disk target
+  * Change trigger to pull_request_target (#1889)
+  * Add disable-boot-entry flag to reset-command (#1888)
+  * Changes to cleanup-cache workflow (#1887)
+  * Make sure the module-setup.sh picks the right paths for systemd units
+  * Add permissions to delete cache items
+  * Load mount-layout from .env-files (#1885)
+  * Drop elemental object and make elemental methods stateless
+  * Refactor some elemental package methods to be used as stand alone functions
+  * Cleanup caches when PR is closed
+  * Add backwards-compatibility for liveCD detection
+  * Rename overlay -> ephemeral mounts
+  * Fix tumbleweed example
+  * Make network configuration part of the example, not defaults
+  * Do not run CI on pushes to main, the test already happens on the PR
+  * Fix RISCV64 Tumbleweed example build
+  * add btrfs support in partitioner
+  * Wrap mount.Interface to our own interface (#1875)
+  * Update go in build-docs action
+  * Refactor early system mounting (#1866)
+  * Add force flag in systemd-firstboot yip's plugin so default files are overwritten if they are already existing
+  * Make sure it triggers PR workflow
+  * Bump yip
+  * Add other example distros (#1868)
+  * Make lint happy, Runner.error method was unused
+  * Log errors of runner commands only in debug mode
+  * Fix initrd and kernel ISO paths
+  * Refactor grub as a bootloader interface
+  * Add target for rpi disk (#1859)
+  * Drop ARM32 build
+  * Add support for RISC-V 64bit architecture
+  * Update golang.org/x/net dependency
+  * Remove existing file during build-disk (#1857)
+  * Configurable build-disk deploy command
+  * Move recovery hostname to cloud-config-defaults
+  * Update release workflow
+  * Improve CI stability
+  * Try different drivers for macOS
+  * Add installer test
+
+-------------------------------------------------------------------
+Tue Nov 28 18:25:02 UTC 2023 - dcassany@suse.com
+
+- Update to version 1.1.0+git20231027.9c55b9d7:
+  * Use build-disk command (#1847)
+  * Make use of partx instead of partprobe
+  * build-disk command (#1794)
+  * Ensure the cache is renewed on source changes
+  * Improve test coverage and fix recovery image label setting
+  * Improve state.yaml file loading
+  * Remove deprecated cmdline options
+  * Fix partitions typo (#1835)
+  * Move grub bootargs.cfg into new feature
+  * Worflow was still trying to build the already dropped builder image
+
+-------------------------------------------------------------------
+Mon Nov 28 11:13:36 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- elemental-cli needs lvm2 for running blkdeactivate.
+
+-------------------------------------------------------------------
+Fri Sep 30 10:18:31 UTC 2022 - David Cassany <dcassany@suse.com>
+
+- Improve requirements in spec 
+
+-------------------------------------------------------------------
+Fri Sep 23 15:29:03 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.16+git20220923.0e836a9:
+  * Drop binary signature for now (#334)
+  * Fix cosign location
+  * Fix signatures for binaries and images (#333)
+
+-------------------------------------------------------------------
+Fri Sep 23 13:54:13 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.16+git20220923.075f8ae:
+  * Stop testing on image push/release (#332)
+  * Remove sanity check for SUSE based systems on efi installation (#331)
+  * [auto] Update cmd docs (#328)
+
+-------------------------------------------------------------------
+Fri Sep 23 11:56:56 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220923.33d6aba:
+  * Rework SetDefaultGrubEntry (#330)
+  * Add CreateBootEntry to EFI install/reset (#326)
+
+-------------------------------------------------------------------
+Fri Sep 23 08:17:26 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220922.3bfae9c:
+  * Add secure boot for EFI ISO images (#327)
+
+-------------------------------------------------------------------
+Thu Sep 22 07:36:40 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220922.06e0bbe:
+  * [auto] Update cmd docs (#318)
+  * Keep working dir after a chroot call (#324)
+  * Create ISO for EFI only or BIOS only, not both (#322)
+  * Fix image tests to use an up to date system for testing the install (#323)
+
+-------------------------------------------------------------------
+Tue Sep 20 10:46:38 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220919.129edf9:
+  * Fix disk partitioning (#321)
+
+-------------------------------------------------------------------
+Mon Sep 19 14:30:53 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220919.6f62fa2:
+  * Rework efi grub install (#317)
+  * Include bootloader arrangement in build-iso (#316)
+
+-------------------------------------------------------------------
+Mon Sep 12 13:23:20 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220907.0ff8246:
+  * Fix GO-2022-0244 (#315)
+  * Fix GO-2022-0586 (#314)
+
+-------------------------------------------------------------------
+Fri Sep 02 06:07:18 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220831.b488ce7:
+  * Bump cosign installer
+  * Fix cosign command (#312)
+
+-------------------------------------------------------------------
+Wed Aug 31 12:34:13 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220831.efe83cf:
+  * Fix image signing (#311)
+
+-------------------------------------------------------------------
+Mon Aug 29 13:27:50 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220815.c9a862d:
+  * Add extra partitions config on installation (#306)
+  * Update docker-master.yaml
+
+-------------------------------------------------------------------
+Thu Aug 11 13:16:08 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220811.07f8e36:
+  * Drop luet init from BuildConfig (#310)
+  * cosign the release artifacts (#308)
+  * Fix logging coming from luet (#309)
+
+-------------------------------------------------------------------
+Tue Aug 02 11:26:25 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220802.8a7e7a1:
+  * Fix branch name for github workflow
+  * Push to REPO-ci on master merge (#301)
+
+-------------------------------------------------------------------
+Fri Jul 29 15:40:09 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220729.ae4f000:
+  * Set the message of what we are setting as default properly (#300)
+
+-------------------------------------------------------------------
+Fri Jul 29 12:11:28 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220729.87f0cb4:
+  * Allow overriding default grub entry or fallback to default (#299)
+  * Log error on upgrade
+
+-------------------------------------------------------------------
+Tue Jul 26 13:17:05 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220726.dfb21b4:
+  * [auto] Update cmd docs
+
+-------------------------------------------------------------------
+Mon Jul 25 10:13:38 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220725.a0b8053:
+  * Go mod vendor
+  * Unify cmd-line usage
+
+-------------------------------------------------------------------
+Thu Jul 21 14:08:15 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220721.be54398:
+  * Docker fixes (#289)
+
+-------------------------------------------------------------------
+Thu Jul 21 08:48:31 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220721.0f0dccb:
+  * [auto] Update cmd docs (#288)
+
+-------------------------------------------------------------------
+Wed Jul 20 09:05:08 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220720.2eb14f6:
+  * Allow multiple cloud-init files in installation spec (#287)
+
+-------------------------------------------------------------------
+Tue Jul 19 09:10:53 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220719.799d323:
+  * elemental install: allow to get the EJECT_CD option from the env
+
+-------------------------------------------------------------------
+Tue Jul 12 15:32:14 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220707.f1fabd4:
+  * Bump yip dependency (#282)
+
+-------------------------------------------------------------------
+Wed Jul 06 12:00:51 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220706.d574597:
+  * Remove a leftover file (#281)
+  * Produce state.yaml files on install, upgrade and reset commands (#278)
+
+-------------------------------------------------------------------
+Fri Jun 24 08:08:24 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220622.a81c51f:
+  * [auto] Update cmd docs (#274)
+  * More improvements to auto Pr (#273)
+  * Improve auto docs PR (#271)
+  * Set serial tests with ginkgo dsl (#269)
+  * Add vendor dir with deps (#266)
+  * Fallback to docker type if URI source is of an unknown type (#264)
+  * tests: add unit test for CalcFileChecksum
+  * build-iso: add computation of the sha256 checksum
+  * Add flag to fully disable compression for squashfs (#257)
+  * Ensure we properly propagate repository arch configuration in repos (#260)
+  * Fix buld-iso (#259)
+  * rawdisk: Consume repositories from top level YAML (#255)
+  * Bump ghw and fix labels (#253)
+  * Fix build-iso command when no arguments are provided (#256)
+
+-------------------------------------------------------------------
+Mon Jun 13 10:24:17 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220609.2707687:
+  * build-iso: Sanitize config file for build-iso (#251)
+  * Fix default config for RawDisk (#249)
+  * Long info for build-disk including the SOURCE info (#252)
+  * Drop uneeded root test and add mroe tests for syscall (#250)
+  * [auto] Update cmd docs (#247)
+  * Improve SELinux labeling commands (#245)
+  * increase reset test (#241)
+  * utils: Drop NewSourceGuessingType() (#242)
+  * build-iso: Improve validation for rootfs source image (#234)
+  * [auto] Update cmd docs (#240)
+  * Split OEM reset from Persistent reset (#239)
+  * Relabel SELinux in a chroot env (#230)
+
+-------------------------------------------------------------------
+Tue Jun 07 12:03:07 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220606.71c35d2:
+  * Fix binary name (#237)
+  * Rename package to rancher/elemental-cli (#236)
+
+-------------------------------------------------------------------
+Wed Jun 01 08:41:47 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220601.1554b61:
+  * Fail disk build if luet errors (#233)
+  * Use a channel to close rsync monitoring goroutine (#231)
+  * Ensure recovery image file is set according to the filesystem (#229)
+  * Add lvm2 to docker image (#227)
+  * Bump luet and wire up logger from elemental (#226)
+  * Move config fixtures to test/fixtures, add test case (#225)
+  * Fix grub-entry-name parsing from config files (#224)
+  * Report rsync status (#216)
+  * [auto] Update cmd docs (#222)
+  * Switch option for using mtree plugin (#208)
+
+-------------------------------------------------------------------
+Tue May 31 13:47:04 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.15+git20220531.7e946eb:
+  * Use a channel to close rsync monitoring goroutine (#231)
+  * Ensure recovery image file is set according to the filesystem (#229)
+  * Add lvm2 to docker image (#227)
+  * Bump luet and wire up logger from elemental (#226)
+  * Move config fixtures to test/fixtures, add test case (#225)
+  * Fix grub-entry-name parsing from config files (#224)
+  * Report rsync status (#216)
+  * [auto] Update cmd docs (#222)
+  * Switch option for using mtree plugin (#208)
+  * Deactivate unmounted lvm volumes before partitioning (#221)
+
+-------------------------------------------------------------------
+Tue May 24 10:37:29 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- renamed to elemental-cli
+
+-------------------------------------------------------------------
+Tue May 24 10:31:59 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14-1+git20220523.605346d:
+  * Adding support for additional environment variables to support ros-installer (#217)
+  * Use /etc/os-release on install and reset (#218)
+  * Use equivalent logic in run and build commands to load configuration (#210)
+  * Introduce ReferenceId for Repository (#215)
+  * Use litter lib to dump full cfg (#213)
+  * Fix passing repositories to luet channel unpack (#214)
+  * Fix efi image size calculation (#211)
+  * Add arch to config based on current arch (#209)
+  * Make use of elemental API in build commands (#207)
+  * [auto] Update cmd docs (#206)
+  * Refactor runconfig (#189)
+
+-------------------------------------------------------------------
+Tue May 24 09:54:15 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14-1+git20220517.1a7a85c:
+  * [auto] Update cmd docs (#204)
+  * Include other configs on config load (#203)
+  * Add --local option to install, build-iso, upgrade (#185)
+  * Update the system in the dockerfile (#202)
+  * [auto] Update cmd docs (#200)
+  * Small fix for autogenerated docs
+  * Add job to auto create PR for updated docs (#195)
+  * Try to fix go cache on CI (#199)
+  * Also set temp dir for luet pkgcache (#196)
+  * Update go.mod to fix cache (#197)
+  * Try to get a decent luet tempdir (#193)
+  * Add docs for commands and generator (#192)
+  * Protect against wrong squshfs options (#190)
+  * Fix loading squash options (#188)
+  * Squashfs compression (#187)
+  * Set default config dir to /etc/elemental (#181)
+  * Introduce generic arch flag for build commands (#182)
+  * Fix typo in Config mapstructure mapping (#180)
+  * Ensure ISO's defaults are applied (#179)
+  * Improve build-iso flags (#177)
+  * Use the arch for the repo (#176)
+  * Add default values if config is empty (#174)
+  * Add build-iso command defaults (#173)
+  * Expand build disk (#171)
+  * Create basic dir structure for isos with proper permissions (#170)
+  * Fix --date default (#169)
+  * Add build-disk command (#162)
+  * Fix build-iso kernel discovery and root permissions (#168)
+  * Exclude only root-located directories (#165)
+
+-------------------------------------------------------------------
+Fri May 20 07:48:09 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220519.5766180:
+  * Fix efi image size calculation (#211)
+  * Add arch to config based on current arch (#209)
+
+-------------------------------------------------------------------
+Thu May 19 09:01:47 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220519.de33226:
+  * Make use of elemental API in build commands (#207)
+  * [auto] Update cmd docs (#206)
+  * Refactor runconfig (#189)
+  * [auto] Update cmd docs (#204)
+  * Include other configs on config load (#203)
+  * Add --local option to install, build-iso, upgrade (#185)
+
+-------------------------------------------------------------------
+Fri May 13 09:33:21 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220513.4ed4c33:
+  * Update the system in the dockerfile (#202)
+  * [auto] Update cmd docs (#200)
+  * Small fix for autogenerated docs
+  * Add job to auto create PR for updated docs (#195)
+  * Try to fix go cache on CI (#199)
+
+-------------------------------------------------------------------
+Wed May 11 07:54:35 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220511.ce2dd48:
+  * Also set temp dir for luet pkgcache (#196)
+  * Update go.mod to fix cache (#197)
+  * Try to get a decent luet tempdir (#193)
+  * Add docs for commands and generator (#192)
+
+-------------------------------------------------------------------
+Tue May 10 06:44:46 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220509.2dec7d7:
+  * Protect against wrong squshfs options (#190)
+  * Fix loading squash options (#188)
+  * Squashfs compression (#187)
+  * Set default config dir to /etc/elemental (#181)
+
+-------------------------------------------------------------------
+Fri May 06 07:43:38 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220504.dc0d414:
+  * Introduce generic arch flag for build commands (#182)
+
+-------------------------------------------------------------------
+Mon May 02 15:50:38 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220502.62b0cfd:
+  * Fix typo in Config mapstructure mapping (#180)
+  * Ensure ISO's defaults are applied (#179)
+
+-------------------------------------------------------------------
+Thu Apr 28 08:33:30 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220428.49299da:
+  * Improve build-iso flags (#177)
+  * Use the arch for the repo (#176)
+  * Add default values if config is empty (#174)
+  * Add build-iso command defaults (#173)
+  * Expand build disk (#171)
+
+-------------------------------------------------------------------
+Mon Apr 25 11:34:56 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.14+git20220425.36c1b6a:
+  * Create basic dir structure for isos with proper permissions (#170)
+  * Fix --date default (#169)
+  * Add build-disk command (#162)
+  * Fix build-iso kernel discovery and root permissions (#168)
+  * Exclude only root-located directories (#165)
+  * Properly pass repos to build-iso (#163)
+  * Extend LuetInterface to support custom repositories (#161)
+  * build-iso command first round implementation (#160)
+
+-------------------------------------------------------------------
+Tue Apr 12 10:43:14 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220407.f122839:
+  * Move out generic configuration from RunConfig (#159)
+
+-------------------------------------------------------------------
+Thu Apr 07 09:05:10 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220405.89d323a:
+  * Drop lsblk in favour of ghw library (#155)
+  * Add a eject-cd flag for install (#156)
+  * Relocate GPT headers for expanded disks (#158)
+  * Bump yip to master (#157)
+  * Use local context for docker building (#153)
+  * Test the docker image install over loop device (#149)
+  * Missing one step skipped woops (#152)
+  * Dont run tests if only Dockerfile has changed (#151)
+  * Move config options into the config package (#148)
+  * Add grub2-efi image into the docker image (#150)
+  * Remove blkid dependency and limit lsblk usage (#147)
+  * Add logger to runner and log commands on debug (#142)
+  * Fix docker building on tag (#146)
+  * Sync locally build docker names with remote (#145)
+  * Fix load and push not being able to be used at the same time (#144)
+  * Dockerfile changes (#143)
+  * Use auto for FS in upgrade (#141)
+  * Keep partition device path after creating a new partition (#140)
+  * Adapts action tests to new fs interface (#139)
+  * Fix elemental package tests, no root required (#138)
+  * Use default dir permissions constant (#137)
+  * Fix directory permissions (#136)
+
+-------------------------------------------------------------------
+Thu Mar 10 15:46:50 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220310.21e7373:
+  * add channel support to install action (#132)
+  * Ensure we use configured labels in reset command, not defaults (#133)
+  * Check partial yaml unmarshal errors and unify FS (#125)
+  * Add dockerfile (#131)
+
+-------------------------------------------------------------------
+Wed Mar 09 09:26:16 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220308.f91b2f6:
+  * Add checkRoot helper for cmd and add it to root commands (#129)
+  * Fix variables initialization in tests (#128)
+  * Small fixes (#127)
+
+-------------------------------------------------------------------
+Mon Mar 07 11:18:43 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220303.491b27d:
+  * Use golangci for lint+license check (#123)
+
+-------------------------------------------------------------------
+Tue Mar 01 13:28:29 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220301.c7e1cb7:
+  * Use grab library as the http client (#121)
+
+-------------------------------------------------------------------
+Fri Feb 25 17:44:57 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220225.dd23b93:
+  * Support loop mount on isos (#119)
+
+-------------------------------------------------------------------
+Fri Feb 25 12:43:31 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220225.e9b4112:
+  * Allow to set GIT_TAG and GIT_COMMIT when calling make (#118)
+
+-------------------------------------------------------------------
+Fri Feb 25 10:45:39 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220225.38414ba:
+  * Increase shared flags between install, upgrade and reset (#117)
+  * Full installation from downloaded ISO (#116)
+  * Define all needed images in runconfig (#114)
+  * Fixups to upgrade process (#115)
+  * CLI fixups (#113)
+  * Ensure cloudinit tests can be executed in parallel (#112)
+  * Implement yip's Layout plugin using partitioner package (#111)
+  * codecov: split cmd from pkg coverage (#109)
+  * upgrade: always try to remount state partition (#108)
+  * Upgrade fixes for paths and mounts (#107)
+
+-------------------------------------------------------------------
+Fri Feb 25 10:44:56 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- rename to elemental
+
+-------------------------------------------------------------------
+Fri Feb 25 09:44:32 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.13+git20220225.38414ba:
+  * Increase shared flags between install, upgrade and reset (#117)
+  * Full installation from downloaded ISO (#116)
+
+-------------------------------------------------------------------
+Tue Feb 22 15:13:50 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.12+git20220221.13c2b6f:
+  * Define all needed images in runconfig (#114)
+  * Fixups to upgrade process (#115)
+
+-------------------------------------------------------------------
+Mon Feb 21 13:34:58 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.12+git20220218.9f1859e:
+  * CLI fixups (#113)
+  * Ensure cloudinit tests can be executed in parallel (#112)
+  * Implement yip's Layout plugin using partitioner package (#111)
+  * codecov: split cmd from pkg coverage (#109)
+
+-------------------------------------------------------------------
+Thu Feb 17 10:14:13 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.12+git20220217.a95088a:
+  * upgrade: always try to remount state partition (#108)
+  * Upgrade fixes for paths and mounts (#107)
+  * cli: read target also from config (#106)
+  * Upgrade: Fix upgradestateDir (#105)
+  * Be more smart about upgrade dir (#104)
+  * Refactor CopyActive method to turn tin CopyImage (#95)
+  * Create new command (#96)
+  * Also check the system label to see if we booting from recovery (#102)
+  * Fix upgrade source from channel in recovery (#101)
+  * Upgrade: only add mounts for chroot if they have a mountpoint (#100)
+  * cloud-init: Process users before SSH (#99)
+  * Fix luet not having a logger and changing context (#98)
+  * Remove a Focus leftover from action tests (#97)
+  * Rework flags to unify some of them (#94)
+  * syscall test (#93)
+  * Adding CleanStack utility (#92)
+
+-------------------------------------------------------------------
+Wed Feb 09 15:43:13 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.12+git20220209.745468a:
+  * Upgrade improvements (#91)
+  * Add reset command (#86)
+  * upgrade from channel (#81)
+  * Ensure make fmt returns error if some file is changed (#90)
+  * Changes by running 'make fmt' (#89)
+  * Unpack local flag v2 (#87)
+  * Add a Chroot.RunCallback method (#84)
+  * Make action setup methods public (#83)
+  * Install config refactor (#72)
+  * Add cache for go modules and build to CI (#76)
+  * Rename 'PLabel' form v1.Partition to 'Name' (#74)
+  * Move to ginkgo v2 (#73)
+  * Add upgrade command (#59)
+
+-------------------------------------------------------------------
+Thu Feb 03 09:21:03 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.12+git20220201.42f728f:
+  * Adding incompatible flags tests in install command (#67)
+  * Add --reboot and --poweroff flags (#66)
+  * Do not use cosign luet plugin (#65)
+
+-------------------------------------------------------------------
+Mon Jan 31 15:28:50 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.0.12+git20220131.04e7e83:
+  * Hide yip errors under debug (#64)
+  * Update go.mod (#63)
+  * Disable cosign by default (#62)
+  * Fixes grub tests flakyness (#61)
+  * Ensure RunConfig parameters are writable by Viper (#60)
+  * Add retries logic to get devices by label (#57)
+  * Add --logfile and --quiet options to root (#56)
+  * Add plugin flags to pull-image (#55)
+  * Use ext2 FS for images (#54)
+  * Adds pull-image (#52)
+
+-------------------------------------------------------------------
+Mon Jan 31 15:25:26 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- Initial version 0.0.12
+

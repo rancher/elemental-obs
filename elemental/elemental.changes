@@ -1,0 +1,477 @@
+-------------------------------------------------------------------
+Tue Jul 30 17:24:02 CEST 2024 - David Cassany <dcassany@suse.com>
+
+- Changes on top of v2.1.0-dev:
+  * c1800c9 Adapting spec to the gitified project
+  * 6b285fe ci/cli: add daily rancher 2.9 CLI tests
+  * 8b1dd2c ci: fix proxy tests for rancher 2.9
+  * f70e3b2 ci/ui: Do not install rc ui version in 2.9 upgrade
+  * 016d866 ci/openqa: update Job Group definition
+  * 2afb487 ci/ui: Force elemental ui rc7 for 2.9
+  * 24320d7 ci/ui: add weekly rancher 2.7 head tests
+  * fad356b ci/ui: enable prime and rancher 2.9-head in UI
+  * a1cc324 ci/cli: add Regression tests
+  * 3e910e4 ci: update tests/README.md file
+  * 4e14f3e ci/cli: test recovery mode after OS upgrade
+  * 6f36e00 ci: use latest version of DeployRancherManager func
+  * 28c8099 ci: add a 2nd HDD
+  * aaa67c6 ci/cli: use Rancher Manager Prime on RKE2 tests
+  * 9effef1 ci: update tests/README.md file
+  * aff2f7c ci/ui: adapt code for rancher 2.9
+  * 712b1b2 ci/multicluster: reduce number of tested cluster
+  * 111368b build(deps): bump golang.org/x/net from 0.21.0 to 0.23.0 in
+            /tests (#1377)
+  * 1765e9f ci: fix deployed application test
+  * 4448ed7 ci/airgap: fix test with Rancher Manager Stable
+  * ec409b6 ci: fix mulicluster test
+  * d2ec1f6 ci: remove EndBug/add-and-commit action
+  * a3035ab ci/scalability: remove test on Rancher Manager Devel
+  * 7d254cd ci/ui: automate latest os version selection
+  * 3488ddb ci/airgap: use alpha channel to test RM 2.9 branch
+  * dc9eaf0 ci/airgap: fix os channel sync with Dev
+  * fbd653c Remove the x86_64 literal from OS selector
+  * 0c1ef40 ci/ui: fix dev channel for upgrade test
+  * 07d9c53 ci: update tests/README.md file
+  * 0e8df2d Ensure uninstall test is backward compatible
+  * 3e2afee ci: Adapt uninstall tests after rancher/elemental-operator#775
+  * dba9c98 Remove unneeded network setup
+  * 36207b6 elemental.spec: Add procps to Requires
+  * fde4fe2 Add openSSH server to SELinux images
+  * 2ef9dd7 Revert "Move install openssh and openssh-server"
+  * a95c8bb ci/cli: fix CheckCreatedRegistration function
+  * 838d5d7 ci/cli: fix simple application deployment
+  * 9e3bd2c Update openQA job group
+  * 6f75951 Add system data labels to test manifest (#1445)
+  * 1556bc6 ci/ui: do not always report to QASE for UI tests
+  * 9fb588a ci: define default value for qase reporting
+  * cc1abf7 ci/ui: use version input instead of hardcoded one
+  * d30ce2b ci: Bump checkout version in update-tests-description
+  * 1eefd7c ci/cli: add a SELinux OS image test
+  * 462b1b8 Move install openssh and openssh-server
+  * 9c92644 ci/cli: fix IPv6 deactivation
+  * 84a337a ci: increase timeout in reset test
+  * 67827f3 ci: bump k8s upstream to 1.27
+  * 7451732 ci/cli: fix operator uninstallation test
+  * c399554 ci/weekly: fix Rancher latest/devel installation
+  * ae048c6 ci/cli: fix cluster check for Rancher 2.9
+  * 0c2a6aa ci: force backup-restore version for Rancher HEAD-2.9
+  * 6344488 ci: update K8s version for Rancher HEAD-2.9
+  * 6bea78c ci: precise conditions when proxy log is needed
+  * ecfe8e7 ci: update default zone in master file
+  * 92df34a ci/ui: use OSVersionChannel in marketplace upgrade
+  * 6b630cf ci/cli: fix multicluster test
+  * 55cbbb9 ci: update tests/README.md file
+  * 5b0a794 ci: add badge for CLI-K3s-Downgrade test
+  * 25315a5 ci/cli: add an OS downgrade test
+  * b09d26f ci/cli: increase timeout in bootstrapping
+  * cbcae7e ci/ui: fix scheduling on RM HEAD-2.9
+  * dddfb17 ci/openqa: update jobgroup for SLMicro 6.0
+  * baffc6b ci/ui: bump Cypress container to 13.9.0
+  * a267562 selinux config file no longer needed
+  * 0b88900 Configure SELinux for RKE2 image
+  * 9fd1cd7 Add relabelling initramfs step
+  * 016914b Add explicit enforcing setup
+  * bec23e9 Set SELinux in permissive mode on recovery, leave default on
+            active
+  * 10e1896 ci/cli: upgrade Rancher Manager only to 2.8.x
+  * af04918 ci/ui: enable user account back
+  * 80a9efe Move mount config files to /run/elemental
+  * fe8e0fc Removing syslinux from base image
+  * 7f668e9 Fix grub2-x86_64-efi installation
+  * 8b8c89a Update framework/files/system/oem/01_elemental-rootfs.yaml
+  * 7675473 Set layout with yaml format
+  * 650493a Drop unused accounting.yaml
+  * 460d095 ci: spread tests over GCP zones
+  * 5a538c9 ci: fix multicluster+scalability tests
+  * 2989a2f ci: disable qase report for verification runs
+  * 33d64d9 ci/ui: automate chart upgrade with marketplace
+  * 26bbc8c ci/ui: install operator from market if requested
+  * f5d721a ci: fix github badges
+  * a2ee8b4 ci: enable qase for all tests
+  * db7f55a use patterns-microos-selinux instead of individual packages
+  * b6720b9 Add flavors for k3s-selinux and rke2-selinux KVM images
+  * 1d2a62c ci/ui: increase download time for media image
+  * a0d8748 ci/cli: fix RKE2 workflow
+  * f27bd61 ci: reschedule the workflows
+  * 4f34bd8 ci: move Rancher Head-2.9 tests on Sunday
+  * 973fc06 ci: remove nightly tests for Rancher devel/2.9
+  * 14775a7 ci/ui: bump cypress to 13.7.3
+  * 888b6cc ci/ui: report raw/iso installation to Qase
+  * b6800b3 ci/ui: fix artifacts upload
+  * 5e204e5 ci/ui: fix cypress test for stable UI
+  * cc1a6ee Rebase dev image to Tumbleweed (#1363)
+  * 5058ebc ci/logs: fix missing condition
+  * fc0f073 ci: fix Qase report
+  * ade4197 ci: fix CI badges
+  * e1390cc ci/qase: fix report deletion
+  * 5ef949c ci/qase: fix description
+  * ceeffb6 ci: 2nd fix for Qase support
+  * 8d186f5 ci: fix Qase support in manual workflows
+  * c896c75 ci: add GitHub matrix support
+  * 2f52e9a ci/cli: remove concurrency option
+  * 5194c1b ci/logs: a title in summary is not needed anymore
+  * f4d7103 ci/logs: add support for mutliple uploads in parallel
+  * 9462bd6 ci/ui: fix upgrade check
+  * 640d337 ci: update tests/README.md file
+  * b6dccbc ci/ui: remove stable channel for rke2 upgrade test
+  * 4d14e45 ci/ui: use different cloud-cfg for upgrade tests
+  * 765100e ci: Update ele-testhelpers
+  * 72e1be0 ci: Drain before deleting for all pools
+  * b867b58 ci: Drain before nodes before deleting them
+  * 0373869 ci/ui: add ui-plugin for rancher 2.8 and 2.9
+  * ac7f59c ci/ui: disable standard user account usage in RKE2
+  * d1d509b ci: update tests/README.md file
+  * 994a0c3 Use default compression (gzip) for ISOs
+  * 0d67032 No squashfs compression by default
+  * 110ff43 ci/ui: add multi-node for UI tests
+  * 92cfb3f ci/ui: remove old banner check
+  * 48cca69 ci/cli: fix Rancher Manager upgrade tests
+  * 0a58695 ci/airgap: fix node deployment
+  * fe466ba ci: fix OS version extraction
+  * cc73155 ci/cli: fix upgrade tests
+  * 0ee7de6 ci/ui: fix default snapshotter in UI tests
+  * 321b98a ci/cli: fix test with private CA
+  * 4a56919 ci: fix lint workflow
+  * f1eadd8 ci: update golang dependancies
+  * 8787081 Get rid of few error messages in OBS builds
+  * 3941dd5 ci/cli: add support for snapshotter option
+  * f2f3e65 Update spec file to new bootargs.cfg location
+  * 24dca6e Move bootargs to /etc/elemental
+  * 174967b ci/cli: fix PXE boot
+  * 8edb9ba Include boot assessment installation as part of elemental init
+  * 7a04678 Do not start elemental-register timer manually
+  * 37f60bf Update .obs/dockerfile/micro-rt-iso/Dockerfile
+  * 6019373 Update .obs/dockerfile/micro-kvm-iso/Dockerfile
+  * f8ef719 Update .obs/dockerfile/micro-base-iso/Dockerfile
+  * 60de594 Update .obs/dockerfile/micro-baremetal-iso/Dockerfile
+  * 6d90f32 Use the naming convention OBS expects for ISOs
+  * c01a9a1 Add an elemental-register checker
+  * 54c94ff Adding an network-online checker for elemental
+  * c50d518 Fix RT ISO name
+  * 769a019 ci/ui: fix chatmuseum script for operatot version
+  * 284a344 ci/multi: fix the OS image used
+  * 0c74c7e ci: fix OS images name
+  * 1b9cf0f Update workflow to new SL Micro name
+  * 98d06fc micro-rt-os/Dockerfile: Tag consistently
+  * a479e2b Dockefile: Add #!UseOBSRepositories
+  * 8f61703 Add wireless-regdb for aarch64
+  * 530dc33 Finalize Micro rename
+  * b710380 ci/ui: fix elemental operator upgrade
+  * 9a5f23f ci: test booting from raw image
+  * 2b6cf4d Install openssl in micro-base
+  * b828ca9 ci: fix impersonator account error
+  * 238937b README: fix typo
+  * 39b1fad Micro rename
+  * a301743 ci/ui: update check for default cloud config
+  * 858e26d ci: update tests/README.md file
+  * e4e1206 Include audit package and boot selinux in permissive mode
+            explicitly
+  * 00c479b ci/airgap: delete archive file after extracted it
+  * f358223 Sync kvm and rt ISO sources in OBS
+  * f7f9de3 Only apply upgrade config on OS upgrades (#1283)
+  * a5afd95 Actualize development documentation (#1271)
+  * 2ca5761 ci: fix SeedImage root password
+  * 290684e ci/airgap: no need to use specific baseImage
+  * 5ee3e10 ci/airgap: simplify container images mirroring
+  * b2e33ed ci/airgap: support channel.image Operator value
+  * b8e09e6 ci/airgap: speedup containers mirroring
+  * 7451fbb ci/airgap: fix Rancher VM deployment
+  * 249f6db ci/airgap: use K3s v1.27.10 for latest/devel Rancher
+  * 6b3297a ci/airgap: fix CI summary
+  * 6fd993a ci: use Elemental sle-micro-6.0 based images
+  * 005e933 slem-rt-iso: fix ISO name
+  * 7b23fee Disable selinux for recovery
+  * 77aaac2 rt: move ARG after FROM
+  * c1abf48 rt, kvm: fix tags and references
+  * 98584eb kvm, rt: Add BuildName
+  * 886f710 Use busybox in RT and KVM iso images
+  * 6fee308 Include busybox to ISO images from scratch
+  * eb74c83 slem-base-os: Drop apparmor-parser
+  * 13344e6 Switch from busybox to toolbox for ALP
+  * e00d917 Fix labelprefix for ALP
+  * b9ebc0a slem-iso: SLE_VERSION -> SLEMICRO_VERSION on ALP
+  * 17a5133 slem-iso: move from busybox to toolbox on ALP
+  * 5a73e00 Drop builder container in favor of sle-micro/6.0/toolbox
+  * 99c7c44 Switch to sle-micro/6.0/toolbox as host
+  * 14c46a2 Back to SLE15 busybox
+  * 85e97d3 Move to alp/bci/busybox
+  * a6267b4 Adapt Dockerfiles for ALP
+  * ccd4598 drop %VERSION% in IMG_TAG
+  * 9c8403f fix VERSION
+  * 474b8b1 Unify syntax
+  * 351a396 add SLEMICRO_VERSION suffix
+  * 08f1118 Build slem-base-os with slem-builder-container
+  * 3d27650 drop -base- from builder container
+  * 87e8d8b A builder container
+  * 34018d3 Back to SLE15 busybox
+  * f21de6d Add btrfsmaintance to base container
+  * 1b92b57 Move to alp/bci/busybox
+  * 382730c slem-kvm-iso/Dockerfile: fix IMG_REPO
+  * 65224b7 Add slem-rt-iso Dockerfile and manifest.yaml
+  * c5dc64b Add slem-kvm-iso Dockerfile
+  * e7f9844 Drop haveged - included in kernel now
+  * dd525b0 slem-base-os: explicitly install kernel-default
+  * de2fa1f drop k9s and nfsidmap, not available in SLE Micro 6
+  * 91eb5ef Adapt Dockerfiles for ALP
+  * 1872873 ci: allow root login by SSH
+  * 59ced58 Add constraints for new development version
+  * ed2811b Require elemental-toolkit v2
+  * 2669832 Adding the btrfs default at elemental-operator level
+  * 3836c23 ci/ui: update operator workaround in ui deployment
+  * 44d8ee5 ci: user K8s v1.27.8 for downstream cluster
+  * 8231619 ci: rename K8s version variables
+  * 6a60deb ci/airgap: mirror both upstream and downstream K3s
+  * 5e6bc8f Always ensure a Rancher-vWXYZ transient hostname (#1264)
+  * 4143cc7 ci: update tests/README.md file
+  * 2b5d720 ci/airgap: retry all helm/skopeo commands
+  * 6758aa5 ci/airgap: fix scheduled tests
+  * 9779f49 ci: validate that the operator cannot be reinstalled
+  * ec5be1c Enable recovery upgrades (#1226)
+  * 540b5ef Revert "ci/ui: add workaround for dhcp test"
+  * 9baac13 ci: use correct container path for upgrade tests
+  * df7a307 ci: fix container paths in upgrade tests
+  * 973f1ab ci: bump ele-testhelpers library
+  * 1a79ea5 Remove recovery hostname change
+  * daa1122 ci: fix backup-restore-operator tests
+  * 60715b8 ci/ui: add workaround for dhcp test
+  * ebbe673 Fix base ISO
+  * c71a4f7 Pull the correct OS image
+  * 2983f84 ci/ui: add test for dhcp hostname
+  * 6698b89 Update image names in OBS workflow
+  * d01c643 ci/airgap: add retry commands for helm and skopeo
+  * 0041ff0 Set transient recovery hostname
+  * 0105924 ci/ui: enable media build select
+  * f8966e9 Revert "Run services after time-sync.target"
+  * f70a104 ci/airgap: fix build and deploy scripts
+  * 8ccdfb8 Update all Golang dependencies
+  * a4ee4d8 Update Golang/Ginkgo/Gomega
+  * 475c591 Include btrfsmaintenance package
+  * 6bf680c Include btrfsprogs in dev image (#1232)
+  * a404747 ci: update tests/README.md file
+  * f11dba8 Add dev iso build and documentation (#1203)
+  * 537e9d9 ci: use new kubectl.RunWithoutErr function
+  * 95886d2 Adapt bootargs file to support btrfs snapshotter (#1213)
+  * 1956534 ci: fix Rancher Manager upgrade
+  * e87df57 ci: fix manual OBS workflow
+  * 101eb93 ci: fix scalability test
+  * b1578dd ci: bump downstream k8s to v1.27.10
+  * 4c68b30 ci: update tests/README.md file
+  * 12db31a ci: fix multi-cluster test
+  * 69be53c ci: update tests/README.md file
+  * 394712d ci: fix upgrade with OSVersionName/OSVersionChannel
+  * 9411355 ci/ui: deploy elemental operator when using RM2.7
+  * c6d4b3f ci/ui: fix extension installation
+  * 8f33842 ci: update tests/README.md file
+  * f61f4fc Add back recovery hostname
+  * 61ae555 ci/ui: clean code for 1.3.0 UI
+  * ea48ff3 fix URL in spec
+  * ab6d5a5 ci: update tests/README.md file
+  * 221aa4f ci/ui: Update QASE number
+  * 01778a5 ci: fix Qase report publishing
+  * 84c44f2 Add BuildName and fix BuildTags for SLE Micro container builds
+  * 959f8d3 Fix the naming
+  * e767b71 ci: use testType instead of clusterType for airgap
+  * 59ea010 ci: make elemental repo configurable for airgap
+  * 5bf4b8e ci: update tests/README.md file
+  * ba0ac0b ci: split master-e2e workflow to smaller ones
+  * acd425d ci: update tests/README.md file
+  * adb0b59 ci/cli: fix regression on operator installation
+  * 9e144da ci/ui: disable media button due to revert in UI
+  * 7a39b0c ci/ui: install operator via cli for RM 2.7
+  * 95cedfc Make elemental-toolkit dependency constrained to a specific
+            version range
+  * 93c2278 Adapt upgrade script to the new elemental-toolkit
+  * 0bf9ba8 Don't set the hostname (#1171)
+  * bd18269 ci/ui: use auto qase run id mode
+  * 9759fe3 ci: fix delete-runner
+  * 5764e97 ci: delete-runner could be (re)integrated in clean-runner
+  * 7a247b7 ci: fix clean-runner job
+  * f322ee5 ci: update tests/README.md file
+  * ebcef7d ci: use the more official qase-ginkgo library
+  * c2e1ef2 Make use of the update elemental kernel arguments
+  * dcbef16 Make initrd generation consistent across flavors
+  * d835ad8 Update rootfs settings
+  * c2451ff qase/lib: fix some checks
+  * 6cae61f ci: add GH test run URL in Qase result
+  * 9581aa2 ci: publish and complete Qase Run outside of Ginkgo
+  * ef07878 ci: delete Qase Run if job has been cancelled
+  * c30d92d qase/lib: update README
+  * afc3039 qase/lib: remove QASE_DELETE_RUN support
+  * a1a746b ci: update tests/README.md file
+  * cc95006 Update tests/e2e/helpers/qase/README.md
+  * 7508e79 ci/cli: re-format functions help headers
+  * 1f63455 ci/cli: add Qase reporting for CLI tests
+  * a2e3ccf ci/cli: add support for Qase reporting with Ginkgo
+  * b3b3aab ci/airgap: add missing check on err variable
+  * ae79026 Make sure no variables in /etc/os-release are duplicated
+  * 72c1c9e Build RT flavour only for x86_64
+  * ddbb2b2 Use Elemental systemd branding package
+  * e8ddfc0 Include all OBS packages pulling sources from this repository
+  * bd8d50c Update copyright to 2024 (for golangci-lint)
+  * 8191c9d ci: update tests/README.md file
+  * 9eac079 ci: add airgap e2e test (#1034)
+  * 7f0f8af Use per-flavor Dockerfiles
+  * 84aecc9 Update kernel cmdline for elemental-sysroot (#1165)
+  * c1f29a3 Use the elemental-rootfs feature (#1163)
+  * 42f9759 ci: add 2.9 pipeline badges in README
+  * 4be9814 ci: Scheduling rework for daily tests
+  * 4e019f5 ci: remove some tests done on Rancher head
+  * 9dc89d3 ci: add pipeline to test rancher 2.9 head
+  * 3c4d737 Rename systemd-presets-branding-SLE-Micro-for-Rancher to
+            systemd-presets-branding-Elemental
+  * 3151625 Mention elemental-rpmlintrc as Source in spec
+  * d6c0b1c Run services after time-sync.target
+  * ebe4e59 drop kpartx and sg3_utils
+  * 9bf694c Update copyright to 2024
+  * b03b336 Update copyright to 2024
+  * b5d466e drop "for Rancher" from grub entry
+  * 9b1cae9 Make x86_64 specific grub packages explicit
+  * 8bfdb3f Install NetworkManager-branding-SLE
+  * 5ca40ba drop rpm-ndb from non-flavored image
+  * 95f071f Add all the packages that were part of Elemental 5.4
+  * bc7a805 Add openssh-server
+  * 4dbd2d0 Add iputils
+  * 341d80a ci: spread jobs in differents GCP zones
+  * b458b6d ci: use the new GCP templates for GH runner
+  * 6177d45 ci: delete GH_REPO_* secrets as the end
+  * c86fca6 ci: use new version of GCP template
+  * 04cd365 ci: update tests/README.md file
+  * b9b0cf7 ci/ui: upgrade elemental operator via marketplace
+  * 5f65fc3 build(deps): bump golang.org/x/crypto from 0.14.0 to 0.17.0 in
+            /tests
+  * ce4e545 ci: update tests/README.md file
+  * 067d8eb ci/ui: automate ui-extension upgrade
+  * 09e9fb1 Use the backwards compatible  /run/cos/active_mode
+  * 7a95cd7 Revert to 'old' RPi firmware
+  * a374ccb Mkdir /host/run/elemental in suc-upgrade
+  * 4c00629 ci: update tests/README.md file
+  * 0690abc ci: add device-selector test
+  * 2bb7a4e Migrate to /run/elemental from /run/cos
+  * c843cdf ci/cli: fix upgrade to Staging tests
+  * 282622b Add default network configuration for eth0
+  * dfedffb ci/cli: fix OBS Staging tests
+  * c6268ca ci: update tests/README.md file
+  * b64561a ci/ui: update html selector for Cypress
+  * 21b4948 ci/cli: fix RKE2 multi-cluster
+  * 322592e ci/cli: use K3s for-scalability test
+  * d3d2e0f ci/cli: increase timeout for ManagedOSVersionChannel sync
+  * 4ec37df ci/cli: add RunSSHWithRetry function
+  * 43fdcc7 Remove default serial console kernel parameter
+  * e0c8e44 ci/cli: fix upgrade version of Rancher Manager
+  * 8d12cc2 ci/cli: replace sle-micro-rancher by sle-micro
+  * 1a0ecd7 ci: allow to use newer version of configure-gh-runner
+  * c8cdbd1 Remove unused Dockerfile
+  * 6d48bf5 Ensure the base iso name follows the OBS pattern
+  * cf72907 ui/ci: replace sle-micro-rancher by sle-micro
+  * 2731138 ci: fix sporadic download issues
+  * fc8ac84 ci/cli: increase CPU/MEM values for nodes
+  * 9151e11 ci: bump K3s/RKE2 versions to 1.26.10
+  * 6b324f5 ci: disable metrics-server on downstream cluster
+  * 56cdc4e ci: disable metrics-server on upstream cluster
+-------------------------------------------------------------------
+Fri Apr 26 12:01:26 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Update to version v2.1.1
+  * Move bootargs to /etc/elemental
+  * Include boot assessment installation as part of elemental init
+  * Do not start elemental-register timer manually
+  * Add an elemental-register checker
+  * Adding an network-online checker for elemental
+  * Add wireless-regdb for aarch64 
+
+-------------------------------------------------------------------
+Wed Mar 13 20:24:13 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Bump to v2.1.0
+  * Micro rename
+  * Only apply upgrade config on OS upgrades (#1283)
+  * Require elemental-toolkit v2
+  * Adding the btrfs default at elemental-operator level
+  * Enable recovery upgrades (#1226)
+  * Set transient recovery hostname
+  * Update all Golang dependencies
+  * Adapt bootargs file to support btrfs snapshotter (#1213)
+  * Adapt upgrade script to the new elemental-toolkit
+  * Don't set the hostname (#1171)
+  * Make use of the update elemental kernel arguments
+  * Make initrd generation consistent across flavors
+  * Update rootfs settings
+  * Make sure no variables in /etc/os-release are duplicated
+  * Build RT flavour only for x86_64
+  * Use Elemental systemd branding package
+  * Update kernel cmdline for elemental-sysroot (#1165)
+  * Use the elemental-rootfs feature (#1163)
+  * Run services after time-sync.target
+  * Mkdir /host/run/elemental in suc-upgrade
+  * Migrate to /run/elemental from /run/cos
+  * Add default network configuration for eth0
+  * Remove default serial console kernel parameter
+
+-------------------------------------------------------------------
+Tue Nov 28 17:26:41 UTC 2023 - dcassany@suse.com
+
+- Update to version 2.0.0:
+  * For some reason OBS complains of invalid format on SOURCEURL substitution
+  * Update workflow so that it branches the appropriate OBS packages
+  * Adding missing manifest for the base-iso image
+  * Align and update labels and tags with all images
+  * Remove obsolete images, sle micro variants are already in place
+  * Rename build-iso-next
+  * Remove longhorn overlay mount
+  * Drop the 'for Rancher' suffix
+  * Revert to 'old' RPi firmware
+  * Set entrypoint of elemental-iso-add-registration
+  * Fix SLEM4R OS build
+  * Update elemental-iso-add-registration
+  * Remove some old teal references
+  * Remove Teal images
+  * Bump ele-testhelpers deps
+  * Include system agent unit file in specfile
+  * Require elemental-toolkit instead of elemental-cli (#984)
+
+-------------------------------------------------------------------
+Tue Nov 28 17:26:14 UTC 2023 - dcassany@suse.com
+
+- Update to version 1.3+git20230830.d301e1b:
+  * Add elemental-register-reset.service
+  * Use the new init command (#874)
+  * Disable service triggers on staging
+  * Fix elemental-iso-add-registration script
+  * rancher/ -> suse/
+  * Use elemental-register --install argument (#934)
+  * Allow installation on non-SUSE distributions
+  * Add CONTRIBUTING.md
+  * Enable cloud-config from removable devices
+  * Ensure names are unique for all stages
+  * Do not compare versions from different repositories on upgrades
+  * Feat: add CODEOWNERS
+  * Load proxy setup from sysconfig and allow elemental specific env variables
+  * Include cryptsetup in elemental-teal
+  * Do not expand COS_PERSISTENT by default
+  * Add environment variable files in elemental-system-agent.service
+  * Run elemental-register in systemd service (#723)
+  * Include rke2-killall on shutdown process
+  * Update shutdown-k3s.service
+  * Prevent upgrade loops when FORCE is in use
+  * Do not allow downgrades without force flag
+  * Remove reboots on cloud-config addition
+  * Do not allow concurrent suc-upgrade executions
+  * Update docker/login-action to v2.1.0 (#666)
+  * Add shutdown-k3s.service to OBS spec
+  * Add service to kill k3s before umount
+
+-------------------------------------------------------------------
+Tue Nov 28 17:19:29 UTC 2023 - dcassany@suse.com
+
+- Update to version 1.1.0+git20230125.14a106c:
+  * Add debug flag on upgrade command and update bootargs.cfg file (#625)
+
+-------------------------------------------------------------------
+Tue Oct 25 09:59:01 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add /etc/NetworkManager/conf.d/rke2-canal.conf (#446)
+
+-------------------------------------------------------------------
+Wed Oct  5 11:25:44 UTC 2022 - David Cassany <dcassany@suse.com>
+
+- Initial commit 
