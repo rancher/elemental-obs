@@ -67,3 +67,21 @@ update_spec "${rpmpath}/${pkgname}.spec" "${scminfo}"
 
 echo "Done"
 
+
+#########################################
+#         SL Micro base image           #
+#########################################
+echo -n "Preparing ${baseimg} sources at ${BUILDER_OUTPUT}/${baseimg} ..."
+mkdir -p "${BUILDER_OUTPUT}/${baseimg}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-base-os/"* "${BUILDER_OUTPUT}/${baseimg}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${baseimg}"
+cp "${changes}" "${BUILDER_OUTPUT}/${baseimg}/${baseimg}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${baseimg}/Dockerfile"
+
+echo "Done"
