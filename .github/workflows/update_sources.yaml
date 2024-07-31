@@ -18,7 +18,7 @@ jobs:
   update-sources:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout builders
+    - name: Checkout target branch
       uses: actions/checkout@v4
       with:
         ref: ${{ inputs.target_branch }}
@@ -37,8 +37,6 @@ jobs:
         V_OFFSET: no
         V_PARSE: patch
       run: |
-        set -x
-
         count=$(yq ".${{ inputs.target_branch }} | length" builders/config.yaml)
 
         for ((n=0;n<${count};n++)); do
@@ -78,8 +76,6 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.PAT }}
       run: |
-        set -x
-
         json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${{ inputs.target_branch }}_stage --base ${{ inputs.target_branch }} --limit 1)
 
         if [ "$(echo "${json}" | jq length)" -eq 1 ]; then

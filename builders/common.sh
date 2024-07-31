@@ -142,6 +142,7 @@ function create_scminfo {
 function create_changes_entry {
   local path=$1
   local scminfo=$2
+  local excludes=()
   local tag
   local pretag
   local ccount
@@ -158,6 +159,11 @@ function create_changes_entry {
 
   [ -d "${path}" ] || _abort "${error_msg} path '${path}' is not a directory"
   [ -f "${scminfo}" ] || _abort "${error_msg} ${scminfo} file not found"
+
+  shift; shift
+  for exclude in "$@"; do
+    excludes+=(":^${exclude}")
+  done
 
   tag="$(grep "tag:" < "${scminfo}" | cut -d" " -f 2)"
 
@@ -178,7 +184,8 @@ function create_changes_entry {
     {
       git show --format="${header}%n%n- ${starter}" \
         --date="format-local:${datef}" -s "HEAD"
-      git log --no-patch --no-merges --cherry-pick --format="%w(77,2,12)* %h %s" "${scope}"
+      git log --no-patch --no-merges --cherry-pick --format="%w(77,2,12)* %h %s" \
+	"${scope}" -- . "${excludes[@]}"
     } > "${BUILDER_OUTPUT}/${CHANGES_ENTRY}" 
 
   popd > /dev/null || _abort "${error_msg} popd failed"

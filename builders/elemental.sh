@@ -38,7 +38,7 @@ trap cleanup EXIT
 # Checkout code, compute version and compute changes
 gitpath=$(checkout "${giturl}" "${gitbranch}")
 scminfo=$(create_scminfo "${gitpath}" "${versionoffset}" "${parseversion}")
-changes=$(create_changes_entry "${gitpath}" "${scminfo}")
+changes=$(create_changes_entry "${gitpath}" "${scminfo}" tests README.md .github)
 
 # Set obs packages paths
 rpmpath="${BUILDER_OUTPUT}/${pkgname}"
