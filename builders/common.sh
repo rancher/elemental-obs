@@ -324,12 +324,19 @@ function update_changes {
   [ -f "${newchanges}" ] || _abort "${error_msg} new changes file '${newchanges}' not found"
   [ -f "${changeslog}" ] || _abort "${error_msg} previous changes file '${changeslog}' not found"
 
-  if head -n 4 "${newchanges}" | grep -q "Changes on top of"; then
-    if head -n 4 "${changeslog}" | grep -q "Changes on top of"; then
-      linenum="$(awk '/^--------+$/{ c++; if (c >=2) {print NR-1; exit} }' "${changeslog}")"
-      sed "1,${linenum} d" "${changeslog}" >> "${newchanges}"
-      return
-    fi
+  # Compare the start of the last entry with the current one to prevent duplicates
+  if [[ "$(head -n 4 "${changeslog}")" == "$(head -n 4 "${newchanges}")" ]]; then
+    # Do not update changelog
+    cat "${changeslog}" > "${newchanges}"
+    return
+  fi
+
+
+  # Check if last entry was on a tag or not, if no tag replace it
+  if head -n 4 "${changeslog}" | grep -q "Changes on top of"; then
+    linenum="$(awk '/^--------+$/{ c++; if (c >=2) {print NR-1; exit} }' "${changeslog}")"
+    sed "1,${linenum} d" "${changeslog}" >> "${newchanges}"
+    return
   fi
 
   cat "${changeslog}" >> "${newchanges}"
