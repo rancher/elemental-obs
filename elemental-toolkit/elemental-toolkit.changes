@@ -18,11 +18,6 @@ Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
             0.20.0
   * 644cdc72 Refactor ci (#2137)
   * 22996ef7 Allow insecure registries (#2131)
-  * 1a0903ab Fix nested permissions definition
-  * 3206436e Leftover from d3da1cf
-  * d3da1cf6 Fix workflows, permissions at top level
-  * 8b8ae120 Move permissions at top level
-  * 3d657c95 Set token to explicit content read permissions
   * e2feafb9 Bump yip to 1.9.2
   * b41f7d20 Bump tp yip 1.6.2
   * 49ed9afd Bump github.com/bramvdbogaerde/go-scp from 1.2.1 to 1.4.0
@@ -30,24 +25,17 @@ Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
   * b3e17ba2 Bump golang.org/x/crypto from 0.22.0 to 0.24.0
   * 72940f06 Bump github.com/onsi/ginkgo/v2 from 2.17.2 to 2.19.0
   * 3f754032 Bump github.com/containerd/containerd from 1.7.12 to 1.7.18
-  * d0971ac5 Do not rebuild OS Images nightly (#2118)
-  * 17a0f7b4 Use nightly tag for ghcr.io nightly builds (#2117)
-  * d5eab7e7 Bump peaceiris/actions-hugo from 2 to 3
-  * 622babe8 Bump golangci/golangci-lint-action from 4 to 6
   * a9bd0f1a Bump github.com/onsi/gomega from 1.30.0 to 1.33.1
   * 884573cd Bump github.com/google/go-containerregistry from 0.19.0 to
             0.19.2
   * 31a8d413 Bump k8s.io/mount-utils from 0.30.1 to 0.30.2
   * 19d2cb04 Bump github.com/spf13/cobra from 1.7.0 to 1.8.1
   * b6a14cf1 Bump github.com/spf13/viper from 1.15.0 to 1.19.0
-  * 96506998 gomod package manager does not support 'vendor' key
   * 2b23133c Bump mount utils (#2099)
   * 15a10cc4 Make EFI partition size configurable at install time (#2105)
-  * 5e49bb96 Add orange and blue flavors for nightly builds
   * 28c4e473 Use fake mounter in tests
   * 897d872a Ensure subvolume snapshots is mounted to list snapshots
   * 0b9170de Fix smoke test for orange flavor
-  * 97e8baf1 Always run tests for all distros
   * f427491f Update example OSes to more recent versions
   * fc923f42 Remove default network configuration
   * 043a7dfd Add missing glibc-gconv package
@@ -63,7 +51,6 @@ Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
   * a1a22e83 Allow to compile for RPi (#2084)
   * 54664f8c Solve few linter warnings
   * f0d9cb30 Remove the work around for bsc#1210690 and simplify code
-  * ad4adb21 Disable codecov/codecov-action
   * 5a840145 Bootloader-in-rootfs=true (#2071)
   * 3f96b5e7 Relabel presistent paths only at first boot (#2080)
   * f3d4cfd6 Ensure SELinux relabelling can be disabled in configfile
@@ -78,13 +65,11 @@ Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
   * a5f526d5 Allow key pair of ssh connection in tests
   * 46a88e10 Change default root password
   * f9934d75 Fix error return
-  * 23616f35 Reword bug_report issue template
   * 22baf14e Fix stackable sources for build-iso (#2061)
   * 786cfa63 Update embedded features docs
   * 4d469e7f Enable SELinux for tumbleweed and green (#2052)
   * 8baaef22 Disable boot entry if efivars is read-only (#2059)
   * 91983af9 Retry pull-toolkit on failure
-  * ccf2acc7 Remove duplicate registry login step
   * b04f5098 Refactor selinux method (#2057)
   * dddb716b Add autologin feature (#2056)
   * c6b391a8 Move green to tumbleweed
@@ -107,30 +92,18 @@ Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
   * 80bd8d81 make configurable boot-assessment checks (#2018)
   * 4ff0f27b Turn off smm test
   * 9a533095 Turn off secure boot test
-  * cd97d5c0 Use 2M firmware args
-  * b0f9752f Use secure boot firmware
-  * c14d044b Change test ISO firmware
-  * 1cc181ac Use ContainSubstring
   * c0f39f2d Test qemu secure boot
   * 4fb44d23 Fix passive snapshots listing in grub.cfg
   * 39128d53 Bump github.com/docker/docker (#2020)
   * d61a24c7 Extract recovery kernel (#2016)
   * a2c4f0b3 Change location of bootargs.conf (#2013)
   * 3116cf21 Use elemental instead of cos (#2014)
-  * 3028919a Remove flaky assert in downgrade test
   * c618d581 Bump google.golang.org/protobuf from 1.32.0 to 1.33.0 (#2009)
   * 9231c8f3 Remove deprecated feature immutable-rootfs (#2007)
   * fd493864 Bump github.com/docker/docker (#2006)
   * 92e0a02a Bump google/go-containerregistry (#2005)
-  * 31f164a1 Fix downgrade tests, there are no hooks when upgrading from
-            passive
-  * 0fe91877 Fix version check
-  * c44d0672 Fix recovery test
   * fd757e61 Fix downgrade test
-  * bf4536c0 Use v2.0.0 reference image for tests
-  * d62ddfdb Switches tests to Ubuntu and KVM for tests
   * a5a16a20 Update v2 linker args (#2000)
-  * a1c2e2d7 Fix unterminated quoted string (#1999)
 -------------------------------------------------------------------
 Thu Apr 11 08:44:39 UTC 2024 - fredrik.lonnegren@suse.com
 
