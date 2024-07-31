@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Wed Jul 31 14:18:35 UTC 2024 - David Cassany <dcassany@suse.com>
+Wed Jul 31 15:11:43 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v2.1.0-dev:
+  * 322935e Add _service file to ISO sources
   * ec4af67 Add service file for OS images
   * 22aac32 Adding base os image _service file
   * 2198a04 Adapting spec to the gitified project
