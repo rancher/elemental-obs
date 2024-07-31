@@ -85,3 +85,136 @@ cp "${changes}" "${BUILDER_OUTPUT}/${baseimg}/${baseimg}.changes"
 sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${baseimg}/Dockerfile"
 
 echo "Done"
+
+
+#########################################
+#         SL Micro base ISO             #
+#########################################
+echo -n "Preparing ${baseiso} sources at ${BUILDER_OUTPUT}/${baseiso} ..."
+mkdir -p "${BUILDER_OUTPUT}/${baseiso}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-base-iso/"* "${BUILDER_OUTPUT}/${baseiso}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${baseiso}"
+cp "${changes}" "${BUILDER_OUTPUT}/${baseiso}/${baseiso}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${baseiso}/Dockerfile"
+
+echo "Done"
+
+
+#########################################
+#      SL Micro baremetal image         #
+#########################################
+echo -n "Preparing ${baremetalimg} sources at ${BUILDER_OUTPUT}/${baremetalimg} ..."
+mkdir -p "${BUILDER_OUTPUT}/${baremetalimg}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-baremetal-os/"* "${BUILDER_OUTPUT}/${baremetalimg}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${baremetalimg}"
+cp "${changes}" "${BUILDER_OUTPUT}/${baremetalimg}/${baremetalimg}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${baremetalimg}/Dockerfile"
+
+echo "Done"
+
+
+#########################################
+#      SL Micro baremetal ISO           #
+#########################################
+echo -n "Preparing ${baremetaliso} sources at ${BUILDER_OUTPUT}/${baremetaliso} ..."
+mkdir -p "${BUILDER_OUTPUT}/${baremetaliso}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-baremetal-iso/"* "${BUILDER_OUTPUT}/${baremetaliso}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${baremetaliso}"
+cp "${changes}" "${BUILDER_OUTPUT}/${baremetaliso}/${baremetaliso}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${baremetaliso}/Dockerfile"
+
+echo "Done"
+
+
+#########################################
+#         SL Micro kvm image            #
+#########################################
+echo -n "Preparing ${kvmimg} sources at ${BUILDER_OUTPUT}/${kvmimg} ..."
+mkdir -p "${BUILDER_OUTPUT}/${kvmimg}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-kvm-os/"* "${BUILDER_OUTPUT}/${kvmimg}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${kvmimg}"
+cp "${changes}" "${BUILDER_OUTPUT}/${kvmimg}/${kvmimg}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${kvmimg}/Dockerfile"
+
+echo "Done"
+
+
+#########################################
+#         SL Micro kvm ISO              #
+#########################################
+echo -n "Preparing ${kvmiso} sources at ${BUILDER_OUTPUT}/${kvmiso} ..."
+mkdir -p "${BUILDER_OUTPUT}/${kvmiso}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-kvm-iso/"* "${BUILDER_OUTPUT}/${kvmiso}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${kvmiso}"
+cp "${changes}" "${BUILDER_OUTPUT}/${kvmiso}/${kvmiso}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${kvmiso}/Dockerfile"
+
+echo "Done"
+
+
+#########################################
+#         SL Micro rt image             #
+#########################################
+echo -n "Preparing ${rtimg} sources at ${BUILDER_OUTPUT}/${rtimg} ..."
+mkdir -p "${BUILDER_OUTPUT}/${rtimg}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-rt-os/"* "${BUILDER_OUTPUT}/${rtimg}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${rtimg}"
+cp "${changes}" "${BUILDER_OUTPUT}/${rtimg}/${rtimg}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${rtimg}/Dockerfile"
+
+echo "Done"
+
+
+#########################################
+#         SL Micro rt ISO             #
+#########################################
+echo -n "Preparing ${rtiso} sources at ${BUILDER_OUTPUT}/${rtiso} ..."
+mkdir -p "${BUILDER_OUTPUT}/${rtiso}"
+
+# Copy the Dockerfile and contents
+cp "${gitpath}/.obs/dockerfile/micro-rt-iso/"* "${BUILDER_OUTPUT}/${rtiso}"
+
+# Copy scminfo and changes entry files
+cp "${scminfo}" "${BUILDER_OUTPUT}/${rtiso}"
+cp "${changes}" "${BUILDER_OUTPUT}/${rtiso}/${rtiso}.changes"
+
+# Apply version
+sed_substitution "%VERSION%" "${version}" "${BUILDER_OUTPUT}/${rtiso}/Dockerfile"
+
+echo "Done"
