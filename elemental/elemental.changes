@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Wed Jul 31 11:30:35 UTC 2024 - David Cassany <dcassany@suse.com>
+Wed Jul 31 14:18:35 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v2.1.0-dev:
+  * ec4af67 Add service file for OS images
   * 22aac32 Adding base os image _service file
   * 2198a04 Adapting spec to the gitified project
   * dba9c98 Remove unneeded network setup
@@ -139,6 +140,7 @@ Wed Jul 31 11:30:35 UTC 2024 - David Cassany <dcassany@suse.com>
   * 43fdcc7 Remove default serial console kernel parameter
   * c8cdbd1 Remove unused Dockerfile
   * 6d48bf5 Ensure the base iso name follows the OBS pattern
+
 -------------------------------------------------------------------
 Fri Apr 26 12:01:26 UTC 2024 - David Cassany <dcassany@suse.com>
 
