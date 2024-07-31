@@ -1,0 +1,138 @@
+-------------------------------------------------------------------
+Fri Apr 26 12:09:30 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Update to version v2.1.1
+
+-------------------------------------------------------------------
+Fri Apr  5 10:02:14 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Rename changes file to match package name
+
+-------------------------------------------------------------------
+Fri Mar 22 13:08:28 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Backport rename to v2.1.x series 
+
+-------------------------------------------------------------------
+Thu Mar 21 16:15:40 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- #!UseOBSRepositories
+
+-------------------------------------------------------------------
+Fri Mar 15 10:35:07 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to SL-Micro-base-container
+
+-------------------------------------------------------------------
+Mon Jan 29 13:36:22 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to SLE-Micro-base-container
+
+-------------------------------------------------------------------
+Wed Nov 22 11:41:16 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- drop the "for Rancher" suffix
+
+-------------------------------------------------------------------
+Mon Oct  2 14:00:08 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- split off -base
+
+-------------------------------------------------------------------
+Mon Aug 14 08:48:52 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- bump to 5.5
+- build with Dockerfile instead of .kiwi
+
+-------------------------------------------------------------------
+Tue Apr 04 13:12:33 UTC 2023 - jsrain@suse.com
+
+- set status to Released
+- reference correct EULA
+
+-------------------------------------------------------------------
+Wed Nov 16 08:20:23 UTC 2022 - jsrain@suse.com
+
+- bump to 5.4
+
+-------------------------------------------------------------------
+Mon Sep 26 07:15:43 UTC 2022 - jsrain@suse.com
+
+- set support level to Released
+
+-------------------------------------------------------------------
+Thu Sep 22 12:07:22 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add apparmor-parser for containerd.
+  https://github.com/rancher/elemental/issues/349
+
+-------------------------------------------------------------------
+Tue Sep 20 10:03:56 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add syslinux for ISO creation with UEFI
+
+-------------------------------------------------------------------
+Tue Sep 13 14:44:02 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add shim for secure boot
+
+-------------------------------------------------------------------
+Tue Sep  6 11:13:03 UTC 2022 - jsrain@suse.com
+
+- replace ca-certificates-mozilla-prebuilt with ca-certificates-mozilla
+  (we're building an OS, not a container)
+- add NetworkManager and traceroute
+- drop python-azure-agent as it pulls in Python
+  (all changes coming by kkaempf@suse.com)
+
+-------------------------------------------------------------------
+Fri Aug  5 01:42:00 UTC 2022 - jsrain@suse.com
+
+- bump the version to 5.3
+
+-------------------------------------------------------------------
+Wed Aug  3 11:32:04 UTC 2022 - jsrain@suse.com
+
+- set release status to Beta
+
+-------------------------------------------------------------------
+Mon Mar 28 07:24:04 UTC 2022 - jsrain@suse.com
+
+- fixes of container labels
+
+-------------------------------------------------------------------
+Tue Mar 22 15:35:45 UTC 2022 - jsrain@suse.com
+
+- adjust container labels before release
+
+-------------------------------------------------------------------
+Mon Feb 21 09:14:13 UTC 2022 - jsrain@suse.com
+
+- remove plymouth from the image
+
+-------------------------------------------------------------------
+Fri Feb  4 10:07:28 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add raspberry firmware for aarch64
+
+-------------------------------------------------------------------
+Thu Feb  3 09:11:21 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add grub2-arm64-efi for aarch64
+
+-------------------------------------------------------------------
+Wed Feb  2 09:22:03 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- replace systemd-presets-branding-SLE with
+  systemd-presets-branding-SLE-Micro-for-Rancher
+
+-------------------------------------------------------------------
+Mon Jan 31 11:12:38 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add container-selinux and plymouth
+
+-------------------------------------------------------------------
+Thu Jan 20 15:38:55 UTC 2022 - jsrain@suse.com
+
+- initial version
+
