@@ -20,7 +20,7 @@
 %define c_date 20240730
 
 Name:           elemental-toolkit
-Version:        2.1.0~dev
+Version:        2.2.0~rc1
 Release:        0
 Summary:        The command line client for Elemental
 License:        Apache-2.0
