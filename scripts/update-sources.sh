@@ -12,7 +12,7 @@ type create_scminfo > /dev/null 2>&1 || . "${SCRIPT_PATH}/common.sh"
 declare pkgname
 declare pkgoutput
 
-pushd "${BUILDERS_PATH:?}/.." > /dev/null || _abort "update-sources: pushd failed"
+pushd "${ROOT_PATH:?}/.." > /dev/null || _abort "update-sources: pushd failed"
 
   check_work_tree "$(pwd)" || _abort "not in a git work tree"
 

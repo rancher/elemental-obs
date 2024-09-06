@@ -1,14 +1,14 @@
 #!/bin/bash
 
 declare BUILDER
-declare BUILDERS_PATH
+declare ROOT_PATH
 declare BUILDER_OUTPUT
 declare BUILDER_WORKDIR
 
 BUILDER="$(realpath -s "${0}")"
-BUILDERS_PATH="$(dirname "${BUILDER}")"
-BUILDER_OUTPUT="${BUILDERS_PATH}/output"
-BUILDER_WORKDIR="${BUILDERS_PATH}/workdir"
+ROOT_PATH="$(dirname "${BUILDER}")"
+BUILDER_OUTPUT="${ROOT_PATH}/build"
+BUILDER_WORKDIR="${ROOT_PATH}/workdir"
 
 : "${SCM_INFO:=_scminfo}"
 : "${CHANGES_ENTRY:=newentry.changes}"
@@ -18,6 +18,10 @@ declare re_minor="^([0-9]+(\.[0-9]+){0,1})(-[0-9a-z]+)?"
 declare re_patch="^([0-9]+(\.[0-9]+){0,2})(-[0-9a-z]+)?"
 declare re_all="(.*)"
 
+
+#########################################
+#           Functions library           #
+#########################################
 
 function _abort {
   echo "$@" && exit 1
@@ -94,6 +98,9 @@ function create_scminfo {
     patch)
       regex="${re_patch}"
       ;;
+    none)
+      regex=none
+      ;;
     *)
       regex="${re_all}"
       ;;
@@ -110,7 +117,9 @@ function create_scminfo {
 
     version=${tag##v}
 
-    if [[ "${version}" =~ ${regex} ]]; then
+    if [[ "${regex}" == "none" ]]; then
+      version="null"
+    elif [[ "${version}" =~ ${regex} ]]; then
       version="${BASH_REMATCH[0]}"
     else
       _abort "Invalid version string: '${version}'"
@@ -138,7 +147,13 @@ function create_scminfo {
 }
 
 
-
+# create_changes_entry creates an OBS changelog entry
+# from the git history. It takes as arguments the git checkout
+# path, the scminfo file (which contains some information such
+# the most recent tag, HEAD date, etc.) and a list of
+# paths relative the git root to exclude from logs.
+# TODO: would be nice to also have a way to provide includes
+# instead of excludes. Probaby we need a toggle for that.
 function create_changes_entry {
   local path=$1
   local scminfo=$2
@@ -314,8 +329,11 @@ function cleanup {
 }
 
 
-# update_changes takes a changes files and adds a new given entry. If the last entry in file was a tag
-# it is pre-appended or substituted otherwise.
+# update_changes takes a changes files and adds a new given entry. If the last entry
+# in file was a tag it is pre-appended or substituted otherwise.
+#
+# TODO: some logic to detect retagging is missing (e.g. 1.2.3-rc2 is
+# retagged to 1.2.3). I guess scminfo is required for that
 function update_changes {
   local newchanges=$1
   local changeslog=$2
@@ -343,7 +361,3 @@ function update_changes {
 
   cat "${changeslog}" >> "${newchanges}"
 }
-
-
-rm -rf "${BUILDER_WORKDIR}"
-trap cleanup EXIT

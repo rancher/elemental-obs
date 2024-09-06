@@ -31,17 +31,19 @@ jobs:
         [ -f Makefile ] && exit 1
 
         git fetch origin +${{ github.ref_name }}:${{ github.ref_name }}
-        git checkout ${{ github.ref_name }} -- builders Makefile
-    - name: Run builder
+        git checkout ${{ github.ref_name }} -- scripts Makefile config.yaml
+    - name: Run prepare-sources
       env:
         V_OFFSET: no
         V_PARSE: patch
       run: |
-        count=$(yq ".${{ inputs.target_branch }} | length" builders/config.yaml)
+        count=$(yq ".${{ inputs.target_branch }} | length" config.yaml)
 
         for ((n=0;n<${count};n++)); do
-          export REPO="$(yq ".${{ inputs.target_branch }}.[${n}].repo" builders/config.yaml)"
-          export BRANCH="$(yq ".${{ inputs.target_branch }}.[${n}].branch" builders/config.yaml)"
+          export REPO="$(yq ".${{ inputs.target_branch }}.[${n}].repo" config.yaml)"
+          export BRANCH="$(yq ".${{ inputs.target_branch }}.[${n}].branch" config.yaml)"
+          export V_PARSE="$(yq ".${{ inputs.target_branch }}.[${n}].parseVersion" config.yaml)"
+          export V_OFFSET="$(yq ".${{ inputs.target_branch }}.[${n}].versionOffset" config.yaml)"
 
           make prepare-sources
         done
@@ -50,13 +52,16 @@ jobs:
         make update-sources 
     - name: Clean paths
       run: |
-        rm -rf builders
-        rm -f Makefile
+        rm -rf scripts
+        rm -f Makefile config.yaml
     - name: Checkout new branch ${{ inputs.target_branch }}_stage
       id: commit
+      env:
+        GH_TOKEN: ${{ secrets.PAT }}
       run: |
-        git config --global user.email "davidcassany@suse.com"
-        git config --global user.name "David Cassany"
+        # TODO set an OBS user as this might be used for *.changes generation
+        git config --global user.email "do-not-use@elemental.suse.com"
+        git config --global user.name "GitHub Action Runner"
 
         git checkout -b ${{ inputs.target_branch }}_stage
         git add .

@@ -1,0 +1,20 @@
+# Sets the relation of branches in current repository with
+# source repositories branches
+
+dev:
+- repo: rancher/elemental-toolkit
+  branch: gitified
+  parseVersion: patch
+  versionOffset: yes
+- repo: rancher/elemental-operator
+  branch: gitified
+  parseVersion: patch
+  versionOffset: yes
+- repo: rancher/elemental
+  branch: gitified
+  parseVersion: patch
+  versionOffset: yes
+- repo: rancher/elemental-channels
+  branch: gitified
+  parseVersion: none
+  versionOffset: no
