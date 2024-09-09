@@ -1,10 +1,33 @@
 -------------------------------------------------------------------
-Tue Jul 30 14:29:24 UTC 2024 - David Cassany <dcassany@suse.com>
+Fri Sep  6 11:25:58 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v1.7.0-dev:
-  * c75cae01 Fine tune specfile
-  * 7489fa1c Adding _service files to .obs sources
-  * 4908496c Adapting specfile to new package format
+  * 481b6565 Use %VERSION% as the version placeholder
+  * 2cd14590 Fine tune specfile
+  * ba735370 Adding _service files to .obs sources
+  * 3533abcd Adapting specfile to new package format
+  * b02de0ad Structure OBS package recipes in folders matching the OBS
+            package name
+  * 198628f8 operator: add Registry to ManagedOSVersionChannels Spec (#831)
+  * 122109f7 Random template labels - avoid override (#830)
+  * 0899ba29 Add SeedImage.status.checksumURL (#827)
+  * 488ad0d8 [Airgap] fix channel extraction for 1.7 version
+  * b7f70897 Fix flaky network test (#825)
+  * 3de0fc7a Use after-install && after-reset stages to initialize system
+            (#822)
+  * d857bda0 Implement Network Configurators (nmc, nmstate, nmconnections)
+            (#819)
+  * d8bcf740 operator: add built-in 'Random' label templates (#821)
+  * e4c75194 networking: use the main registration websocket channel for
+            network data (#820)
+  * 2858dad9 error strings should not be capitalized (ST1005) (#814)
+  * 3f185597 Bandaid local build (#818)
+  * 342bba26 IPAM to nmstate network config (#793)
+  * 717c575d Add new Micro 6.0 channels (#817)
+  * 36468aba register: always register when called (#813)
+  * 6681ea5f operator: rework label templating (#808)
+  * 05b6a19d Enable PR workflow for v1.6 maintenance branch
+  * d280e617 Implement Enabled field on ManagedOSVersionChannels (#800)
   * b8664194 [Airgap] fix unstable channel extraction
   * d7a712d3 Update channels (#781)
   * 0f59b146 Check crds chart is aligned with the main operator chart version
@@ -49,6 +72,7 @@ Tue Jul 30 14:29:24 UTC 2024 - David Cassany <dcassany@suse.com>
   * f5d9c70b unit-tests: minor cleanups
   * dae5f912 unit-test: add register tests
   * 695904cd unit-tests: add coverage for seedimage API
+
 -------------------------------------------------------------------
 Tue May  7 11:58:19 UTC 2024 - David Cassany <dcassany@suse.com>
 

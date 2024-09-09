@@ -1,4 +1,101 @@
 -------------------------------------------------------------------
+Fri Sep  6 10:39:35 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Changes on top of v2.1.0:
+  * 8b64092d Structure OBS package recipes in folders matching the OBS
+            package name
+  * d6a98088 Adapting spec to the gitified OBS project
+  * 1a529527 Bump yip to v1.9.3
+  * bbd386ec Bump github.com/onsi/ginkgo/v2 from 2.19.1 to 2.20.2 (#2169)
+  * 0cfc891c Bump github.com/google/go-containerregistry from 0.20.1 to
+            0.20.2 (#2161)
+  * 5e0a28c6 Do not require network in initrd by default
+  * 75e17df1 Bump to v2.1.1 for tests and fix recovery test
+  * 8dac61cb Disable SELINUX enforcing mode, permissive is the default
+  * 265cf018 Add build-disk documentation (#2164)
+  * b1bac09c Expose ELEMENTAL_CLOUD_INIT_PATHS option (#2163)
+  * b1cc863b Make RAW disks recovery partition expandable (#2159)
+  * 44b2e7b5 Bump efi library (#2158)
+  * 40b4fd4b Bump github.com/onsi/gomega from 1.34.0 to 1.34.1 (#2157)
+  * bfc3696b Bump github.com/google/go-containerregistry from 0.20.0 to
+            0.20.1 (#2156)
+  * d42f3c8b Bump github.com/onsi/ginkgo/v2 from 2.19.0 to 2.19.1
+  * 19a9ae32 Bump github.com/onsi/gomega from 1.33.1 to 1.34.0
+  * 3c885d2c Bump github.com/jaypipes/ghw
+  * 76caad5f Add test for auto disabled boot entry in Grub
+  * 615af35d Bump github.com/bramvdbogaerde/go-scp from 1.4.0 to 1.5.0
+  * afe3ed5a Bump github.com/containerd/containerd from 1.7.19 to 1.7.20
+  * c9c89b3c Bump k8s.io/mount-utils from 0.30.2 to 0.30.3
+  * 51a85a71 Remove unused steps in workflow
+  * 80bb6a22 Bump github.com/containerd/containerd from 1.7.18 to 1.7.19
+  * f54f6836 Fix cache cleaning for PRs and main pushes (#2144)
+  * 396e5aeb Bump golang.org/x/crypto from 0.24.0 to 0.25.0
+  * b9fc3e91 Bump github.com/google/go-containerregistry from 0.19.2 to
+            0.20.0
+  * 644cdc72 Refactor ci (#2137)
+  * 22996ef7 Allow insecure registries (#2131)
+  * e2feafb9 Bump yip to 1.9.2
+  * b41f7d20 Bump tp yip 1.6.2
+  * 49ed9afd Bump github.com/bramvdbogaerde/go-scp from 1.2.1 to 1.4.0
+  * c7746687 Bump github.com/cenkalti/backoff/v4 from 4.2.1 to 4.3.0
+  * b3e17ba2 Bump golang.org/x/crypto from 0.22.0 to 0.24.0
+  * 72940f06 Bump github.com/onsi/ginkgo/v2 from 2.17.2 to 2.19.0
+  * 3f754032 Bump github.com/containerd/containerd from 1.7.12 to 1.7.18
+  * a9bd0f1a Bump github.com/onsi/gomega from 1.30.0 to 1.33.1
+  * 884573cd Bump github.com/google/go-containerregistry from 0.19.0 to
+            0.19.2
+  * 31a8d413 Bump k8s.io/mount-utils from 0.30.1 to 0.30.2
+  * 19d2cb04 Bump github.com/spf13/cobra from 1.7.0 to 1.8.1
+  * b6a14cf1 Bump github.com/spf13/viper from 1.15.0 to 1.19.0
+  * 2b23133c Bump mount utils (#2099)
+  * 15a10cc4 Make EFI partition size configurable at install time (#2105)
+  * 28c4e473 Use fake mounter in tests
+  * 897d872a Ensure subvolume snapshots is mounted to list snapshots
+  * 0b9170de Fix smoke test for orange flavor
+  * f427491f Update example OSes to more recent versions
+  * fc923f42 Remove default network configuration
+  * 043a7dfd Add missing glibc-gconv package
+  * 9f2f2368 Remove pre-existing Elemental initrds
+  * fbe90421 Fix overlaydir setup
+  * e20e3829 Move green-rpi flavor to tumbleweed
+  * 29e909eb Longer retry during nightly pull
+  * f036b83c Fix status badge in README
+  * 48d6ca48 Refactor and test efi manager
+  * 2e56a099 Do not return error for efi.ReadLoadOption
+  * fa82c1b1 Fix recovery test (#2086)
+  * 8ce930a1 Remove obsolete flags for build-disk command (#2085)
+  * a1a22e83 Allow to compile for RPi (#2084)
+  * 54664f8c Solve few linter warnings
+  * f0d9cb30 Remove the work around for bsc#1210690 and simplify code
+  * 5a840145 Bootloader-in-rootfs=true (#2071)
+  * 3f96b5e7 Relabel presistent paths only at first boot (#2080)
+  * f3d4cfd6 Ensure SELinux relabelling can be disabled in configfile
+  * 7686d121 Refine relabel step
+  * 3fd2046a Update SELinux docs (#2075)
+  * 6c301f2e Move mount config file to /run/elemental
+  * a4c414f5 Add extra-cmdline flag to build-iso command (#2072)
+  * 1c89db02 SELinux relabel on boot (#2074)
+  * c95aa381 Define layout with yaml format
+  * d7d208a1 Add branding for live CD (#2065)
+  * 6f0b28e1 Set legacy password for upgrade test
+  * a5f526d5 Allow key pair of ssh connection in tests
+  * 46a88e10 Change default root password
+  * f9934d75 Fix error return
+  * 22baf14e Fix stackable sources for build-iso (#2061)
+  * 786cfa63 Update embedded features docs
+  * 4d469e7f Enable SELinux for tumbleweed and green (#2052)
+  * 8baaef22 Disable boot entry if efivars is read-only (#2059)
+  * 91983af9 Retry pull-toolkit on failure
+  * b04f5098 Refactor selinux method (#2057)
+  * dddb716b Add autologin feature (#2056)
+  * c6b391a8 Move green to tumbleweed
+  * c80eaa9b Bump golang.org/x/net in the go_modules group across 1 directory
+            (#2051)
+  * cccd8387 add symlink for missing binary on ubuntu 22.04+ (#2048)
+  * d0ad1014 Document cloud-config-defaults for SELinux support (#2046)
+  * 7feca1f4 Make squashfs defaults more consistent
+
+-------------------------------------------------------------------
 Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Update to v2.2.0-rc1:

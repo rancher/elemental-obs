@@ -1,16 +1,27 @@
 -------------------------------------------------------------------
-Wed Jul 31 15:11:43 UTC 2024 - David Cassany <dcassany@suse.com>
+Fri Sep  6 11:18:03 UTC 2024 - David Cassany <dcassany@suse.com>
 
-- Changes on top of v2.1.0-dev:
-  * 322935e Add _service file to ISO sources
-  * ec4af67 Add service file for OS images
-  * 22aac32 Adding base os image _service file
-  * 2198a04 Adapting spec to the gitified project
+- Changes on top of v2.2.0-dev:
+  * f0b5950 Structure OBS package recipes in folders matching the OBS package
+            name
+  * cfb5de6 Add _service file to ISO sources
+  * 9bf12ab Add service file for OS images
+  * 89c1605 Adding base os image _service file
+  * bce3ce8 Adapting spec to the gitified project
+  * 415c2ea Install nm-configurator in dev image and simplify dev sample
+            manifest (#1533)
+  * 31c322a Support for IPAM to nmstate (#1476)
+  * 6b285fe ci/cli: add daily rancher 2.9 CLI tests
+  * 24320d7 ci/ui: add weekly rancher 2.7 head tests
+  * fad356b ci/ui: enable prime and rancher 2.9-head in UI
+  * a1cc324 ci/cli: add Regression tests
   * dba9c98 Remove unneeded network setup
   * 36207b6 elemental.spec: Add procps to Requires
   * fde4fe2 Add openSSH server to SELinux images
   * 2ef9dd7 Revert "Move install openssh and openssh-server"
+  * 1eefd7c ci/cli: add a SELinux OS image test
   * 462b1b8 Move install openssh and openssh-server
+  * 5b0a794 ci: add badge for CLI-K3s-Downgrade test
   * a267562 selinux config file no longer needed
   * 0b88900 Configure SELinux for RKE2 image
   * 9fd1cd7 Add relabelling initramfs step
@@ -23,9 +34,13 @@ Wed Jul 31 15:11:43 UTC 2024 - David Cassany <dcassany@suse.com>
   * 8b8c89a Update framework/files/system/oem/01_elemental-rootfs.yaml
   * 7675473 Set layout with yaml format
   * 650493a Drop unused accounting.yaml
+  * f5d721a ci: fix github badges
   * db7f55a use patterns-microos-selinux instead of individual packages
   * b6720b9 Add flavors for k3s-selinux and rke2-selinux KVM images
+  * 4f34bd8 ci: move Rancher Head-2.9 tests on Sunday
   * cc1a6ee Rebase dev image to Tumbleweed (#1363)
+  * ade4197 ci: fix CI badges
+  * c896c75 ci: add GitHub matrix support
   * 994a0c3 Use default compression (gzip) for ISOs
   * 0d67032 No squashfs compression by default
   * 8787081 Get rid of few error messages in OBS builds
@@ -47,6 +62,7 @@ Wed Jul 31 15:11:43 UTC 2024 - David Cassany <dcassany@suse.com>
   * 8f61703 Add wireless-regdb for aarch64
   * 530dc33 Finalize Micro rename
   * 2b6cf4d Install openssl in micro-base
+  * 238937b README: fix typo
   * 39b1fad Micro rename
   * e4e1206 Include audit package and boot selinux in permissive mode
             explicitly
@@ -87,60 +103,6 @@ Wed Jul 31 15:11:43 UTC 2024 - David Cassany <dcassany@suse.com>
   * dd525b0 slem-base-os: explicitly install kernel-default
   * de2fa1f drop k9s and nfsidmap, not available in SLE Micro 6
   * 91eb5ef Adapt Dockerfiles for ALP
-  * 59ced58 Add constraints for new development version
-  * ed2811b Require elemental-toolkit v2
-  * 2669832 Adding the btrfs default at elemental-operator level
-  * 5e6bc8f Always ensure a Rancher-vWXYZ transient hostname (#1264)
-  * ec5be1c Enable recovery upgrades (#1226)
-  * 1a79ea5 Remove recovery hostname change
-  * ebbe673 Fix base ISO
-  * c71a4f7 Pull the correct OS image
-  * 6698b89 Update image names in OBS workflow
-  * 0041ff0 Set transient recovery hostname
-  * f8966e9 Revert "Run services after time-sync.target"
-  * 475c591 Include btrfsmaintenance package
-  * 6bf680c Include btrfsprogs in dev image (#1232)
-  * f11dba8 Add dev iso build and documentation (#1203)
-  * 95886d2 Adapt bootargs file to support btrfs snapshotter (#1213)
-  * f61f4fc Add back recovery hostname
-  * ea48ff3 fix URL in spec
-  * 84c44f2 Add BuildName and fix BuildTags for SLE Micro container builds
-  * 959f8d3 Fix the naming
-  * 95cedfc Make elemental-toolkit dependency constrained to a specific
-            version range
-  * 93c2278 Adapt upgrade script to the new elemental-toolkit
-  * 0bf9ba8 Don't set the hostname (#1171)
-  * c2e1ef2 Make use of the update elemental kernel arguments
-  * dcbef16 Make initrd generation consistent across flavors
-  * d835ad8 Update rootfs settings
-  * ae79026 Make sure no variables in /etc/os-release are duplicated
-  * 72c1c9e Build RT flavour only for x86_64
-  * ddbb2b2 Use Elemental systemd branding package
-  * e8ddfc0 Include all OBS packages pulling sources from this repository
-  * bd8d50c Update copyright to 2024 (for golangci-lint)
-  * 7f0f8af Use per-flavor Dockerfiles
-  * 84aecc9 Update kernel cmdline for elemental-sysroot (#1165)
-  * c1f29a3 Use the elemental-rootfs feature (#1163)
-  * 3c4d737 Rename systemd-presets-branding-SLE-Micro-for-Rancher to
-            systemd-presets-branding-Elemental
-  * 3151625 Mention elemental-rpmlintrc as Source in spec
-  * d6c0b1c Run services after time-sync.target
-  * ebe4e59 drop kpartx and sg3_utils
-  * b5d466e drop "for Rancher" from grub entry
-  * 9b1cae9 Make x86_64 specific grub packages explicit
-  * 8bfdb3f Install NetworkManager-branding-SLE
-  * 5ca40ba drop rpm-ndb from non-flavored image
-  * 95f071f Add all the packages that were part of Elemental 5.4
-  * bc7a805 Add openssh-server
-  * 4dbd2d0 Add iputils
-  * 09e9fb1 Use the backwards compatible  /run/cos/active_mode
-  * 7a95cd7 Revert to 'old' RPi firmware
-  * a374ccb Mkdir /host/run/elemental in suc-upgrade
-  * 2bb7a4e Migrate to /run/elemental from /run/cos
-  * 282622b Add default network configuration for eth0
-  * 43fdcc7 Remove default serial console kernel parameter
-  * c8cdbd1 Remove unused Dockerfile
-  * 6d48bf5 Ensure the base iso name follows the OBS pattern
 
 -------------------------------------------------------------------
 Fri Apr 26 12:11:49 UTC 2024 - David Cassany <dcassany@suse.com>
