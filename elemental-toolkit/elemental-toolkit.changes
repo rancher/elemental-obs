@@ -1,10 +1,15 @@
 -------------------------------------------------------------------
-Fri Sep  6 10:39:35 UTC 2024 - David Cassany <dcassany@suse.com>
+Thu Sep 12 20:38:31 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v2.1.0:
-  * 8b64092d Structure OBS package recipes in folders matching the OBS
+  * b30bc6b5 Structure OBS package recipes in folders matching the OBS
             package name
-  * d6a98088 Adapting spec to the gitified OBS project
+  * f4ddd61f Adapting spec to the gitified OBS project
+  * dc52491a Add user defined labels to snapshot info (#2175)
+  * b2cce27b Bump github.com/opencontainers/runc in the go_modules group
+  * 08a8ead9 Bump k8s.io/mount-utils from 0.30.3 to 0.31.0
+  * 949d4709 Bump github.com/docker/docker in the go_modules group
+  * 16438ddc Bump github.com/onsi/gomega from 1.34.1 to 1.34.2
   * 1a529527 Bump yip to v1.9.3
   * bbd386ec Bump github.com/onsi/ginkgo/v2 from 2.19.1 to 2.20.2 (#2169)
   * 0cfc891c Bump github.com/google/go-containerregistry from 0.20.1 to

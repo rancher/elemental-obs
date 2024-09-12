@@ -1,13 +1,13 @@
 -------------------------------------------------------------------
-Fri Sep  6 11:18:03 UTC 2024 - David Cassany <dcassany@suse.com>
+Thu Sep 12 20:39:39 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v2.2.0-dev:
-  * f0b5950 Structure OBS package recipes in folders matching the OBS package
+  * 837ad6b Structure OBS package recipes in folders matching the OBS package
             name
-  * cfb5de6 Add _service file to ISO sources
-  * 9bf12ab Add service file for OS images
-  * 89c1605 Adding base os image _service file
-  * bce3ce8 Adapting spec to the gitified project
+  * 13caff2 Add _service file to ISO sources
+  * fd2a433 Add service file for OS images
+  * 531cd4f Adding base os image _service file
+  * 2121774 Adapting spec to the gitified project
   * 415c2ea Install nm-configurator in dev image and simplify dev sample
             manifest (#1533)
   * 31c322a Support for IPAM to nmstate (#1476)
