@@ -7,6 +7,8 @@ on:
         description: 'Target branch to upgrade in OBS'
         required: true
         default: 'dev'
+  schedule:
+  - cron: "0 */2 * * *"
 
 concurrency:
   group: soucre-update-${{ inputs.target_branch }}
@@ -18,12 +20,14 @@ permissions:
 
 jobs:
   update-sources:
+    env:
+      BRANCH: ${{ inputs.target_branch || 'dev' }} 
     runs-on: ubuntu-latest
     steps:
     - name: Checkout target branch
       uses: actions/checkout@v4
       with:
-        ref: ${{ inputs.target_branch }}
+        ref: ${{ env.BRANCH }}
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Checkout builders
       run: |
@@ -35,17 +39,14 @@ jobs:
         git fetch origin +${{ github.ref_name }}:${{ github.ref_name }}
         git checkout ${{ github.ref_name }} -- scripts Makefile config.yaml
     - name: Run prepare-sources
-      env:
-        V_OFFSET: no
-        V_PARSE: patch
       run: |
-        count=$(yq ".${{ inputs.target_branch }} | length" config.yaml)
+        count=$(yq ".${{ env.BRANCH }} | length" config.yaml)
 
         for ((n=0;n<${count};n++)); do
-          export REPO="$(yq ".${{ inputs.target_branch }}.[${n}].repo" config.yaml)"
-          export BRANCH="$(yq ".${{ inputs.target_branch }}.[${n}].branch" config.yaml)"
-          export V_PARSE="$(yq ".${{ inputs.target_branch }}.[${n}].parseVersion" config.yaml)"
-          export V_OFFSET="$(yq ".${{ inputs.target_branch }}.[${n}].versionOffset" config.yaml)"
+          export REPO="$(yq ".${{ env.BRANCH }}.[${n}].repo" config.yaml)"
+          export BRANCH="$(yq ".${{ env.BRANCH }}.[${n}].branch" config.yaml)"
+          export V_PARSE="$(yq ".${{ env.BRANCH }}.[${n}].parseVersion" config.yaml)"
+          export V_OFFSET="$(yq ".${{ env.BRANCH }}.[${n}].versionOffset" config.yaml)"
 
           make prepare-sources
         done
@@ -56,7 +57,7 @@ jobs:
       run: |
         rm -rf scripts
         rm -f Makefile config.yaml
-    - name: Checkout new branch ${{ inputs.target_branch }}_stage
+    - name: Checkout new branch ${{ env.BRANCH }}_stage
       id: commit
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -65,7 +66,7 @@ jobs:
         git config --global user.email "do-not-use@elemental.suse.com"
         git config --global user.name "GitHub Action Runner"
 
-        git checkout -b ${{ inputs.target_branch }}_stage
+        git checkout -b ${{ env.BRANCH }}_stage
         git add .
 
         if [ -z "$(git status --porcelain)" ]; then
@@ -77,18 +78,18 @@ jobs:
         fi
 
         git commit -s -m "Automated commit from GHA workflow"
-        git push origin ${{ inputs.target_branch }}_stage --force
+        git push origin ${{ env.BRANCH }}_stage --force
     - if: ${{ steps.commit.outputs.clean != 'true' }} 
       name: Update/create PR
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${{ inputs.target_branch }}_stage --base ${{ inputs.target_branch }} --limit 1)
+        json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${{ env.BRANCH }}_stage --base ${{ env.BRANCH }} --limit 1)
 
         if [ "$(echo "${json}" | jq length)" -eq 1 ]; then
           number="$(echo "${json}" | jq '.[0].number')"
           gh pr comment "${number}" --repo ${{ github.repository }} --body "Updating PR from sources"
         else
-          gh pr create --repo ${{ github.repository }} --head ${{ inputs.target_branch }}_stage --base ${{ inputs.target_branch }} \
-            --body "Automated PR from GH client" --title "Update '${{ inputs.target_branch }}' OBS sources"
+          gh pr create --repo ${{ github.repository }} --head ${{ env.BRANCH }}_stage --base ${{ env.BRANCH }} \
+            --body "Automated PR from GH client" --title "Update '${{ env.BRANCH }}' OBS sources"
         fi
