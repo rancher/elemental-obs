@@ -1,0 +1,150 @@
+-------------------------------------------------------------------
+Mon Aug 12 09:43:52 UTC 2024 - kkaempf@suse.de
+
+- Update to version 0.3.7:
+  * Add support for CATTLE_AGENT_VAR_DIR in suc plan
+  * add the step for creating GH release, and fix typo in filename
+  * Migrate from Drone to GitHub Action
+  * Version bump for Alpine and Kubectl
+  * Add support for CATTLE_AGENT_STRICT_VERIFY|STRICT_VERIFY environment variables to ensure kubeconfig CA data is valid (#171)
+
+-------------------------------------------------------------------
+Fri Apr 12 07:03:33 UTC 2024 - fredrik.lonnegren@suse.com
+
+- Update to version 0.3.6:
+  * Update Go to 1.21 and deps for k8s 1.27 (#152)
+  * Apply suggestions from code review
+  * Cleanup and exit if cannot download valid connection info.
+
+-------------------------------------------------------------------
+Thu Mar 14 10:39:13 UTC 2024 - kkaempf@suse.com
+
+- Update to version 0.3.5:
+  * Add interlocks to ensure operations are not interrupted (#150)
+  * Update module github.com/google/go-containerregistry to v0.16.1
+  * Update module github.com/rancher/wharfie to v0.6.2
+  * Update module github.com/urfave/cli/v2 to v2.25.7
+  * Update module github.com/sirupsen/logrus to v1.9.3
+  * Update plugins/manifest Docker tag to v1.4.0
+  * Update module golang.org/x/sync to v0.3.0
+  * Update dependency golangci/golangci-lint to v1.54.2
+  * Update alpine Docker tag to v3.18.3
+  * Update module github.com/mattn/go-colorable to v0.1.13
+
+-------------------------------------------------------------------
+Fri Feb 23 10:15:07 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- bump go to 1.21 or later (SURE-7072)
+
+-------------------------------------------------------------------
+Mon Feb 19 14:36:53 UTC 2024 - kkaempf@suse.com
+
+- Update to version 0.3.4:
+  * Add initial Renovate configuration (#117)
+  * bump docker version and go deps to fix CVEs
+  * Fix repeated time parse error on probes that have not yet run successfully
+
+- switched _service from 'disabled' to 'manual'
+
+-------------------------------------------------------------------
+Mon Sep 25 05:07:37 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Remove the systemd unit file as this is now included as part of
+  elemental package
+
+-------------------------------------------------------------------
+Tue Jul 18 15:34:57 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- Fix .spec to build and install on non-SUSE distributions
+
+-------------------------------------------------------------------
+Mon Jul 17 16:52:06 UTC 2023 - kkaempf@suse.com
+
+- Update to version 0.3.3:
+  * Add CATTLE_AGENT_ATTEMPT_NUMBER environment variable that corresponds to failure count for K8s plan application (#115)
+  * Retry update with latest secret if plan still matches the applied plan (#114)
+  * Add support for transactional-update based systems (#105)
+  * Add error handling logic that handles edge cases to force the system-agent to restart if we encounter non-transient errors. Disallow the K8s watcher from manipulating a secret when the UID changes. (#112)
+  * Update CODEOWNERS
+  * Add CODEOWNERS
+  * Update wrangler to v1.1.0
+
+-------------------------------------------------------------------
+Wed Apr 12 12:11:51 UTC 2023 - kkaempf@suse.com
+
+- Update to version 0.3.2:
+  * Convert uname aarch64 to k8s arm64 before downloading kubectl
+  * Only try to get the client version with kubectl
+  * Make curl fail on non 2xx codes
+  * Use `kubectl version` to make sure the downloaded binary works
+
+-------------------------------------------------------------------
+Wed Feb 01 09:45:00 UTC 2023 - kkaempf@suse.com
+
+- Update to version 0.3.1:
+  * Use plugins/docker for arm64 instead of custom image
+  * Update pipelines to support suc for arm64 and remove all arm support
+  * Bump golang to 1.19.4-alpine3.17, rancher/wharfie to v0.5.3, and dapper to v0.6.0 (#102)
+  * Add docker-publish-suc for s390x (#91)
+  * fix(run.sh): cleanup temp folder when script fail (#100)
+
+-------------------------------------------------------------------
+Thu Nov 03 13:12:34 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.13:
+  * Add back TLSClientConfig to transport
+  * Add proxy to validate rest config
+  * This fixes the TLS handshake on Windows.
+  * Reuse version if found for binary, and add uninstall to suc entrypoint
+  * Bump to go1.18 and client-go 1.24, remove windows-specific x509 logic (#86)
+  * Fix nil-pointer dereference on windows context
+  * add windows support for root CA cert stores (#84)
+
+-------------------------------------------------------------------
+Tue Oct 04 06:35:01 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.11+git20220927.99069d7:
+  * Add proxy to validate rest config
+
+-------------------------------------------------------------------
+Mon Aug 29 13:29:09 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.10+git20220801.6a89e30:
+  * This fixes the TLS handshake on Windows.
+  * Reuse version if found for binary, and add uninstall to suc entrypoint
+
+-------------------------------------------------------------------
+Tue Jul 19 06:59:19 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- don't run in live mode or if rancher-system-agent is already present
+
+-------------------------------------------------------------------
+Fri Jul 15 05:58:08 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.9+git20220713.bbb6969:
+  * Bump to go1.18 and client-go 1.24, remove windows-specific x509 logic (#86)
+
+-------------------------------------------------------------------
+Fri Jun 24 08:59:58 UTC 2022 - kkaempf@suse.com
+
+- renamed to elemental-system-agent
+
+- Update to version 0.2.8+git20220623.5b9b848:
+  * Renamed uninstall.sh to system-agent-uninstall.sh
+  * Implemented uninstall script and added to install script
+
+-------------------------------------------------------------------
+Fri May 20 08:59:33 UTC 2022 - kkaempf@suse.com
+
+- Update to version 0.2.7+git20220506.65aac83:
+  * Fix nil-pointer dereference on windows context
+  * add windows support for root CA cert stores (#84)
+  * Increase max periodic cooldown duration, tidy applyinator, and add debug messages (#81)
+  * add max-retries and periodic cooldown (#80)
+  * Correctly pick up on failed apply (#79)
+  * Move log messages around to prevent unnecessarily redundant messages (#78)
+  * create directory for applied plans before listing the directory (#77)
+  * Only write applied plan contents if the plan actually changes (#75)
+  * Set default log level to info (#76)
+  * change field name (#73)
+

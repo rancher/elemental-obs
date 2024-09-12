@@ -1,0 +1,30 @@
+-------------------------------------------------------------------
+Wed Aug  7 06:15:10 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Include elemental-register.timer as service enabled by default  
+
+-------------------------------------------------------------------
+Fri Apr 26 13:41:45 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- fix .spec title
+
+-------------------------------------------------------------------
+Tue Jan  9 11:22:07 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Rename it back to systemd-presets-branding-Elemental
+
+-------------------------------------------------------------------
+Mon Aug 14 13:46:18 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- merge with systemd-presets-branding-Elemental
+
+-------------------------------------------------------------------
+Tue Sep 13 14:40:09 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- start sshd and NetworkManager
+- drop ros-installer and rancherd
+
+-------------------------------------------------------------------
+Mon Jan 31 11:41:40 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- Initial version 20220131

@@ -1,0 +1,25 @@
+-------------------------------------------------------------------
+Tue Apr  2 09:42:17 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- install to /usr/lib/build/post_build.d
+
+-------------------------------------------------------------------
+Tue Apr  2 09:42:17 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- install to /usr/lib/build/post_build.d 
+
+-------------------------------------------------------------------
+Fri May 26 15:56:20 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Update ISO path to current containerized ISOs
+
+-------------------------------------------------------------------
+Mon Apr 24 15:40:03 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Do not exit 1 if docker images are not found, just exit 0
+
+-------------------------------------------------------------------
+Fri Apr 21 12:54:42 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Version 0.0.2:
+  * Only extract containers including "iso" in its name

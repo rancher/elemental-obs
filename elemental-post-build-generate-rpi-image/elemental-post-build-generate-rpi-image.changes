@@ -1,0 +1,113 @@
+-------------------------------------------------------------------
+Mon Apr 22 17:04:44 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- handle non-iso builds gracefully
+
+-------------------------------------------------------------------
+Thu Apr 11 11:21:33 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Adapt to new rootfs.squashfs file path
+
+-------------------------------------------------------------------
+Tue Apr  2 09:39:22 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- install to /usr/lib/build/post_build.d 
+
+-------------------------------------------------------------------
+Thu Mar 28 14:18:04 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Copying required files only <EFI>/boot path. This prevents
+  dereferencing multiple links pointing to the same file, otherwise
+  kernel and initrd are duplicated.
+
+-------------------------------------------------------------------
+Thu Mar 28 10:07:17 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- fix flavor extraction (micro version was added to filename)
+
+-------------------------------------------------------------------
+Fri Mar 22 12:27:26 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- follow symlinks when copying boot partition
+
+-------------------------------------------------------------------
+Thu Mar 14 13:49:59 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Fix generator script: Do not patch partition label setup from
+  grub.cfg.
+
+-------------------------------------------------------------------
+Thu Jan  4 14:18:23 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- fix grub2 root partition (rancher/elemental#1151)
+
+-------------------------------------------------------------------
+Wed Jan  3 14:21:11 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- switch ttyS0 baudrate to 115200 (standard for Raspberry Pi)
+  (rancher/elemental#1139)
+
+-------------------------------------------------------------------
+Wed Dec 27 15:32:01 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- iso name changed, adapt flavor extraction
+
+- handle empty flavor
+
+-------------------------------------------------------------------
+Thu Sep 21 15:22:16 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- fix copying of 'systemready' firmware
+
+-------------------------------------------------------------------
+Wed Sep 20 09:46:16 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- move from parted to sfdisk (from util-linux)
+- fix loop device setup
+
+-------------------------------------------------------------------
+Mon Apr 24 13:46:16 UTC 2023 - David Cassany <dcassany@suse.com>
+
+- Adapt generation script to rancher/elemental-cli#404 so it makes
+  use of the proper paths in after-install hooks.
+
+-------------------------------------------------------------------
+Tue Dec 27 10:58:02 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- create checksum with .raw file.
+
+-------------------------------------------------------------------
+Wed Dec  7 13:00:30 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- add last project name element to image name.
+
+-------------------------------------------------------------------
+Wed Dec  7 12:13:00 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- create a timestamped image name.
+
+-------------------------------------------------------------------
+Thu Dec  1 10:41:52 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- label the boot partition as RPI_BOOT.
+
+-------------------------------------------------------------------
+Tue Nov 29 11:05:20 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- faking an .iso extension was a bad idea, breaks build service
+  trying to sign the image.
+
+-------------------------------------------------------------------
+Mon Nov 28 15:27:36 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- get image size from ~/.rpmmacros (Macros: in project config)
+
+-------------------------------------------------------------------
+Mon Nov 28 10:56:13 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- make it downloadable (by faking an .iso extension)
+
+-------------------------------------------------------------------
+Sat Nov 26 12:17:56 UTC 2022 - Klaus Kämpf <kkaempf@suse.com>
+
+- Initial version 0.1

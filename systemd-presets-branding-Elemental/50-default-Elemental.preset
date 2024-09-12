@@ -1,0 +1,12 @@
+enable sshd.service
+enable systemd-timesyncd.service
+enable NetworkManager.service
+enable elemental-setup-boot.service
+enable elemental-setup-fs.service
+enable elemental-setup-initramfs.service
+enable elemental-setup-network.service
+enable elemental-setup-reconcile.service
+enable elemental-setup-reconcile.timer
+enable elemental-setup-rootfs.service
+enable elemental-register.timer
+enable shutdown-containerd.service

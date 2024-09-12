@@ -1,0 +1,4 @@
+<servicedata>
+<service name="tar_scm">
+                <param name="url">https://github.com/rancher/rke2-selinux</param>
+              <param name="changesrevision">ccc4d045c4cf11d3a44a43e98d2cea50e8616aae</param></service></servicedata>
