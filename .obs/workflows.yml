@@ -1,10 +1,7 @@
 sync:
   steps:
   - trigger_services:
-      project: home:dcassany:Elementalgit
+      project: isv:Rancher:Elemental:Devgit
       package: _project
   filters:
-    branches:
-      only:
-      - dev
     event: push
