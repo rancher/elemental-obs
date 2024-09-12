@@ -1,5 +1,0 @@
-<services>
-	<service name="cargo_vendor" mode="manual">
-		<param name="srctar">nmstate-2.2.16.tar.gz</param>
-	</service>
-</services>
