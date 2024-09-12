@@ -62,9 +62,8 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        # TODO set an OBS user as this might be used for *.changes generation
-        git config --global user.email "do-not-use@elemental.suse.com"
-        git config --global user.name "GitHub Action Runner"
+        git config --global user.email "elemental@suse.de"
+        git config --global user.name "elementalbot"
 
         git checkout -b ${{ env.BRANCH }}_stage
         git add .
