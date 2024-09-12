@@ -2,8 +2,8 @@
 # Define the names/tags of the container
 #!BuildName: SL-Micro-container
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.2.0-dev_git20240906.f0b5950
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.2.0-dev_git20240906.f0b5950-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.2.0-dev
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.2.0-dev-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
 #!UseOBSRepositories
 
@@ -11,7 +11,7 @@ ARG SLMICRO_VERSION
 
 FROM suse/sl-micro/${SLMICRO_VERSION}/base-os-container:latest
 
-# dummy zypper call to get elemental into the build context and extract 2.2.0-dev_git20240906.f0b5950 from it via _service
+# dummy zypper call to get elemental into the build context and extract 2.2.0-dev from it via _service
 RUN zypper in --no-recommends -y systemd-presets-branding-Elemental elemental
 
 # extend -base with baremetal and usability packages
@@ -30,7 +30,7 @@ RUN zypper in --no-recommends -y procps openssh openssh-server \
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container
-ARG IMAGE_TAG=2.2.0-dev_git20240906.f0b5950-%RELEASE%
+ARG IMAGE_TAG=2.2.0-dev-%RELEASE%
 
 # IMPORTANT: Setup elemental-release used for versioning/upgrade. The
 # values here should reflect the tag of the image being built

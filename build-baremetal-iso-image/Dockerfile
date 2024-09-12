@@ -1,8 +1,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #!BuildName: build-baremetal-iso-image
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:2.2.0-dev_git20240906.f0b5950
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:2.2.0-dev_git20240906.f0b5950-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:2.2.0-dev
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:2.2.0-dev-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 10
 #!BuildConstraint: hardware:memory:size unit=G 16
 #!UseOBSRepositories
@@ -24,7 +24,7 @@ RUN zypper --installroot /busybox in --no-recommends -y busybox
 # Version value is taken form the elemental repository tags
 # Release value of this image and os image are unrelated
 # must be ...<flavor>.<arch>... for OBS
-RUN elemental --debug --config-dir . build-iso -o /output -n "sl-micro-%%SLMICRO_VERSION%%-baremetal.$(uname -m)-2.2.0-dev_git20240906.f0b5950-Build%RELEASE%" dir:rootfs
+RUN elemental --debug --config-dir . build-iso -o /output -n "sl-micro-%%SLMICRO_VERSION%%-baremetal.$(uname -m)-2.2.0-dev-Build%RELEASE%" dir:rootfs
 
 # Only keep the ISO as a result and busybox
 FROM scratch
@@ -34,7 +34,7 @@ COPY --from=builder /output /elemental-iso
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image
-ARG IMAGE_TAG=2.2.0-dev_git20240906.f0b5950-%RELEASE%
+ARG IMAGE_TAG=2.2.0-dev-%RELEASE%
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=com.suse.sl.micro
