@@ -1,7 +1,10 @@
-sync:
+sync-dev:
   steps:
   - trigger_services:
       project: isv:Rancher:Elemental:Devgit
       package: _project
   filters:
+    branches:
+      only:
+        - dev
     event: push
