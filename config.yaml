@@ -5,15 +5,15 @@ dev:
 - repo: rancher/elemental-toolkit
   branch: gitified
   parseVersion: patch
-  versionOffset: yes
+  versionOffset: no
 - repo: rancher/elemental-operator
   branch: gitified
   parseVersion: patch
-  versionOffset: yes
+  versionOffset: no
 - repo: rancher/elemental
   branch: gitified
   parseVersion: patch
-  versionOffset: yes
+  versionOffset: no
 - repo: rancher/elemental-channels
   branch: gitified
   parseVersion: none
