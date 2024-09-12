@@ -1,13 +1,14 @@
 -------------------------------------------------------------------
-Fri Sep  6 11:25:58 UTC 2024 - David Cassany <dcassany@suse.com>
+Tue Sep 10 10:25:46 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v1.7.0-dev:
-  * 481b6565 Use %VERSION% as the version placeholder
-  * 2cd14590 Fine tune specfile
-  * ba735370 Adding _service files to .obs sources
-  * 3533abcd Adapting specfile to new package format
-  * b02de0ad Structure OBS package recipes in folders matching the OBS
+  * f759d159 Use %VERSION% as the version placeholder
+  * b6d730fc Fine tune specfile
+  * fde4c508 Adding _service files to .obs sources
+  * b89981e9 Adapting specfile to new package format
+  * f22e9e52 Structure OBS package recipes in folders matching the OBS
             package name
+  * 9e42b199 register: add 'version' and 'dumpdata'  subcommands (#835)
   * 198628f8 operator: add Registry to ManagedOSVersionChannels Spec (#831)
   * 122109f7 Random template labels - avoid override (#830)
   * 0899ba29 Add SeedImage.status.checksumURL (#827)

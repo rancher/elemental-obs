@@ -1,5 +1,5 @@
 tag: v2.1.0
 mtime: 1725619175
 commit: 8b64092dc38cd957a9c97c99e3a939bbe33f4de6
-versionRPM: 2.1.0+git20240906.8b64092
-versionOCI: 2.1.0_git20240906.8b64092
+versionRPM: 2.1.0
+versionOCI: 2.1.0
