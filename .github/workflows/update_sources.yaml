@@ -13,6 +13,8 @@ concurrency:
 
 permissions:
   contents: write
+  pull-requests: write
+  statuses: write
 
 jobs:
   update-sources:
@@ -22,7 +24,7 @@ jobs:
       uses: actions/checkout@v4
       with:
         ref: ${{ inputs.target_branch }}
-        token: ${{ secrets.PAT }}
+        token: ${{ secrets.GITHUB_TOKEN }}
     - name: Checkout builders
       run: |
         set -x
@@ -57,7 +59,7 @@ jobs:
     - name: Checkout new branch ${{ inputs.target_branch }}_stage
       id: commit
       env:
-        GH_TOKEN: ${{ secrets.PAT }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         # TODO set an OBS user as this might be used for *.changes generation
         git config --global user.email "do-not-use@elemental.suse.com"
@@ -79,7 +81,7 @@ jobs:
     - if: ${{ steps.commit.outputs.clean != 'true' }} 
       name: Update/create PR
       env:
-        GH_TOKEN: ${{ secrets.PAT }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${{ inputs.target_branch }}_stage --base ${{ inputs.target_branch }} --limit 1)
 
