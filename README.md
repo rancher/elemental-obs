@@ -3,3 +3,5 @@
 This `dev` branch is expected to be in sync with upstream head of all Elemental project components.
 
 There is an automated workflow to keep it in sync, however manual PRs to the branch are also valid and possible.
+
+Find the builds of these branch at https://build.opensuse.org/project/show/isv:Rancher:Elemental:Dev
