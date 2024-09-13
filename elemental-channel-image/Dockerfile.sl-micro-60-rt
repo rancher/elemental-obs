@@ -1,0 +1,38 @@
+# SPDX-License-Identifier: Apache-2.0
+#!BuildTag: rancher/elemental-channel/sl-micro:6.0-rt
+#!BuildTag: rancher/elemental-channel/sl-micro:6.0-rt-%RELEASE%
+#!UseOBSRepositories
+
+ARG SLMICRO_VERSION
+
+FROM suse/sl-micro/${SLMICRO_VERSION}/toolbox:latest as toolbox
+
+# Prepare a busybox base
+RUN mkdir -p /busybox && rpm --initdb --root /busybox
+RUN zypper --installroot /busybox in --no-recommends -y busybox
+
+ARG CHANNEL_JSON_FILE="sl-micro-60-rt.json"
+
+COPY $CHANNEL_JSON_FILE /channel.json
+
+FROM scratch
+
+COPY --from=toolbox /busybox /
+COPY --from=toolbox /channel.json /channel.json
+
+USER 10010:10010
+
+# Define labels according to https://en.opensuse.org/Building_derived_containers
+# labelprefix=com.rancher.elemental
+LABEL org.opencontainers.image.title="SL Micro 6.0 RT Channel"
+LABEL org.opencontainers.image.description="Includes the Elemental Channel"
+LABEL org.opencontainers.image.version="6.0-rt"
+LABEL org.opencontainers.image.url="https://build.opensuse.org"
+LABEL org.opencontainers.image.created="%BUILDTIME%"
+LABEL org.opencontainers.image.vendor="SUSE LLC"
+LABEL org.opensuse.reference="rancher/elemental-channel/sl-micro:6.0-rt"
+LABEL org.openbuildservice.disturl="%DISTURL%"
+# endlabelprefix
+
+ENTRYPOINT ["/usr/bin/busybox", "cp"]
+CMD ["/channel.json", "/data/output"]

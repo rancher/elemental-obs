@@ -1,0 +1,43 @@
+# SPDX-License-Identifier: Apache-2.0
+#!BuildTag: rancher/elemental-unstable-channel:latest
+#!UseOBSRepositories
+
+ARG SLMICRO_VERSION
+
+FROM suse/sl-micro/${SLMICRO_VERSION}/baremetal-os-container:latest AS os
+
+ADD unstable.json /channel.json
+
+# Align the channel with the latest OS version in the project
+RUN source /etc/os-release && \
+    IMG_TAG=${IMAGE_TAG%%-*} && \
+    sed -i -e "s|%IMG_TAG%|${IMG_TAG}|g" /channel.json
+
+# Prepare a busybox base
+RUN mkdir -p /busybox && rpm --initdb --root /busybox
+RUN zypper --installroot /busybox in --no-recommends -y busybox
+
+FROM scratch
+COPY --from=os /busybox /
+COPY --from=os /channel.json /channel.json
+
+ARG BUILD_REPO=%%IMG_REPO%%
+ARG IMAGE_REPO=$BUILD_REPO/rancher/elemental-unstable-channel:latest
+
+# Define labels according to https://en.opensuse.org/Building_derived_containers
+# labelprefix=com.rancher.elemental
+LABEL org.opencontainers.image.title="Rancher Elemental Unstable Channel"
+LABEL org.opencontainers.image.description="Includes the Elemental Unstable Channel"
+LABEL org.opencontainers.image.version="unstable"
+LABEL org.opencontainers.image.url="https://build.opensuse.org"
+LABEL org.opencontainers.image.created="%BUILDTIME%"
+LABEL org.opencontainers.image.vendor="SUSE LLC"
+LABEL org.opensuse.reference=$IMAGE_REPO
+LABEL org.openbuildservice.disturl="%DISTURL%"
+LABEL com.suse.supportlevel="beta"
+# endlabelprefix
+
+USER 10010:10010
+
+ENTRYPOINT ["/usr/bin/busybox", "cp"]
+CMD ["/channel.json", "/data/output"]
