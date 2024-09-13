@@ -237,17 +237,17 @@ function create_tarball_renameroot {
   basepath="$(basename "${src}")"
   dirpath="$(dirname "${src}")"
 
-  shift; shift
-  for exclude in "$@"; do
-    excludes+=("--exclude=${exclude}")
-  done
-
   # Rename root folder
   if [[ "${rootDir}" != "_none_" ]] && [[ "${rootDir}" != "${basepath}" ]]; then
     mv "${src}" "${dirpath}/${rootDir}"
     basepath="${rootDir}"
     renamed="yes"
   fi
+
+  shift; shift; shift
+  for exclude in "$@"; do
+    excludes+=("--exclude=${basepath}/${exclude}")
+  done
 
   pushd "${dirpath}" > /dev/null || _abort "${error_msg} popd failed"
     tar --sort=name --mtime="@0" --owner=0 --group=0 \
