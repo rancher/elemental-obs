@@ -14,6 +14,10 @@ dev:
   branch: gitified
   parseVersion: patch
   versionOffset: no
+- repo: rancher-sandbox/cluster-api-provider-elemental
+  branch: gitified
+  parseVersion: patch
+  versionOffset: no
 - repo: rancher/elemental-channels
   branch: gitified
   parseVersion: none
