@@ -31,10 +31,10 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
     - name: Checkout builders
       run: |
-        set -x
-        
-        [ -d builders ] && exit 1
+        # Ensure Makefile, scripts and config.yaml are not present in target branch
+        [ -d scripts ] && exit 1
         [ -f Makefile ] && exit 1
+        [ -f config.yaml ] && exit 1
 
         git fetch origin +${{ github.ref_name }}:${{ github.ref_name }}
         git checkout ${{ github.ref_name }} -- scripts Makefile config.yaml
