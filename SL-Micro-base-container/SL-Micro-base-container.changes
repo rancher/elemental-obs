@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Thu Sep 12 20:39:39 UTC 2024 - David Cassany <dcassany@suse.com>
+Fri Sep 13 11:45:34 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Changes on top of v2.2.0-dev:
+  * 59523f7 Add _service files for SELinux images
   * 837ad6b Structure OBS package recipes in folders matching the OBS package
             name
   * 13caff2 Add _service file to ISO sources
@@ -11,17 +12,11 @@ Thu Sep 12 20:39:39 UTC 2024 - David Cassany <dcassany@suse.com>
   * 415c2ea Install nm-configurator in dev image and simplify dev sample
             manifest (#1533)
   * 31c322a Support for IPAM to nmstate (#1476)
-  * 6b285fe ci/cli: add daily rancher 2.9 CLI tests
-  * 24320d7 ci/ui: add weekly rancher 2.7 head tests
-  * fad356b ci/ui: enable prime and rancher 2.9-head in UI
-  * a1cc324 ci/cli: add Regression tests
   * dba9c98 Remove unneeded network setup
   * 36207b6 elemental.spec: Add procps to Requires
   * fde4fe2 Add openSSH server to SELinux images
   * 2ef9dd7 Revert "Move install openssh and openssh-server"
-  * 1eefd7c ci/cli: add a SELinux OS image test
   * 462b1b8 Move install openssh and openssh-server
-  * 5b0a794 ci: add badge for CLI-K3s-Downgrade test
   * a267562 selinux config file no longer needed
   * 0b88900 Configure SELinux for RKE2 image
   * 9fd1cd7 Add relabelling initramfs step
@@ -34,13 +29,9 @@ Thu Sep 12 20:39:39 UTC 2024 - David Cassany <dcassany@suse.com>
   * 8b8c89a Update framework/files/system/oem/01_elemental-rootfs.yaml
   * 7675473 Set layout with yaml format
   * 650493a Drop unused accounting.yaml
-  * f5d721a ci: fix github badges
   * db7f55a use patterns-microos-selinux instead of individual packages
   * b6720b9 Add flavors for k3s-selinux and rke2-selinux KVM images
-  * 4f34bd8 ci: move Rancher Head-2.9 tests on Sunday
   * cc1a6ee Rebase dev image to Tumbleweed (#1363)
-  * ade4197 ci: fix CI badges
-  * c896c75 ci: add GitHub matrix support
   * 994a0c3 Use default compression (gzip) for ISOs
   * 0d67032 No squashfs compression by default
   * 8787081 Get rid of few error messages in OBS builds
@@ -62,7 +53,6 @@ Thu Sep 12 20:39:39 UTC 2024 - David Cassany <dcassany@suse.com>
   * 8f61703 Add wireless-regdb for aarch64
   * 530dc33 Finalize Micro rename
   * 2b6cf4d Install openssl in micro-base
-  * 238937b README: fix typo
   * 39b1fad Micro rename
   * e4e1206 Include audit package and boot selinux in permissive mode
             explicitly
