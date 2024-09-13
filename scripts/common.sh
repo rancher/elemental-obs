@@ -234,7 +234,7 @@ function create_tarball_renameroot {
   [ "$#" -lt 3 ] && _abort "${error_msg} three arguments required"
   [ -d "${src}" ] || _abort "${error_msg} '${src}' is not a directory"
 
-  basepath="$(basename "${dst}")"
+  basepath="$(basename "${src}")"
   dirpath="$(dirname "${src}")"
 
   shift; shift
