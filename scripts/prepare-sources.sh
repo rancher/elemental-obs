@@ -32,7 +32,7 @@ trap cleanup EXIT
 # Checkout code, compute version and compute changes
 gitpath=$(checkout "${giturl}" "${gitbranch}")
 scminfo=$(create_scminfo "${gitpath}" "${versionoffset}" "${parseversion}")
-changes=$(create_changes_entry "${gitpath}" "${scminfo}" tests .github)
+changes=$(create_changes_entry "${gitpath}" "${scminfo}" tests .github README.md)
 version=$(OCIversion "${scminfo}")
 
 
