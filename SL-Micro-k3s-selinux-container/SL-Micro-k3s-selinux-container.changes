@@ -1,0 +1,24 @@
+-------------------------------------------------------------------
+Tue Apr 23 09:40:02 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- forked SL-Micro-k3s-selinux-container from SL-Micro-kvm-container
+
+-------------------------------------------------------------------
+Fri Mar 15 10:36:03 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to SL-Micro-kvm-container
+
+-------------------------------------------------------------------
+Mon Jan 29 13:36:37 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
+
+- Rename to SLE-Micro-kvm-container
+
+-------------------------------------------------------------------
+Thu Nov 23 15:40:10 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- drop "for Rancher" suffix
+
+-------------------------------------------------------------------
+Mon Oct  2 14:23:12 UTC 2023 - Klaus Kämpf <kkaempf@suse.com>
+
+- Derive from -base
