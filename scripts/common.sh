@@ -210,6 +210,61 @@ function create_changes_entry {
 }
 
 
+# create_tarball_renameroot creates an xz compressed tarball of the given
+# folder. First argument is the source folder to make a tarball of, the
+# second argument is the destination folder of the tarball (relative
+# to BUILDER_OUTPUT) and the third argument is the name of the root
+# folder included in the tarball.
+#
+# Further arguments are excluded subpaths under the given folder.
+#
+# Usage:
+#   create_tarball SRC_FOLDER DST_FOLDER ROOTDIR [exclude_paths...]
+#
+function create_tarball_renameroot {
+  local src=$1
+  local dst=$2
+  local rootDir=$3
+  local excludes=()
+  local basepath
+  local dirpath
+  local renamed
+  local error_msg="error creating tarball:"
+
+  [ "$#" -lt 3 ] && _abort "${error_msg} three arguments required"
+  [ -d "${src}" ] || _abort "${error_msg} '${src}' is not a directory"
+
+  basepath="$(basename "${dst}")"
+  dirpath="$(dirname "${src}")"
+
+  shift; shift
+  for exclude in "$@"; do
+    excludes+=("--exclude=${exclude}")
+  done
+
+  # Rename root folder
+  if [[ "${rootDir}" != "_none_" ]] && [[ "${rootDir}" != "${basepath}" ]]; then
+    mv "${src}" "${dirpath}/${rootDir}"
+    basepath="${rootDir}"
+    renamed="yes"
+  fi
+
+  pushd "${dirpath}" > /dev/null || _abort "${error_msg} popd failed"
+    tar --sort=name --mtime="@0" --owner=0 --group=0 \
+      --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
+      -caf "${basepath}.tar.xz" "${excludes[@]}" "${basepath}" 
+  
+    mkdir -p "${BUILDER_OUTPUT}/${dst}"
+    mv "${basepath}.tar.xz" "${BUILDER_OUTPUT}/${dst}"
+  popd > /dev/null || _abort "${error_msg} popd failed"
+
+  # Restore root folder
+  if [[ "${renamed}" == "yes" ]]; then
+    mv "${dirpath}/${rootDir}" "${src}"
+  fi
+}
+
+
 # create_tarball creates an xz compressed tarball of the given folder.
 # First argument is the source folder to make a tarball of and the
 # second argument is the destination folder of the tarball (relative
@@ -223,28 +278,12 @@ function create_changes_entry {
 function create_tarball {
   local src=$1
   local dst=$2
-  local excludes=()
-  local basepath
-  local error_msg="error creating tarball:"
-
-  basepath="$(basename "${src}")"
 
   [ "$#" -lt 2 ] && _abort "${error_msg} two arguments required"
   [ -d "${src}" ] || _abort "${error_msg} '${src}' is not a directory"
 
   shift; shift
-  for exclude in "$@"; do
-    excludes+=("--exclude=${exclude}")
-  done
-
-  pushd "$(dirname "${src}")" > /dev/null || _abort "${error_msg} popd failed"
-    tar --sort=name --mtime="@0" --owner=0 --group=0 \
-      --pax-option=exthdr.name=%d/PaxHeaders/%f,delete=atime,delete=ctime \
-      -caf "${basepath}.tar.xz" "${excludes[@]}" "${basepath}" 
-  
-    mkdir -p "${BUILDER_OUTPUT}/${dst}"
-    mv "${basepath}.tar.xz" "${BUILDER_OUTPUT}/${dst}"
-  popd > /dev/null || _abort "${error_msg} popd failed"
+  create_tarball_renameroot "${src}" "${dst}" _none_ "$@"
 }
 
 

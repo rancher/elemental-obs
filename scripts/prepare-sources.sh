@@ -48,7 +48,8 @@ if [ -d "${gitpath}/.obs/specfile" ]; then
     mkdir -p "${rpmpath}"
 
     # Exclude tools and .git subfolders in generated tarball
-    create_tarball "${gitpath}" "${pkgname}" "${pkgname}/tools" "${pkgname}/.git" "${pkgname}/tests" "${pkgname}/build"
+    create_tarball_renameroot "${gitpath}" "${pkgname}" "${pkgname}" \
+      "${pkgname}/tools" "${pkgname}/.git" "${pkgname}/tests" "${pkgname}/build"
 
     # Copy the specfile and contents, follows symlinks
     cp -L "${gitpath}/.obs/specfile/${pkgname}/"* "${rpmpath}"
