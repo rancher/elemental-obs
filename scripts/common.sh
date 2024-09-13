@@ -361,3 +361,24 @@ function update_changes {
 
   cat "${changeslog}" >> "${newchanges}"
 }
+
+
+# new_changes creates an initial changelog entry. It basically drops all generated changes from git
+# to a static 'Initial commit' style message. The given changes file must already exist and it is modified
+# by this method.
+#
+# Used if this is expected to be the first
+# changelog entry in changes file.
+function new_changes {
+  local changes=$1
+  local tmpchanges
+
+  [ "$#" -eq 1 ] || _abort "${error_msg} one argument is required"
+  [ -f "${changes}" ] || _abort "${error_msg} given changes file '${changes}' not found"
+
+  tmpchanges="${changes}.tmp"
+
+  head -n 3 "${changes}" > "${tmpchanges}"
+  echo "- Initial commit" >> "${tmpchanges}"
+  mv "${tmpchanges}" "${changes}"
+}

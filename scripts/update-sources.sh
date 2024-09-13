@@ -21,15 +21,25 @@ pushd "${ROOT_PATH:?}/.." > /dev/null || _abort "update-sources: pushd failed"
   for pkgoutput in "${BUILDER_OUTPUT}"/*; do
     pkgname="$(basename "${pkgoutput}")"
   
-    [ -d "${pkgname}" ] || continue
-    [ -f "${pkgname}/${pkgname}.changes" ] || _abort "${pkgname}.changes file not found"
-    [ -f "${pkgoutput}/${pkgname}.changes" ] || _abort "${pkgoutput}/${pkgname}.changes file not found"
+    if [ -d "${pkgname}" ]; then
+      [ -f "${pkgname}/${pkgname}.changes" ] || _abort "${pkgname}.changes file not found"
+      [ -f "${pkgoutput}/${pkgname}.changes" ] || _abort "${pkgoutput}/${pkgname}.changes file not found"
 
-    update_changes "${pkgoutput}/${pkgname}.changes" "${pkgname}/${pkgname}.changes"
+      update_changes "${pkgoutput}/${pkgname}.changes" "${pkgname}/${pkgname}.changes"
 
-    rm -rf "${pkgname:?}"/*
-    cp -v "${pkgoutput}"/* "${pkgname}"
+      rm -rf "${pkgname:?}"/*
+      cp -v "${pkgoutput}"/* "${pkgname}"
 
-    echo "'${pkgname}' updated"
+      echo "'${pkgname}' updated"
+    else
+      # This path is for new packages or images
+      mkdir -p "${pkgname:?}"
+
+      new_changes "${pkgoutput}/${pkgname}.changes"
+
+      cp -v "${pkgoutput}"/* "${pkgname}"
+
+      echo "'${pkgname}' created"
+    fi
   done
 popd > /dev/null || _abort "update-sources: pushd failed"
