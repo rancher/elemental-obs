@@ -1,13 +1,18 @@
 -------------------------------------------------------------------
-Tue Sep 10 10:25:46 UTC 2024 - David Cassany <dcassany@suse.com>
+Mon Sep 16 08:39:33 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.0-dev:
-  * f759d159 Use %VERSION% as the version placeholder
-  * b6d730fc Fine tune specfile
-  * fde4c508 Adding _service files to .obs sources
-  * b89981e9 Adapting specfile to new package format
-  * f22e9e52 Structure OBS package recipes in folders matching the OBS
+  * 49517e62 Adapt Makefile to new charts paths
+  * 953908d3 Remove unneeded OBS workflow
+  * 1739e626 Use %VERSION% as the version placeholder
+  * 6e9b8521 Fine tune specfile
+  * e80f20c6 Adding _service files to .obs sources
+  * 4a0db60d Adapting specfile to new package format
+  * 3553b03b Structure OBS package recipes in folders matching the OBS
             package name
+  * cdb34aa7 Update questions to use SL Micro 6.0 channels
+  * 723d7c3e Label Templates: rework collection of 'hostinfo' data and
+            collected variables (#843)
   * 9e42b199 register: add 'version' and 'dumpdata'  subcommands (#835)
   * 198628f8 operator: add Registry to ManagedOSVersionChannels Spec (#831)
   * 122109f7 Random template labels - avoid override (#830)

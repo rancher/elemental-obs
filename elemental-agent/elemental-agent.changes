@@ -1,8 +1,9 @@
 -------------------------------------------------------------------
-Fri Sep 13 12:34:18 UTC 2024 - David Cassany <dcassany@suse.com>
+Mon Sep 16 08:45:05 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v0.6.0:
-  * ad06fcf Adapt repository to rancher/elemental-obs conventions
+  * bc9e9c3 Remove unneeded OBS workflow
+  * 9b8504d Adapt repository to rancher/elemental-obs conventions
   * 3e9855a Remove no longer relevant host configuration step
   * f64d667 Actualize documentation
 

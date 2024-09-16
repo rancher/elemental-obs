@@ -16,8 +16,8 @@
 #
 
 # These variables are coupled to automation scripts
-%define commit ad06fcf515025a3fde840d554fa62a7476560c92
-%define c_date 20240913
+%define commit bc9e9c3f97f37e108ab79ba648cd3a950ad2d245
+%define c_date 20240916
 
 %define pluginsdir /usr/lib/elemental/plugins
 

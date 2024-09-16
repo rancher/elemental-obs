@@ -1,5 +1,5 @@
 -------------------------------------------------------------------
-Fri Sep 13 11:45:34 UTC 2024 - David Cassany <dcassany@suse.com>
+Fri Sep 13 11:45:34 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.2.0-dev:
   * 59523f7 Add _service files for SELinux images

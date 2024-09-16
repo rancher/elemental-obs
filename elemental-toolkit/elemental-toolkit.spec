@@ -16,8 +16,8 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit b30bc6b5dd13e7081d0b69b381e2fe48e5d0f38e
-%define c_date 20240912
+%define commit 3570ada5df0f263742e61ad13ca7c83353b3e69b
+%define c_date 20240916
 
 Name:           elemental-toolkit
 Version:        2.1.0
