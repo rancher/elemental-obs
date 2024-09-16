@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Sep 16 13:43:27 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Updated up to:
+  * 5857db1 Structure images to match OBS structure and include _multibuild
+            and _service files (#42)
+
+-------------------------------------------------------------------
 Mon Sep 16 07:27:03 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Updated up to:

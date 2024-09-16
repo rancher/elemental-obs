@@ -15,7 +15,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 49517e62df3529a01f77a5aa736d9a8bf962f6d6
+%define commit e6bca47c23d0d63687631b7ba392635806d147d8
 %define c_date 20240916
 
 Name:           elemental-operator

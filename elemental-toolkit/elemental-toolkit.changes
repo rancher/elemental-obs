@@ -1,11 +1,11 @@
 -------------------------------------------------------------------
-Mon Sep 16 07:39:35 UTC 2024 - Elemental Bot <elemental@suse.de>
+Mon Sep 16 13:44:36 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.1.0:
-  * 3570ada5 Remove unneeded workflow
-  * 4304096d Structure OBS package recipes in folders matching the OBS
-            package name
-  * 63bc8a3b Adapting spec to the gitified OBS project
+  * 98b0254d Switch to git in OBS (#2187)
+  * b1a7dbc6 Bump github.com/containerd/containerd from 1.7.20 to 1.7.22
+  * c42a766a Bump k8s.io/mount-utils from 0.31.0 to 0.31.1
+  * 8e51d33e Bump golang.org/x/crypto from 0.26.0 to 0.27.0
   * 5a8ecc1c Bump github.com/jaypipes/ghw from 0.12.0 to 0.13.0 (#2178)
   * fa2306d6 Implement state subcommand (#2182)
   * dc52491a Add user defined labels to snapshot info (#2175)
