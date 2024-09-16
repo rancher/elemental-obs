@@ -12,6 +12,8 @@ BUILDER_WORKDIR="${ROOT_PATH}/workdir"
 
 : "${SCM_INFO:=_scminfo}"
 : "${CHANGES_ENTRY:=newentry.changes}"
+: "${CHANGES_EMAIL:=elemental@suse.de}"
+: "${CHANGES_AUTHOR:=Elemental Bot}"
 
 declare re_major="^([0-9]+)(-[0-9a-z]+)?"
 declare re_minor="^([0-9]+(\.[0-9]+){0,1})(-[0-9a-z]+)?"
@@ -170,7 +172,7 @@ function create_changes_entry {
 
   # Setting the OBS entry format
   dashes="$( printf -- "-%.0s" {1..67} )"
-  header="${dashes}%n%cd - %an <%ae>"
+  header="${dashes}%n%cd - ${CHANGES_AUTHOR} <${CHANGES_EMAIL}>"
 
   [ -d "${path}" ] || _abort "${error_msg} path '${path}' is not a directory"
   [ -f "${scminfo}" ] || _abort "${error_msg} ${scminfo} file not found"
@@ -188,7 +190,12 @@ function create_changes_entry {
     pretag=$(git describe --abbrev=0 --tags "${tag}^" || true)
     ccount=$(git rev-list "${tag}..HEAD" --count)
 
-    if [ "${ccount}" -eq 0 ]; then
+    # Consider the case no version is computed, use last commmit
+    # fot changes only
+    if grep -q "versionRPM: null" "${scminfo}"; then
+      scope="HEAD~1..HEAD"
+      starter="Updated up to:"
+    elif [ "${ccount}" -eq 0 ]; then
       scope="${pretag}..${tag}"
       starter="Update to ${tag}:"
     else
