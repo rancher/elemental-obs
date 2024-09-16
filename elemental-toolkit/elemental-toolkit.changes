@@ -1,10 +1,13 @@
 -------------------------------------------------------------------
-Thu Sep 12 20:38:31 UTC 2024 - David Cassany <dcassany@suse.com>
+Mon Sep 16 07:39:35 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.1.0:
-  * b30bc6b5 Structure OBS package recipes in folders matching the OBS
+  * 3570ada5 Remove unneeded workflow
+  * 4304096d Structure OBS package recipes in folders matching the OBS
             package name
-  * f4ddd61f Adapting spec to the gitified OBS project
+  * 63bc8a3b Adapting spec to the gitified OBS project
+  * 5a8ecc1c Bump github.com/jaypipes/ghw from 0.12.0 to 0.13.0 (#2178)
+  * fa2306d6 Implement state subcommand (#2182)
   * dc52491a Add user defined labels to snapshot info (#2175)
   * b2cce27b Bump github.com/opencontainers/runc in the go_modules group
   * 08a8ead9 Bump k8s.io/mount-utils from 0.30.3 to 0.31.0
@@ -64,7 +67,6 @@ Thu Sep 12 20:38:31 UTC 2024 - David Cassany <dcassany@suse.com>
   * fbe90421 Fix overlaydir setup
   * e20e3829 Move green-rpi flavor to tumbleweed
   * 29e909eb Longer retry during nightly pull
-  * f036b83c Fix status badge in README
   * 48d6ca48 Refactor and test efi manager
   * 2e56a099 Do not return error for efi.ReadLoadOption
   * fa82c1b1 Fix recovery test (#2086)
