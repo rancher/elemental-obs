@@ -1,26 +1,26 @@
 [
     {
         "metadata": {
-            "name": "v%IMG_TAG%-os-unstable"
+            "name": "unstable-os"
         },
         "spec": {
-            "version": "v%IMG_TAG%",
+            "version": "unstable",
             "type": "container",
             "metadata": {
-                "upgradeImage": "%%IMG_REPO%%/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:%IMG_TAG%",
+                "upgradeImage": "%%IMG_REPO%%/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:latest",
                 "displayName": "SUSE Linux Micro %%SLMICRO_VERSION%% OS (unstable)"
             }
         }
     },
     {
         "metadata": {
-            "name": "v%IMG_TAG%-iso-unstable"
+            "name": "unstable-iso"
         },
         "spec": {
-            "version": "v%IMG_TAG%",
+            "version": "unstable",
             "type": "iso",
             "metadata": {
-                "uri": "%%IMG_REPO%%/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:%IMG_TAG%",
+                "uri": "%%IMG_REPO%%/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-iso-image:latest",
                 "displayName": "SUSE Linux Micro %%SLMICRO_VERSION%% ISO (unstable)"
             }
         }

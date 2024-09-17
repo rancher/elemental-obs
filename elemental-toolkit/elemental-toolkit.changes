@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Mon Sep 16 13:44:36 UTC 2024 - Elemental Bot <elemental@suse.de>
+Mon Sep 16 14:02:39 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.1.0:
+  * 14c049c0 Fix docker build warnings when using buildx
   * 98b0254d Switch to git in OBS (#2187)
   * b1a7dbc6 Bump github.com/containerd/containerd from 1.7.20 to 1.7.22
   * c42a766a Bump k8s.io/mount-utils from 0.31.0 to 0.31.1
