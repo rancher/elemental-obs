@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Wed Sep 18 13:30:28 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Extend the extraction script to also support disk images
+
+-------------------------------------------------------------------
 Tue Apr  2 09:42:17 UTC 2024 - Klaus Kämpf <kkaempf@suse.com>
 
 - install to /usr/lib/build/post_build.d
