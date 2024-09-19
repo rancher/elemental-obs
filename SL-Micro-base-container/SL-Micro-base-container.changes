@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Mon Sep 16 23:15:46 UTC 2024 - Elemental Bot <elemental@suse.de>
+Thu Sep 19 06:47:21 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.2.0-dev:
+  * 35b34fd Include a baremetal disk image
   * 764b791 Switch to git in OBS (#1562)
   * 415c2ea Install nm-configurator in dev image and simplify dev sample
             manifest (#1533)
