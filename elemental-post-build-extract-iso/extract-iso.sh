@@ -15,26 +15,27 @@ set -e
 
 img=$(ls ${TOPDIR}/DOCKER/*.tar) || true
 
-# Only consider images with 'iso' as part of the name
+# Only consider images with 'iso' or 'disk' as part of the name
 [ -f "${img}" ] || exit 0
-echo "${img}" | grep -q iso || exit 0
+echo "${img}" | grep -q "iso\|disk" || exit 0
 
-echo "Extracting ISO from container image"
+echo "Extracting image from container"
 
 buildah from --name "${container}"  "docker-archive:${img}"
 
 mnt=$(buildah mount "${container}")
 
-ls "${mnt}"
-
 iso=$(ls "${mnt}"/elemental-iso/*.iso) || true
-
-[ -f "${iso}" ] || cleanup_and_exit
+disk=$(ls "${mnt}"/elemental-disk/*.raw) || true
 
 mkdir -p "${TOPDIR}/OTHER"
 
-cp "${iso}" "${TOPDIR}/OTHER"
-cp "${iso}.sha256" "${TOPDIR}/OTHER"
+if [ -f "${iso}" ]; then
+  cp "${iso}" "${TOPDIR}/OTHER"
+  cp "${iso}.sha256" "${TOPDIR}/OTHER"
+elif [ -f "${disk}" ]; then
+  cp "${disk}" "${TOPDIR}/OTHER"
+fi
 
 cleanup_and_exit
 
