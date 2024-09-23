@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Thu Sep 19 06:47:21 UTC 2024 - Elemental Bot <elemental@suse.de>
+Mon Sep 23 09:01:37 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.2.0-dev:
+  * a9c1d57 Disable predictable interface names (bsc#1230904) (#1581)
   * 35b34fd Include a baremetal disk image
   * 764b791 Switch to git in OBS (#1562)
   * 415c2ea Install nm-configurator in dev image and simplify dev sample
