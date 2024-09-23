@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Mon Sep 16 13:44:22 UTC 2024 - Elemental Bot <elemental@suse.de>
+Fri Sep 20 09:21:46 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.0-dev:
+  * 60808bfe Label Templates: render also machineInventoryAnnotations (#848)
+  * c9223009 label templates: drop spaces from Storage variables (#847)
   * e6bca47c Switch to git based repository in OBS (#845)
   * cdb34aa7 Update questions to use SL Micro 6.0 channels
   * 723d7c3e Label Templates: rework collection of 'hostinfo' data and

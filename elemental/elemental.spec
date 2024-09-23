@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit cb28cacc28edc8fe8d736b96362b32634a6ba902
-%define c_date 20240919
+%define commit a9c1d57391839125f94ce6066e26a68ebf5f3e53
+%define c_date 20240923
 
 %define systemdir /system
 %define oemdir %{systemdir}/oem
