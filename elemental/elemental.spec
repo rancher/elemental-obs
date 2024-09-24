@@ -15,7 +15,7 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit a9c1d57391839125f94ce6066e26a68ebf5f3e53
+%define commit c58d3fe8e49907a1a62857a8243f75e3403f7dfb
 %define c_date 20240923
 
 %define systemdir /system
