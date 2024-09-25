@@ -1,20 +1,6 @@
 [
     {
         "metadata": {
-            "name": "rt-v2.1.1-4.1-os"
-        },
-        "spec": {
-            "version": "v2.1.1-4.1",
-            "type": "container",
-            "metadata": {
-                "upgradeImage": "registry.suse.com/suse/sl-micro/6.0/rt-os-container:2.1.1-4.1",
-                "displayName": "SL Micro RT 6.0 OS",
-                "platforms": ["linux/x86_64"]
-            }
-        }
-    },
-    {
-        "metadata": {
             "name": "rt-v2.1.2-4.25-os"
         },
         "spec": {
