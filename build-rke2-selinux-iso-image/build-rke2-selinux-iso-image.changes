@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Tue Sep 24 14:19:19 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Sep 25 10:51:57 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.2.0-dev:
+  * 01444ac Bump elemental-toolkit to latest v2.2.x (#1592)
+  * a0c30fc Adding the new arm-firmware feature for aarch64 builds (#1590)
   * a9c1d57 Disable predictable interface names (bsc#1230904) (#1581)
   * 35b34fd Include a baremetal disk image
   * 764b791 Switch to git in OBS (#1562)

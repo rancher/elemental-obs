@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 6425dbe36fff6b74a78c205a5e08134073b0518a
-%define c_date 20240924
+%define commit 01444ac1795023133dc2afdb41b5e9ae97722a99
+%define c_date 20240925
 
 %define systemdir /system
 %define oemdir %{systemdir}/oem
@@ -31,8 +31,8 @@ URL:            https://github.com/rancher/%{name}
 Source:         %{name}.tar.xz
 Source3:        %{name}-rpmlintrc
 
-Requires:       elemental-toolkit >= 2.1.0
-Requires:       elemental-toolkit < 2.2.0
+Requires:       elemental-toolkit >= 2.2.0
+Requires:       elemental-toolkit < 2.3.0
 Requires:       elemental-register
 Requires:       elemental-system-agent
 Requires:       elemental-support
