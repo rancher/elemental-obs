@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Wed Sep 25 07:47:12 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.2.0:
+  * 30a64d70  Add cloud-init paths of the new root in 'after-*' hooks (#2192)
+  * 98ade87d Expose max snapshots environment variable (#2193)
+
+-------------------------------------------------------------------
 Fri Sep 20 09:08:21 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.0:
