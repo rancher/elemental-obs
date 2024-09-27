@@ -1,11 +1,8 @@
 -------------------------------------------------------------------
-Mon Sep 16 13:43:14 UTC 2024 - Elemental Bot <elemental@suse.de>
+Thu Sep 26 13:00:21 UTC 2024 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v0.6.0:
-  * bc9e9c3 Remove unneeded OBS workflow
-  * 9b8504d Adapt repository to rancher/elemental-obs conventions
-  * 3e9855a Remove no longer relevant host configuration step
-  * f64d667 Actualize documentation
+- Changes on top of v0.7.0:
+  * 133b685 Missing kind port for test registry (#90)
 
 -------------------------------------------------------------------
 Wed Aug 07 13:32:15 UTC 2024 - dcassany@suse.com
