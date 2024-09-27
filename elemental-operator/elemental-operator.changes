@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Wed Sep 25 10:04:51 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Sep 25 11:31:29 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.0-dev:
+  * 3df501da Allow configuration of max snapshots during install (#851)
   * 7ba0a1e7 Update helper scripts to 1.6.x channel setup (#850)
   * 60808bfe Label Templates: render also machineInventoryAnnotations (#848)
   * c9223009 label templates: drop spaces from Storage variables (#847)

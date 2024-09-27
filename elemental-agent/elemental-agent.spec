@@ -16,13 +16,13 @@
 #
 
 # These variables are coupled to automation scripts
-%define commit 007de8668549b87d0547292e6cf496970b1ccbee
-%define c_date 20240916
+%define commit 133b68573c8894b893b0c07e74ace75770e0b9af
+%define c_date 20240926
 
 %define pluginsdir /usr/lib/elemental/plugins
 
 Name:           elemental-agent
-Version:        0.6.0
+Version:        0.7.0
 Release:        0
 Summary:        Elemental CAPI agent
 License:        Apache-2.0
