@@ -1,4 +1,17 @@
 -------------------------------------------------------------------
+Mon Sep 30 08:57:03 UTC 2024 - fredrik.lonnegren@suse.com
+
+- Update to version 0.3.9:
+  * Properly install grep and kubectl into the SUC image (#196)
+  * Add default fallback values (`/opt/rke2/bin`, `/opt/bin`) to the PATH if `/usr/local/bin` is read-only (#195)
+  * use bci-base to run zypper then layer the result onto bci-micro (#194)
+  * Change base images to `bci-micro` (#169)
+  * Add CATTLE_AGENT_FALLBACK_PATH
+  * Fix if statement in install.sh
+  * bump Go version to 1.22, kube-related modules to v0.29.7 to eliminate CVEs
+  * Update module github.com/rancher/wharfie to v0.6.6
+
+-------------------------------------------------------------------
 Mon Aug 12 09:43:52 UTC 2024 - kkaempf@suse.de
 
 - Update to version 0.3.7:
