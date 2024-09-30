@@ -9,7 +9,7 @@ GH_REPO=https://github.com/$(REPO)
 .PHONY: prepare-sources
 prepare-sources:
 ifeq ("$(REPO)","")
-	@echo "REPO paramter not defined"
+	@echo "REPO parameter not defined"
 	exit 1
 else
 	./scripts/prepare-sources.sh $(GH_REPO) $(BRANCH) $(V_PARSE) $(V_OFFSET)
