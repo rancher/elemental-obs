@@ -14,7 +14,7 @@ sources from [rancher/elemental](https://github.com/rancher/elemental),
 [rancher/elemental-channels](https://github.com/rancher/elemental-channels), in addition of the sources of other
 packages that SUSE specific and only living in OBS.
 
-There is a sources refresth workflow that is executed periodically to refresh sources. This is configured with the
+There is a sources refresh workflow that is executed periodically to refresh sources. This is configured with the
 `config.yaml` file in `main` branch. This yaml file is used to define the upstream repositories that are used to
 refresh a local branch. See the example below:
 
