@@ -1,10 +1,10 @@
-sync-dev:
+sync-staging:
   steps:
     - trigger_services:
-        project: isv:Rancher:Elemental:Dev
+        project: isv:Rancher:Elemental:Staging
         package: _project
   filters:
     event: push
     branches:
       only:
-        - dev
+        - staging
