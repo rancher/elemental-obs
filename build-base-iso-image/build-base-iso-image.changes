@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
-Fri Sep 27 09:26:54 UTC 2024 - Elemental Bot <elemental@suse.de>
+Tue Oct  1 07:45:34 UTC 2024 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.0-dev:
+- Update to v2.2.0-rc1:
   * 01444ac Bump elemental-toolkit to latest v2.2.x (#1592)
   * a0c30fc Adding the new arm-firmware feature for aarch64 builds (#1590)
   * a9c1d57 Disable predictable interface names (bsc#1230904) (#1581)
