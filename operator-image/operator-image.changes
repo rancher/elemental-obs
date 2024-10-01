@@ -1,7 +1,10 @@
 -------------------------------------------------------------------
-Wed Sep 25 11:31:29 UTC 2024 - Elemental Bot <elemental@suse.de>
+Tue Oct  1 12:54:40 UTC 2024 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.7.0-dev:
+- Update to v1.7.0-rc1:
+  * 08f6cda7 Build e2e chart locally (#852)
+  * 4e313f7d charts: drop chart version from resource labels (#854)
+  * 57022860 [Airgap] Fix script to support Dev and Staging
   * 3df501da Allow configuration of max snapshots during install (#851)
   * 7ba0a1e7 Update helper scripts to 1.6.x channel setup (#850)
   * 60808bfe Label Templates: render also machineInventoryAnnotations (#848)

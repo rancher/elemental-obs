@@ -2,8 +2,8 @@
 #!ExclusiveArch: x86_64
 #!BuildName: build-rt-iso-image
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-iso-image:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-iso-image:2.2.0-dev
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-iso-image:2.2.0-dev-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-iso-image:2.2.0-rc1
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-iso-image:2.2.0-rc1-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 10
 #!BuildConstraint: hardware:memory:size unit=G 16
 #!UseOBSRepositories
@@ -25,7 +25,7 @@ RUN zypper --installroot /busybox in --no-recommends -y busybox
 # Version value is taken form the elemental repository tags
 # Release value of this image and os image are unrelated
 # must be ...<flavor>.<arch>... for OBS
-RUN elemental --debug --config-dir . build-iso -o /output -n "sl-micro-%%SLMICRO_VERSION%%-rt.$(uname -m)-2.2.0-dev-Build%RELEASE%" dir:rootfs
+RUN elemental --debug --config-dir . build-iso -o /output -n "sl-micro-%%SLMICRO_VERSION%%-rt.$(uname -m)-2.2.0-rc1-Build%RELEASE%" dir:rootfs
 
 # Only keep the ISO as a result and busybox
 FROM scratch
@@ -35,7 +35,7 @@ COPY --from=builder /output /elemental-iso
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/rt-iso-image
-ARG IMAGE_TAG=2.2.0-dev-%RELEASE%
+ARG IMAGE_TAG=2.2.0-rc1-%RELEASE%
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=com.suse.sl.micro

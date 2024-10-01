@@ -15,11 +15,11 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 3df501da73caf03875098a89bae62ac5e2dd559e
-%define c_date 20240925
+%define commit 08f6cda748bb3882ad49538defa6985508b70cf9
+%define c_date 20241001
 
 Name:           elemental-operator
-Version:        1.7.0~dev
+Version:        1.7.0~rc1
 Release:        0
 Summary:        Kubernetes operator to support OS management
 License:        Apache-2.0
