@@ -7,6 +7,10 @@ on:
         description: 'Target branch to upgrade in OBS'
         required: true
         default: 'dev'
+      source_repositories:
+        description: 'Source repositories to upgrade from'
+        required: true
+        default: 'all'
   schedule:
   - cron: "0 8-22/2 * * 1-5"
 
@@ -19,9 +23,60 @@ permissions:
   statuses: write
 
 jobs:
-  update-sources:
+  set-repositories:
     env:
-      BRANCH: ${{ inputs.target_branch || 'dev' }} 
+      BRANCH: ${{ inputs.target_branch || 'dev' }}
+      SRC_REPOS: ${{ inputs.source_repositories || 'all' }} 
+    runs-on: ubuntu-latest
+    outputs:
+      repos: ${{ steps.sources.outputs.repos }}
+    steps:
+    - name: Checkout target branch
+      uses: actions/checkout@v4
+      with:
+        ref: ${{ github.ref_name }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+    - name: Define matrix values
+      id: sources
+      run: |
+        [ ! -f config.yaml ] && exit 1
+
+        count=$(yq ".${{ env.BRANCH }} | length" config.yaml)
+
+        output="repos=["
+
+        for ((n=0;n<${count};n++)); do
+          repo="$(yq ".${{ env.BRANCH }}.[${n}].repo" config.yaml)"
+          if [[ "${{ env.SRC_REPOS }}" != "all" ]] && [[ "${{ env.SRC_REPOS }}" != "${repo}" ]]; then
+            continue
+          fi
+          if (( ${n} == 0 )); then
+            output+="'${repo}'"
+          else
+            output+=", '${repo}'"
+          fi
+        done
+
+        output+="]"
+
+        echo "Computed result: ${output}"
+
+        if [[ "${output}" == "repos=[]" ]]; then
+        echo "Could not find input repository: ${{ env.SRC_REPOS }}"
+          exit 1
+        fi
+        echo "${output}" >> $GITHUB_OUTPUT
+
+    
+  update-sources:
+    needs:
+    - set-repositories
+    env:
+      BRANCH: ${{ inputs.target_branch || 'dev' }}
+    strategy:
+      matrix:
+        repo: ${{ fromJson(needs.set-repositories.outputs.repos) }}
+      fail-fast: false
     runs-on: ubuntu-latest
     steps:
     - name: Checkout target branch
@@ -43,7 +98,12 @@ jobs:
         count=$(yq ".${{ env.BRANCH }} | length" config.yaml)
 
         for ((n=0;n<${count};n++)); do
-          export REPO="$(yq ".${{ env.BRANCH }}.[${n}].repo" config.yaml)"
+          repo="$(yq ".${{ env.BRANCH }}.[${n}].repo" config.yaml)"
+          if [[ "${{ matrix.repo }}" != "${repo}" ]]; then
+            continue
+          fi
+
+          export REPO="${repo}"
           export BRANCH="$(yq ".${{ env.BRANCH }}.[${n}].branch" config.yaml)"
           export V_PARSE="$(yq ".${{ env.BRANCH }}.[${n}].parseVersion" config.yaml)"
           export V_OFFSET="$(yq ".${{ env.BRANCH }}.[${n}].versionOffset" config.yaml)"
@@ -57,15 +117,18 @@ jobs:
       run: |
         rm -rf scripts
         rm -f Makefile config.yaml
-    - name: Checkout new branch ${{ env.BRANCH }}_stage
+    - name: Checkout new branch for ${{ matrix.repo }} sources
       id: commit
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SRC_REPO: ${{ matrix.repo }}
       run: |
         git config --global user.email "elemental@suse.de"
         git config --global user.name "elementalbot"
+        
+        branch="${BRANCH}_${SRC_REPO//\//_}"
 
-        git checkout -b ${{ env.BRANCH }}_stage
+        git checkout -b ${branch}
         git add .
 
         if [ -z "$(git status --porcelain)" ]; then
@@ -77,18 +140,21 @@ jobs:
         fi
 
         git commit -s -m "Automated commit from GHA workflow"
-        git push origin ${{ env.BRANCH }}_stage --force
+        git push origin ${branch} --force
     - if: ${{ steps.commit.outputs.clean != 'true' }} 
       name: Update/create PR
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        SRC_REPO: ${{ matrix.repo }}
       run: |
-        json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${{ env.BRANCH }}_stage --base ${{ env.BRANCH }} --limit 1)
+        branch="${BRANCH}_${SRC_REPO//\//_}"
+
+        json=$(gh pr list --repo ${{ github.repository }} --json number,baseRefName,headRefName --head ${branch} --base ${{ env.BRANCH }} --limit 1)
 
         if [ "$(echo "${json}" | jq length)" -eq 1 ]; then
           number="$(echo "${json}" | jq '.[0].number')"
           gh pr comment "${number}" --repo ${{ github.repository }} --body "Updating PR from sources"
         else
-          gh pr create --repo ${{ github.repository }} --head ${{ env.BRANCH }}_stage --base ${{ env.BRANCH }} \
-            --body "Automated PR from GH client" --title "Update '${{ env.BRANCH }}' OBS sources"
+          gh pr create --repo ${{ github.repository }} --head ${branch} --base ${{ env.BRANCH }} \
+            --body "Automated PR from GH client" --title "Update '${{ env.BRANCH }}' OBS sources from '${{ matrix.repo }}'"
         fi
