@@ -1,4 +1,13 @@
 -------------------------------------------------------------------
+Wed Oct  2 12:03:00 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.2.1:
+  * a9f22910 Bump yip to v1.9.6
+  * 398c0e44 Disable audit package in example Dockerfile
+  * 92264f1e  Add cloud-init paths of the new root in 'after-*' hooks (#2192)
+  * 491e01b8 Expose max snapshots environment variable (#2193)
+
+-------------------------------------------------------------------
 Fri Sep 20 09:08:21 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.0:
