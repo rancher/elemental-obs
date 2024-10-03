@@ -220,6 +220,15 @@ Tue Jul 30 14:32:04 UTC 2024 - David Cassany <dcassany@suse.com>
   * 92e0a02a Bump google/go-containerregistry (#2005)
   * fd757e61 Fix downgrade test
   * a5a16a20 Update v2 linker args (#2000)
+
+-------------------------------------------------------------------
+Mon Aug 05 09:26:54 UTC 2024 - dcassany@suse.com
+
+- Update to version 2.1.1:
+  * [backport] Disable boot entry if efivars is read-only (#2059) (#2145)
+  * [backport] CI refactor to v2.1.x branch (#2146)
+  * Remove pre-existing Elemental initrds
+
 -------------------------------------------------------------------
 Thu Apr 11 08:44:39 UTC 2024 - fredrik.lonnegren@suse.com
 
