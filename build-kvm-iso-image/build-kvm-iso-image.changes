@@ -91,6 +91,13 @@ Tue Oct  1 07:45:34 UTC 2024 - Elemental Bot <elemental@suse.de>
   * dd525b0 slem-base-os: explicitly install kernel-default
   * de2fa1f drop k9s and nfsidmap, not available in SLE Micro 6
   * 91eb5ef Adapt Dockerfiles for ALP
+-------------------------------------------------------------------
+Mon Aug  5 10:13:49 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Update to version v2.1.2
+  * Fix grub2-x86_64-efi installation
+  * Removing syslinux from base image
+  * Workaround to remove any pre-existing Elemental initrd 
 
 -------------------------------------------------------------------
 Fri Apr 26 12:06:44 UTC 2024 - David Cassany <dcassany@suse.com>
