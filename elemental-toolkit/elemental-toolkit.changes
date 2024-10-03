@@ -1,9 +1,12 @@
 -------------------------------------------------------------------
-Wed Sep 25 07:47:12 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Oct  2 11:54:48 UTC 2024 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.0:
-  * 30a64d70  Add cloud-init paths of the new root in 'after-*' hooks (#2192)
-  * 98ade87d Expose max snapshots environment variable (#2193)
+- Changes on top of v2.3.0-dev:
+  * 55770a2f A couple of Dockerfile cleanups (#2200)
+  * 3d763bb7 Bump yip to v1.9.6
+  * 95cdcb22 Add systemd-timesync user
+  * 3da515bd Disable audit package in example Dockerfile
+  * 84a71b9e green: install xterm-resize (#2194)
 
 -------------------------------------------------------------------
 Fri Sep 20 09:08:21 UTC 2024 - Elemental Bot <elemental@suse.de>
