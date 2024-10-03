@@ -1,6 +1,20 @@
 [
     {
         "metadata": {
+            "name": "base-v2.1.2-3.35-os"
+        },
+        "spec": {
+            "version": "v2.1.2-3.35",
+            "type": "container",
+            "metadata": {
+                "upgradeImage": "registry.suse.com/suse/sl-micro/6.0/base-os-container:2.1.2-3.35",
+                "displayName": "SL Micro Base 6.0 OS",
+                "platforms": ["linux/x86_64","linux/aarch64"]
+            }
+        }
+    },
+    {
+        "metadata": {
             "name": "base-v2.1.2-3.34-os"
         },
         "spec": {
@@ -29,14 +43,14 @@
     },
     {
         "metadata": {
-            "name": "base-v2.1.2-3.29-os"
+            "name": "base-v2.1.1-2.69-iso"
         },
         "spec": {
-            "version": "v2.1.2-3.29",
-            "type": "container",
+            "version": "v2.1.1-2.69",
+            "type": "iso",
             "metadata": {
-                "upgradeImage": "registry.suse.com/suse/sl-micro/6.0/base-os-container:2.1.2-3.29",
-                "displayName": "SL Micro Base 6.0 OS",
+                "uri": "registry.suse.com/suse/sl-micro/6.0/base-iso-image:2.1.1-2.69",
+                "displayName": "SL Micro Base 6.0 ISO",
                 "platforms": ["linux/x86_64","linux/aarch64"]
             }
         }
@@ -64,20 +78,6 @@
             "type": "iso",
             "metadata": {
                 "uri": "registry.suse.com/suse/sl-micro/6.0/base-iso-image:2.1.1-2.66",
-                "displayName": "SL Micro Base 6.0 ISO",
-                "platforms": ["linux/x86_64","linux/aarch64"]
-            }
-        }
-    },
-    {
-        "metadata": {
-            "name": "base-v2.1.1-2.65-iso"
-        },
-        "spec": {
-            "version": "v2.1.1-2.65",
-            "type": "iso",
-            "metadata": {
-                "uri": "registry.suse.com/suse/sl-micro/6.0/base-iso-image:2.1.1-2.65",
                 "displayName": "SL Micro Base 6.0 ISO",
                 "platforms": ["linux/x86_64","linux/aarch64"]
             }
