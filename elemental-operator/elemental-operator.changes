@@ -80,6 +80,30 @@ Tue Oct  1 12:54:40 UTC 2024 - Elemental Bot <elemental@suse.de>
   * 695904cd unit-tests: add coverage for seedimage API
 
 -------------------------------------------------------------------
+Thu Aug 08 10:07:24 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.6.4:
+  * register: always register when called (#816)
+
+-------------------------------------------------------------------
+Mon Aug 05 08:59:38 UTC 2024 - dcassany@suse.com
+
+- Update to version 1.6.3:
+  * Backport to v1.6.x (#796)
+  * Enable PR workflow for v1.6 maintenance branch
+  * Add toggle to automatically delete no longer in sync versions (#780) (#783)
+  * [v1.6.x] Add managedosversion finalizer (#775 & #784)  (#782)
+  * Ensure re-sync is triggered
+  * [v1.6.x][BACKPORT] operator: fix ManagedOSVersionChannel sync  (#771)
+  * Use YAML content for Elemental Agent config (#765) (#770)
+  * Allow yip configs (#751) (#762)
+  * Update deployment.yaml (#757) (#761)
+  * Flag no longer in sync ManagedOSVersions (#750) (#752)
+  * Let elemental-register digest system hardware data (#748) (#749)
+  * register: don't send new Disks and Controllers data (#741)
+  * Added the ability to create a node reset marker for unmanaged hosts (#731) (#737)
+
+-------------------------------------------------------------------
 Tue May 07 11:54:53 UTC 2024 - dcassany@suse.com
 
 - Update to version 1.6.2:
