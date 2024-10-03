@@ -93,6 +93,14 @@ Tue Oct  1 07:45:34 UTC 2024 - Elemental Bot <elemental@suse.de>
   * 91eb5ef Adapt Dockerfiles for ALP
 
 -------------------------------------------------------------------
+Mon Aug  5 10:06:31 UTC 2024 - David Cassany <dcassany@suse.com>
+
+- Update to version v2.1.2
+  * Fix grub2-x86_64-efi installation
+  * Removing syslinux from base image
+  * Workaround to remove any pre-existing Elemental initrd
+
+-------------------------------------------------------------------
 Fri Apr 26 12:10:40 UTC 2024 - David Cassany <dcassany@suse.com>
 
 - Update to version v2.1.1
