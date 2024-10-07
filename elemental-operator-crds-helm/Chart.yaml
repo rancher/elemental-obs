@@ -1,12 +1,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #!BuildTag: rancher/elemental-operator-crds-chart:latest
-#!BuildTag: rancher/elemental-operator-crds-chart:1.7.0-rc1
-#!BuildTag: rancher/elemental-operator-crds-chart:1.7.0-rc1-%RELEASE%
+#!BuildTag: rancher/elemental-operator-crds-chart:1.8.0-dev
+#!BuildTag: rancher/elemental-operator-crds-chart:1.8.0-dev-%RELEASE%
 apiVersion: v2
 name: elemental-operator-crds
 description: A Helm chart for deploying Rancher Elemental Operator CRDs
-version: "1.7.0-rc1"
-appVersion: "1.7.0-rc1"
+version: "1.8.0-dev"
+appVersion: "1.8.0-dev"
 annotations:
   catalog.cattle.io/certified: rancher
   catalog.cattle.io/namespace: cattle-elemental-system

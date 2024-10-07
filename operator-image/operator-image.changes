@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Oct  7 11:11:26 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.0-dev:
+  * ab193eca Add support for agent-tls-mode Rancher setting (#863)
+  * de3c37df RBAC: restrict SeedImage controller auth to fleet-default (#864)
+
+-------------------------------------------------------------------
 Tue Oct  1 12:54:40 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.7.0-rc1:
