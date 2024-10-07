@@ -1,12 +1,12 @@
 image:
   empty: rancher/pause:3.1
   repository: "rancher/elemental-operator"
-  tag: "1.7.0-rc1"
+  tag: "1.8.0-dev"
   imagePullPolicy: IfNotPresent
 
 seedImage:
   repository: "rancher/seedimage-builder"
-  tag: "1.7.0-rc1"
+  tag: "1.8.0-dev"
   imagePullPolicy: IfNotPresent
 
 # a custom channel to install
