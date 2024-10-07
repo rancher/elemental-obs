@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Mon Oct  7 13:08:17 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.3.0-dev:
+  * 09c4ab9 Add documentation to test private CA renewal (#1606)
+  * 81c342e Add support to define CATTLE_AGENT_STRICT_VERIFY (#1616)
+
+-------------------------------------------------------------------
 Tue Oct  1 07:45:34 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.0-rc1:
