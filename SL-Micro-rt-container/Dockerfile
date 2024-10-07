@@ -3,8 +3,8 @@
 #!ExclusiveArch: x86_64
 #!BuildName: SL-Micro-rt-container
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-os-container:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-os-container:2.2.0-rc1
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-os-container:2.2.0-rc1-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-os-container:2.3.0-dev
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/rt-os-container:2.3.0-dev-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
 #!UseOBSRepositories
 
@@ -12,7 +12,7 @@ ARG SLMICRO_VERSION
 
 FROM suse/sl-micro/${SLMICRO_VERSION}/baremetal-os-container:latest AS os
 
-# dummy zypper call to get elemental into the build context and extract 2.2.0-rc1 from it via _service
+# dummy zypper call to get elemental into the build context and extract 2.3.0-dev from it via _service
 RUN zypper in --no-recommends -y systemd-presets-branding-Elemental elemental
 
 # turn base image into a rt image
@@ -23,7 +23,7 @@ MAINTAINER SUSE LLC (https://www.suse.com/)
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/rt-os-container
-ARG IMAGE_TAG=2.2.0-rc1-%RELEASE%
+ARG IMAGE_TAG=2.3.0-dev-%RELEASE%
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=com.suse.sl.micro
