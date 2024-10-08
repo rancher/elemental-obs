@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Mon Oct  7 11:11:26 UTC 2024 - Elemental Bot <elemental@suse.de>
+Tue Oct  8 07:54:33 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * fad205a5 Split elemental-operator and elemental-register at OBS level
   * ab193eca Add support for agent-tls-mode Rancher setting (#863)
   * de3c37df RBAC: restrict SeedImage controller auth to fleet-default (#864)
 

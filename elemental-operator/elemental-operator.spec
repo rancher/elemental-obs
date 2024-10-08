@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit ab193eca6f323e8a00ec137689a40bd337581283
-%define c_date 20241007
+%define commit fad205a5b62ce9703852b0250f2e852ba7621614
+%define c_date 20241008
 
 Name:           elemental-operator
 Version:        1.8.0~dev
@@ -57,24 +57,10 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 %define systemdir /system
 %define oemdir %{systemdir}/oem
 
-%package -n elemental-register
-Summary: The registration client
-
 %description
 The Elemental operator is responsible for managing the OS
 versions and maintaining a machine inventory to assist with edge or
 baremetal installations.
-
-%description -n elemental-register
-The elemental-register command is responsible of the node registration
-against an elemental-operator instance running under Rancher.
-
-%package -n elemental-support
-Summary: Collect important logs for support
-
-%description -n elemental-support
-This collects essential configuration files and logs to improve issue
-resolution.
 
 %package -n elemental-httpfy
 Summary: Simple http server
@@ -118,8 +104,6 @@ export COMMITDATE="%{c_date}"
 
 # build binaries
 CGO_ENABLED=0 make operator
-CGO_ENABLED=1 make register
-make support
 make httpfy
 
 %install
@@ -133,8 +117,6 @@ make httpfy
 
 # binary
 %{__install} -m 755 build/elemental-operator %{buildroot}%{_sbindir}
-%{__install} -m 755 build/elemental-register %{buildroot}%{_sbindir}
-%{__install} -m 755 build/elemental-support %{buildroot}%{_sbindir}
 %{__install} -m 755 build/elemental-httpfy %{buildroot}%{_sbindir}
 
 # hooks
@@ -145,17 +127,6 @@ mkdir -p %{buildroot}%{oemdir}
 %defattr(-,root,root,-)
 %license LICENSE
 %{_sbindir}/%{name}
-
-%files -n elemental-register
-%defattr(-,root,root,-)
-%license LICENSE
-%{_sbindir}/elemental-register
-
-%files -n elemental-support
-%defattr(-,root,root,-)
-%license LICENSE
-%{_sbindir}/elemental-support
-
 
 %files -n elemental-httpfy
 %defattr(-,root,root,-)
