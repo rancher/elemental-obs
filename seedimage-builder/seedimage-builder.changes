@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Thu Oct 17 06:09:41 UTC 2024 - Elemental Bot <elemental@suse.de>
+Tue Oct 22 12:56:33 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * 6372ec67 Only reset network if a network configurator is used (#874)
   * cf1a2d64 Do not include Config to MachineRegistration as pointer (#870)
   * fad205a5 Split elemental-operator and elemental-register at OBS level
   * ab193eca Add support for agent-tls-mode Rancher setting (#863)
