@@ -1,4 +1,13 @@
 -------------------------------------------------------------------
+Thu Oct 17 06:09:41 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.0-dev:
+  * cf1a2d64 Do not include Config to MachineRegistration as pointer (#870)
+  * fad205a5 Split elemental-operator and elemental-register at OBS level
+  * ab193eca Add support for agent-tls-mode Rancher setting (#863)
+  * de3c37df RBAC: restrict SeedImage controller auth to fleet-default (#864)
+
+-------------------------------------------------------------------
 Tue Oct  8 07:54:33 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Initial commit
