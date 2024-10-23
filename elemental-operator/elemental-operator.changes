@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Oct 22 13:27:37 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.7.0:
+  * a4af6afd Only reset network if a network configurator is used (#874)
+  * cb473d9d Do not include Config to MachineRegistration as pointer (#870)
+
+-------------------------------------------------------------------
 Mon Oct  7 14:20:10 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.7.0:

@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 71b679dd15960b9d11f2f7c58b9ec7e735d6dc37
-%define c_date 20241007
+%define commit a4af6afdc96fa2d7fd94cdc9cac3d9080e1e79f2
+%define c_date 20241022
 
 Name:           elemental-operator
 Version:        1.7.0
