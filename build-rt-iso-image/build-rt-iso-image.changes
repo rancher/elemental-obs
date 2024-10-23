@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Mon Oct  7 13:08:17 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Oct 23 17:13:52 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * c52cc44 Remove no longer valid OBS workflow
   * 09c4ab9 Add documentation to test private CA renewal (#1606)
   * 81c342e Add support to define CATTLE_AGENT_STRICT_VERIFY (#1616)
 
