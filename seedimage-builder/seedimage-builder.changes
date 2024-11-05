@@ -1,5 +1,5 @@
 -------------------------------------------------------------------
-Tue Oct 22 12:56:33 UTC 2024 - Elemental Bot <elemental@suse.de>
+Fri Oct 25 11:13:41 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
   * 6372ec67 Only reset network if a network configurator is used (#874)
