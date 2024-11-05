@@ -1,3 +1,0 @@
-iso:
-  bootloader-in-rootfs: true
-  grub-entry-name: "SL Micro rke2 SELinux Virtual Image Install"
