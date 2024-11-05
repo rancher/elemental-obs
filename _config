@@ -37,3 +37,6 @@ Macros:
 
 BuildFlags: dockerarg:SLMICRO_VERSION=6.0
 %endif
+
+# Fix choice (go1.22 vs go1.22-openssl) for helm
+Prefer: go1.22
