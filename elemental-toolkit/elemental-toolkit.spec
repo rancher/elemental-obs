@@ -16,8 +16,8 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit ca0ac5925884ab355d5c47a43193cedfea89376b
-%define c_date 20241105
+%define commit 59c79a3f6ad2c214b7ac7e15bc9c007e8368f768
+%define c_date 20241106
 
 Name:           elemental-toolkit
 Version:        2.3.0~dev
@@ -31,7 +31,7 @@ Source:         %{name}.tar.xz
 Requires:       dosfstools
 Requires:       e2fsprogs
 # for blkdeactivate
-Requires: lvm2
+Requires:       lvm2
 Requires:       parted
 Requires:       rsync
 Requires:       udev
@@ -42,6 +42,10 @@ Requires:       xorriso >= 1.5
 Requires:       mtools
 Requires:       util-linux
 Requires:       gptfdisk
+Requires:       dracut
+Requires:       grub2-common
+Requires:       squashfs
+Requires:       util-linux-systemd
 
 %if 0%{?suse_version}
 BuildRequires:  golang(API) >= 1.22

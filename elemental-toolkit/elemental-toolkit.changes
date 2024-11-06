@@ -1,7 +1,12 @@
 -------------------------------------------------------------------
-Tue Nov  5 13:47:03 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Nov  6 14:01:00 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * c289f368 Already fixed upstream
+  * 94ddc24e Set SilenceUsage for run-stage command
+  * 1898d5db Use --strict flag in elemental-setup services
+  * eb77a4ca Update spec dependecies and dracut module dependencies
+  * 733f2b44 Remove few leftovers from snapshotter tests
   * ca0ac592 Btrfs snapshotter without snapper (#2220)
   * 7a7414d7 Bump github.com/onsi/gomega from 1.34.2 to 1.35.1
   * d5ee69e1 Bump github.com/onsi/ginkgo/v2 from 2.20.2 to 2.21.0
