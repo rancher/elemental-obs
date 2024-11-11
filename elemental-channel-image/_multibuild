@@ -1,6 +1,6 @@
 <multibuild>
-  <flavor>sl-micro-60-base</flavor>
-  <flavor>sl-micro-60-kvm</flavor>
-  <flavor>sl-micro-60-baremetal</flavor>
-  <flavor>sl-micro-60-rt</flavor>
+  <flavor>sl-micro-61-base</flavor>
+  <flavor>sl-micro-61-kvm</flavor>
+  <flavor>sl-micro-61-baremetal</flavor>
+  <flavor>sl-micro-61-rt</flavor>
 </multibuild>
