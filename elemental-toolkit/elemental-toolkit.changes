@@ -1,7 +1,11 @@
 -------------------------------------------------------------------
-Wed Nov  6 14:01:00 UTC 2024 - Elemental Bot <elemental@suse.de>
+Mon Nov 11 13:58:41 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * 19606359 Fix dracut modules dependencies
+  * e4472440 Bump golang.org/x/crypto from 0.28.0 to 0.29.0
+  * 50207539 Change btrfs state volumes detection
+  * 5b2bb7ab Add orange btrfs snapshotter support
   * c289f368 Already fixed upstream
   * 94ddc24e Set SilenceUsage for run-stage command
   * 1898d5db Use --strict flag in elemental-setup services
