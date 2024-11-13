@@ -1,7 +1,10 @@
 -------------------------------------------------------------------
-Mon Nov 11 13:58:41 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Nov 13 10:03:25 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * 527c12d0 Fixes squashfs images creation (#2230)
+  * 5f996b5d Expand downgrade test by upgrading back to origin after
+            downgrading (#2224)
   * 19606359 Fix dracut modules dependencies
   * e4472440 Bump golang.org/x/crypto from 0.28.0 to 0.29.0
   * 50207539 Change btrfs state volumes detection
