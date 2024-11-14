@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Wed Nov 13 10:03:25 UTC 2024 - Elemental Bot <elemental@suse.de>
+Thu Nov 14 07:35:21 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * da340af9 Require grub2 instead of grub2-common
   * 527c12d0 Fixes squashfs images creation (#2230)
   * 5f996b5d Expand downgrade test by upgrading back to origin after
             downgrading (#2224)
