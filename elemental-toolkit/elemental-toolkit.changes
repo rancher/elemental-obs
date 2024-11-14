@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Nov 13 13:39:28 UTC 2024 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.1:
+- Update to v2.2.2:
   * 1fbc11ea Fixes squashfs images creation (#2230)
 
 -------------------------------------------------------------------
