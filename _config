@@ -6,6 +6,12 @@ Patterntype: none
 Required: perl-YAML-LibYAML
 %endif
 
+%if "%_repository" == "containerkiwi"
+Type: kiwi
+Repotype: slepool:nobuildid
+Patterntype: none
+%endif
+
 # Container images are build in 'containers' repository
 # ISO images are build in 'containers' repository too
 %if %_repository == "containers"
@@ -25,15 +31,14 @@ Type: docker
 BuildEngine: docker
 
 Prefer: registries-conf-suse
-Prefer: sles-release
 Prefer: kernel-default
 %endif
 
 %if %_repository == "containers" || "%_repository" == "charts"
 Macros:
 %img_repo %(echo registry.opensuse.org:%{_project}:containers | tr ":" "/" | tr '[:upper:]' '[:lower:]')
-%slmicro_version 6.0
+%slmicro_version 6.1
 :Macros
 
-BuildFlags: dockerarg:SLMICRO_VERSION=6.0
+BuildFlags: dockerarg:SLMICRO_VERSION=6.1
 %endif
