@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Tue Nov 12 08:49:08 UTC 2024 - Elemental Bot <elemental@suse.de>
+Tue Nov 26 08:17:00 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * 5e14e968 Label Templates: add IP addresses to the Network variables
+            (#885)
   * b3c9ef88 Update default channels to 6.1 images (#883)
   * 6372ec67 Only reset network if a network configurator is used (#874)
   * cf1a2d64 Do not include Config to MachineRegistration as pointer (#870)
