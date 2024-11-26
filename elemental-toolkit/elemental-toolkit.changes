@@ -1,7 +1,10 @@
 -------------------------------------------------------------------
-Thu Nov 14 07:35:21 UTC 2024 - Elemental Bot <elemental@suse.de>
+Mon Nov 25 10:37:47 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * 877bf6a8 Bump github.com/onsi/ginkgo/v2 from 2.21.0 to 2.22.0
+  * 77b24a85 Bump k8s.io/mount-utils from 0.31.2 to 0.31.3
+  * 701f7621 Bump github.com/containerd/containerd from 1.7.23 to 1.7.24
   * da340af9 Require grub2 instead of grub2-common
   * 527c12d0 Fixes squashfs images creation (#2230)
   * 5f996b5d Expand downgrade test by upgrading back to origin after
