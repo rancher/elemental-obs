@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Tue Nov 26 08:17:00 UTC 2024 - Elemental Bot <elemental@suse.de>
+Thu Nov 28 14:06:26 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * ad150a87 Add created date to the ManagedOSVersion common metadata fields
+            (#886)
   * 5e14e968 Label Templates: add IP addresses to the Network variables
             (#885)
   * b3c9ef88 Update default channels to 6.1 images (#883)
