@@ -105,8 +105,17 @@ if [ -d "${gitpath}/.obs/dockerfile" ]; then
     echo -n "Preparing ${image} sources at ${BUILDER_OUTPUT}/${image} ..."
     mkdir -p "${BUILDER_OUTPUT}/${image}"
 
-    # Copy the Dockerfile and contents, follows symlinks
-    cp -L "${gitpath}/.obs/dockerfile/${image}/"* "${BUILDER_OUTPUT}/${image}"
+    # Copy the Dockerfile and contents, follows non broken symlinks
+    # Directories are copied as tarballs
+    while IFS= read -r -d '' item; do
+      if [ -d "${item}" ]; then
+        create_tarball "$(realpath "${item}")" "${image}"
+      elif [ -L "${item}" ] && [ -f "${item}" ]; then
+        cp -L "${item}" "${BUILDER_OUTPUT}/${image}"
+      else
+        cp "${item}" "${BUILDER_OUTPUT}/${image}" 
+      fi
+    done < <(find "${gitpath}/.obs/dockerfile/${image}" -mindepth 1 -maxdepth 1 -print0)
 
     # Copy scminfo and changes entry files
     cp "${scminfo}" "${BUILDER_OUTPUT}/${image}"
