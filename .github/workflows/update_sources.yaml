@@ -50,7 +50,7 @@ jobs:
           if [[ "${{ env.SRC_REPOS }}" != "all" ]] && [[ "${{ env.SRC_REPOS }}" != "${repo}" ]]; then
             continue
           fi
-          if (( ${n} == 0 )); then
+          if [[ "${output}" == "repos=[" ]]; then
             output+="'${repo}'"
           else
             output+=", '${repo}'"
