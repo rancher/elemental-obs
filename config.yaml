@@ -41,6 +41,6 @@ staging:
   parseVersion: patch
   versionOffset: no
 - repo: rancher/elemental-channels
-  branch: main
+  branch: v1.7
   parseVersion: none
   versionOffset: no
