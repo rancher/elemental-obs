@@ -7,18 +7,33 @@ ARG SLMICRO_VERSION
 
 FROM suse/sl-micro/${SLMICRO_VERSION}/toolbox:latest as toolbox
 
+ARG CHANNEL_PREFIX="sl-micro-61-rt"
+ARG CHANNEL_JSON_FILE="${CHANNEL_PREFIX}.json"
+ARG CHANNEL_PACKAGES_FILE="${CHANNEL_PREFIX}.packages.tar"
+
+COPY ${CHANNEL_JSON_FILE} /workspace/channel.json
+COPY ${CHANNEL_PACKAGES_FILE} /workspace/
+COPY compute_changelogs.sh *.updateinfo.xml /workspace/
+
+WORKDIR /workspace
+
+# Install build dependencies
+RUN zypper in -y --no-recommends updatesparser jq tar
+
 # Prepare a busybox base
 RUN mkdir -p /busybox && rpm --initdb --root /busybox
 RUN zypper --installroot /busybox in --no-recommends -y busybox
 
-ARG CHANNEL_JSON_FILE="sl-micro-61-rt.json"
-
-COPY $CHANNEL_JSON_FILE /channel.json
+# Precompute changelogs
+RUN ARCH=$(uname -m) && chmod +x compute_changelogs.sh && \
+    if [ -f "${ARCH}.updateinfo.xml" ]; then \
+      ./compute_changelogs.sh channel.json ${CHANNEL_PACKAGES_FILE} ${ARCH}.updateinfo.xml; \
+    fi
 
 FROM scratch
 
 COPY --from=toolbox /busybox /
-COPY --from=toolbox /channel.json /channel.json
+COPY --from=toolbox /workspace/channel.json /channel.json
 
 USER 10010:10010
 

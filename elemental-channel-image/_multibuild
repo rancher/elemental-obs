@@ -3,4 +3,5 @@
   <flavor>sl-micro-61-kvm</flavor>
   <flavor>sl-micro-61-baremetal</flavor>
   <flavor>sl-micro-61-rt</flavor>
+  <flavor>updatesparser</flavor>
 </multibuild>

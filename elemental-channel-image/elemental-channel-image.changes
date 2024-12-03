@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Tue Dec  3 13:26:21 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Updated up to:
+  * caf6d2b Precompute logs at build time if updateinfo files are present do
+            nothing otherwise
+
+-------------------------------------------------------------------
 Mon Dec  2 10:52:41 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Updated up to:
