@@ -1,7 +1,14 @@
 -------------------------------------------------------------------
-Mon Nov 25 10:37:47 UTC 2024 - Elemental Bot <elemental@suse.de>
+Tue Dec  3 11:44:21 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * d5e2068b Fix Makefile for riscv64
+  * 25d9ae69 Fix Dockerfile for riscv64
+  * 7f707ca0 Add missing Autologin feature
+  * 692c6333 Fix architecture platform value
+  * d9873c84 Make tar creation deterministic
+  * 71169850 Use GNU tar to support --sort
+  * 733c3432 Bump github.com/onsi/gomega from 1.35.1 to 1.36.0
   * 877bf6a8 Bump github.com/onsi/ginkgo/v2 from 2.21.0 to 2.22.0
   * 77b24a85 Bump k8s.io/mount-utils from 0.31.2 to 0.31.3
   * 701f7621 Bump github.com/containerd/containerd from 1.7.23 to 1.7.24
