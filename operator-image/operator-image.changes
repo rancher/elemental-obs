@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Wed Dec  4 07:59:17 UTC 2024 - Elemental Bot <elemental@suse.de>
+Mon Dec  9 14:53:49 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * f4d7b6f5 Fix generation of already present resources (#892)
   * a7297052 SeedImage: fix description (#889)
   * 884beb59 golanci-lint: change output format (#887)
   * ad150a87 Add created date to the ManagedOSVersion common metadata fields
