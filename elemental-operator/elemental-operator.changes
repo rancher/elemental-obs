@@ -1,7 +1,11 @@
 -------------------------------------------------------------------
-Tue Nov 26 08:17:00 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Dec  4 07:59:17 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * a7297052 SeedImage: fix description (#889)
+  * 884beb59 golanci-lint: change output format (#887)
+  * ad150a87 Add created date to the ManagedOSVersion common metadata fields
+            (#886)
   * 5e14e968 Label Templates: add IP addresses to the Network variables
             (#885)
   * b3c9ef88 Update default channels to 6.1 images (#883)
