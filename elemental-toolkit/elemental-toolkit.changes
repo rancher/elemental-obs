@@ -1,7 +1,21 @@
 -------------------------------------------------------------------
-Tue Dec  3 11:44:21 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Jan 15 13:58:11 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * a2aa800e Bump github.com/containerd/containerd from 1.7.24 to 1.7.25
+  * 94301e7d Bump github.com/sanity-io/litter from 1.5.5 to 1.5.6
+  * f268a908 Bump golang.org/x/crypto from 0.31.0 to 0.32.0
+  * 4cfa5b58 Bump k8s.io/mount-utils from 0.31.3 to 0.32.0
+  * f3c3387f Bump go to v1.23.4
+  * 7575becb Bump github.com/onsi/ginkgo/v2 from 2.22.0 to 2.22.2
+  * f132230b Update copyright year (2025)
+  * 69479dee Bump github.com/onsi/gomega from 1.36.1 to 1.36.2
+  * 7ac3f233 Bump github.com/onsi/gomega from 1.36.0 to 1.36.1
+  * 378ccc6e Bump golang.org/x/crypto from 0.30.0 to 0.31.0 in the go_modules
+            group
+  * 9a1892b4 Simplify podman calls in CI steup
+  * 737983ab Switch GHA runners to Ubuntu 24.04
+  * ecaac096 Bump golang.org/x/crypto from 0.29.0 to 0.30.0
   * d5e2068b Fix Makefile for riscv64
   * 25d9ae69 Fix Dockerfile for riscv64
   * 7f707ca0 Add missing Autologin feature
