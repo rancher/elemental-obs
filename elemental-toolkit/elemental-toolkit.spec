@@ -16,8 +16,8 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit a2aa800ec57745feb4781c8eb9fe73083ed147e0
-%define c_date 20250115
+%define commit d16cafcb837b3537a376016514e5f7042f35c8ed
+%define c_date 20250204
 
 Name:           elemental-toolkit
 Version:        2.3.0~dev
@@ -48,7 +48,7 @@ Requires:       squashfs
 Requires:       util-linux-systemd
 
 %if 0%{?suse_version}
-BuildRequires:  golang(API) >= 1.22
+BuildRequires:  golang(API) >= 1.23
 BuildRequires:  golang-packaging
 %{go_provides}
 %else
