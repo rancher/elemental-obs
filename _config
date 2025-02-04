@@ -45,3 +45,7 @@ BuildFlags: dockerarg:SLMICRO_VERSION=6.1
 
 # Fix choice (go1.22 vs go1.22-openssl) for helm
 Prefer: go1.22
+
+# Fix choice for elemental-toolkit
+# For some unexpected reason it is not pulling go1.23...
+Prefer: go1.24
