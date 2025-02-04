@@ -1,7 +1,12 @@
 -------------------------------------------------------------------
-Wed Jan 15 13:58:11 UTC 2025 - Elemental Bot <elemental@suse.de>
+Tue Feb  4 12:28:15 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * d16cafcb Fix elemental-toolkit build for Dev env
+  * 85f7130c Bump github.com/google/go-containerregistry from 0.20.2 to
+            0.20.3
+  * bb4ed47b Bump k8s.io/mount-utils from 0.32.0 to 0.32.1
+  * 173588ff Bump github.com/spf13/pflag from 1.0.5 to 1.0.6
   * a2aa800e Bump github.com/containerd/containerd from 1.7.24 to 1.7.25
   * 94301e7d Bump github.com/sanity-io/litter from 1.5.5 to 1.5.6
   * f268a908 Bump golang.org/x/crypto from 0.31.0 to 0.32.0
