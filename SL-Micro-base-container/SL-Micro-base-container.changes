@@ -1,4 +1,9 @@
 -------------------------------------------------------------------
+Wed Feb 26 10:42:43 UTC 2025 - Fredrik Lönnegren <fredrik.lonnegren@suse.com>
+
+- Remove /etc/machine-id as last step of Dockerfile
+
+-------------------------------------------------------------------
 Mon Oct  7 13:26:06 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.0:
