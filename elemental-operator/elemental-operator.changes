@@ -4,6 +4,8 @@ Fri Mar 14 07:39:20 UTC 2025 - Elemental Bot <elemental@suse.de>
 - Changes on top of v1.7.1:
   * 5f0246b0 Update header year
   * dd41431b Bump libraries to incorporate CVE fixes
+             - CVE-2025-22870 (bsc#1238700)
+             - CVE-2025-22869 (bsc#1239335)
   * 1e528445 Label Templates: add IP addresses to the Network variables
             (#885) (#894)
   * ab065999 Fix generation of already present resources (#892) (#893)
