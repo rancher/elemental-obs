@@ -16,8 +16,8 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit 1fbc11eac4a1ef28d2c4ac502daee4adef9811a7
-%define c_date 20241113
+%define commit 46dcd19846b374a261fad4133ee9f28eea8ff9a2
+%define c_date 20250313
 
 Name:           elemental-toolkit
 Version:        2.2.2
@@ -44,7 +44,7 @@ Requires:       util-linux
 Requires:       gptfdisk
 
 %if 0%{?suse_version}
-BuildRequires:  golang(API) >= 1.22
+BuildRequires:  golang(API) >= 1.23
 BuildRequires:  golang-packaging
 %{go_provides}
 %else
@@ -53,7 +53,7 @@ BuildRequires:  golang-packaging
 %global commit     d1ae3f9a425de2618f9058f3b37583ef3ce52c7d
 %gometa
 %if (0%{?centos_version} == 800) || (0%{?rhel_version} == 800)
-BuildRequires:  go1.22
+BuildRequires:  go1.23
 %else
 BuildRequires:  compiler(go-compiler)
 %endif

@@ -1,4 +1,16 @@
 -------------------------------------------------------------------
+Thu Mar 13 15:20:24 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.2.2:
+  * 46dcd198 Backport a couple of fixes
+  * 904b3423 Adapt .golangci.yml format to a new version
+  * 11bbeca3 Simplify podman calls in CI steup
+  * 813ee796 Switch GHA runners to Ubuntu 24.04
+  * 2ef0d5be Update year in headers
+  * e3f1f4bd Vendor go.mod libraries
+  * 21ab7963 Bump libraries to incorporate CVE fixes
+
+-------------------------------------------------------------------
 Wed Nov 13 13:39:28 UTC 2024 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.2:
