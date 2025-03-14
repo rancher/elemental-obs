@@ -1,7 +1,7 @@
 #
 # spec file for package elemental
 #
-# Copyright (c) 2022 - 2024 SUSE LLC
+# Copyright (c) 2022 - 2025 SUSE LLC
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 2dfcbfd19277089ca3aff8ca30d42844f4630aac
-%define c_date 20241007
+%define commit 6ed11d8989d2c455571c89905133dfe8bd9b053d
+%define c_date 20250314
 
 %define systemdir /system
 %define oemdir %{systemdir}/oem
