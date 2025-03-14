@@ -9,6 +9,8 @@ Thu Mar 13 15:20:24 UTC 2025 - Elemental Bot <elemental@suse.de>
   * 2ef0d5be Update year in headers
   * e3f1f4bd Vendor go.mod libraries
   * 21ab7963 Bump libraries to incorporate CVE fixes
+             - CVE-2025-22870 (bsc#1238700)
+             - CVE-2025-22869 (bsc#1239335)
 
 -------------------------------------------------------------------
 Wed Nov 13 13:39:28 UTC 2024 - Elemental Bot <elemental@suse.de>
