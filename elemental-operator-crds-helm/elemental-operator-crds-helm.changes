@@ -1,7 +1,11 @@
 -------------------------------------------------------------------
-Tue Dec 10 08:16:48 UTC 2024 - Elemental Bot <elemental@suse.de>
+Fri Mar 14 07:39:20 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.1:
+  * 5f0246b0 Update header year
+  * dd41431b Bump libraries to incorporate CVE fixes
+  * 1e528445 Label Templates: add IP addresses to the Network variables
+            (#885) (#894)
   * ab065999 Fix generation of already present resources (#892) (#893)
   * 7211158b [backport] Update default channels to 6.1 images (#884)
 
