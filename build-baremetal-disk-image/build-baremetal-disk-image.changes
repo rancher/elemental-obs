@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Fri Mar 14 15:01:15 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.0:
+- Update to v2.2.1:
   * 6ed11d8 Include an empty /etc/machine-id file (bsc#1239623)
   * 88ce72c Update year in headers
   * 9ad97c4 Remove /etc/machine-id from base container
