@@ -22,7 +22,7 @@
 %define oemdir %{systemdir}/oem
 
 Name:           elemental
-Version:        2.2.0
+Version:        2.2.1
 Release:        0
 Summary:        A Rancher and Kubernetes optimized immutable Linux distribution
 License:        Apache-2.0
