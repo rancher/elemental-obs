@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Fri Mar 14 07:39:20 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.7.1:
+- Update to v1.7.2:
   * 5f0246b0 Update header year
   * dd41431b Bump libraries to incorporate CVE fixes
              - CVE-2025-22870 (bsc#1238700)
