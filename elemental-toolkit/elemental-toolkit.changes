@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Thu Mar 13 15:20:24 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.2:
+- Update to v2.2.3:
   * 46dcd198 Backport a couple of fixes
   * 904b3423 Adapt .golangci.yml format to a new version
   * 11bbeca3 Simplify podman calls in CI steup
