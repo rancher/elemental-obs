@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu May  8 12:11:20 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.7.2:
+  * 23df62cb operator: update RBAC for upgrade plans (#909)
+
+-------------------------------------------------------------------
 Fri Mar 14 07:39:20 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.7.2:
