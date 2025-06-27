@@ -1,7 +1,10 @@
 -------------------------------------------------------------------
-Thu May  8 12:11:20 UTC 2025 - Elemental Bot <elemental@suse.de>
+Fri Jun 13 12:21:06 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.7.2:
+- Update to v1.7.3:
+  * 1ab38ded [v1.7.x] Label Templates: improve Random family processing
+            (#915)
+  * 51cbbf98 Dockerfile: bump golang container to 1.24 (#912)
   * 23df62cb operator: update RBAC for upgrade plans (#909)
 
 -------------------------------------------------------------------
