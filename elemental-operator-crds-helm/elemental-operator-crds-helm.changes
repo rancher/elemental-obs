@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Jul  3 10:22:34 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.7.3:
+  * 6379fb06 OS channel: enable baremetal channel by default
+
+-------------------------------------------------------------------
 Fri Jun 13 12:21:06 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.7.3:
