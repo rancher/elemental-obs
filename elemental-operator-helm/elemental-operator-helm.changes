@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Tue Jul  8 16:00:46 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Update default channels metadata:
+  * a836fecf Set default channel variable names consistent with OS version
+  * 7d42ed20 Do not delete ManagedOSVersions by default
+  * 9426f088 Include -channel suffix to channel names
+
+-------------------------------------------------------------------
 Thu Jul  3 10:22:34 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.3:
