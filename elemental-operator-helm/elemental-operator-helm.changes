@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Tue Jul  8 16:00:46 UTC 2025 - Elemental Bot <elemental@suse.de>
+Tue Jul  8 17:08:24 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update default channels metadata:
+  * 6a1d92b4 Revert "Do not delete ManagedOSVersions by default"
   * a836fecf Set default channel variable names consistent with OS version
   * 7d42ed20 Do not delete ManagedOSVersions by default
   * 9426f088 Include -channel suffix to channel names
