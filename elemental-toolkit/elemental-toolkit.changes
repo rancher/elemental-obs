@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Thu Jul 31 15:49:46 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.2.4:
+  * f29ac269 Avoid panic when MaxSnaps is set to 0
+
+-------------------------------------------------------------------
 Thu Mar 13 15:20:24 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.3:
