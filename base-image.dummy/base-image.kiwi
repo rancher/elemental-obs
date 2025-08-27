@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- SPDX-License-Identifier: MIT -->
+<!--
+    Copyright (c) 2025 SUSE LLC
+
+All modifications and additions to the file contributed by third parties
+remain the property of their copyright owners, unless otherwise agreed
+upon.
+
+-->
+<!-- OBS-ExclusiveArch: aarch64 x86_64 -->
+<!-- OBS-Imagerepo: obsrepositories:/ -->
+
+<image schemaversion="7.4" name="base-image" xmlns:suse_label_helper="com.suse.label_helper">
+  <description type="system">
+    <author>SUSE LLC</author>
+    <contact>dcassany@suse.com</contact>
+    <specification>%OS_VERSION_NO_DASH% Base Image used in Elemental development environment</specification>
+  </description>
+  <preferences>
+    <type image="docker">
+      <containerconfig
+          name="bci/bci-base"
+          tag="%OS_VERSION_ID_SP%-%RELEASE%"
+          additionaltags="%OS_VERSION_ID_SP%">
+      </containerconfig>
+    </type>
+    <version>16.0.0</version>
+    <packagemanager>zypper</packagemanager>
+    <rpm-excludedocs>true</rpm-excludedocs>
+  </preferences>
+  <repository type="rpm-md">
+    <source path="obsrepositories:/"/>
+  </repository>
+  <packages type="delete">
+    <package name="chkstat"/>
+    <package name="permissions"/>
+    <package name="permissions-config"/>
+  </packages>
+  <packages type="bootstrap">
+    <package name="aaa_base"/>
+    <package name="cracklib-dict-small"/>
+    <package name="filesystem"/>
+    <package name="glibc-locale-base"/>
+    <package name="jdupes"/>
+    <package name="libcurl-mini4"/>
+    <package name="libopenssl-3-fips-provider"/>
+    <package name="patterns-base-minimal_base"/>
+    <package name="shadow"/>
+    <package name="zypper"/>
+  </packages>
+  <packages type="image">
+    <package name="bash"/>
+    <package name="ca-certificates-mozilla"/>
+    <package name="container-suseconnect"/>
+    <package name="coreutils"/>
+    <package name="curl"/>
+    <package name="gzip"/>
+    <package name="netcfg"/>
+    <package name="openssl-3"/>
+    <package name="suse-build-key"/>
+    <package name="tar"/>
+    <package name="timezone"/>
+    <package name="user(nobody)"/>
+  </packages>
+</image>
