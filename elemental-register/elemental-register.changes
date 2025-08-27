@@ -1,7 +1,15 @@
 -------------------------------------------------------------------
-Mon Dec  9 14:53:49 UTC 2024 - Elemental Bot <elemental@suse.de>
+Wed Aug 27 12:22:48 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * 5899edce Stop using toolbox image in favor of bci-base image
+  * fda434de [ports  from 1.7.x] Update default channel data (#919)
+  * 97608c0c OS channel: enable baremetal channel by default
+  * 43f3b001  Bump libraries to incorporate CVE fixes  (#913)
+  * 317de1e2 Label Templates: improve Random family processing (#914)
+  * aa6474c6 operator: update RBAC for upgrade plans (#908)
+  * 8fc8efd4 [Airgap] extend yq support in the airgap script (#898)
+  * 97db17d7 make linter happy - update copyright dates (#899)
   * f4d7b6f5 Fix generation of already present resources (#892)
   * a7297052 SeedImage: fix description (#889)
   * 884beb59 golanci-lint: change output format (#887)
