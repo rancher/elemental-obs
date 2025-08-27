@@ -21,8 +21,13 @@ Repotype: staticlinks
 Type: docker
 BuildEngine: docker
 
+# Fix a choice between docker-stable-buildx
+Prefer: docker-buildx
+
+# Docker requires the default kernel otherwise it fails applying iptables
+Required: kernel-default
+
 Prefer: registries-conf-suse
-Prefer: kernel-default
 %endif
 
 %if %_repository == "containers" || "%_repository" == "charts"
@@ -34,10 +39,3 @@ Macros:
 BuildFlags: dockerarg:SLMICRO_VERSION=6.2
 BuildFlags: dockerarg:SL_VERSION=16.0
 %endif
-
-# Fix choice (go1.22 vs go1.22-openssl) for helm
-Prefer: go1.22
-
-# Fix choice for elemental-toolkit
-# For some unexpected reason it is not pulling go1.23...
-Prefer: go1.24
