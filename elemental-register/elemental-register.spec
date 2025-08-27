@@ -1,7 +1,7 @@
 #
 # spec file for package elemental-register
 #
-# Copyright (c) 2024 SUSE LLC
+# Copyright (c) 2025 SUSE LLC
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit f4d7b6f51d8286cc22e4fe85c6bdb5eaefcab834
-%define c_date 20241209
+%define commit 5899edceaecf54b0398015e37528adb616856efe
+%define c_date 20250827
 
 Name:           elemental-register
 Version:        1.8.0~dev

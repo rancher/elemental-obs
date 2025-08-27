@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit f4d7b6f51d8286cc22e4fe85c6bdb5eaefcab834
-%define c_date 20241209
+%define commit 5899edceaecf54b0398015e37528adb616856efe
+%define c_date 20250827
 
 Name:           elemental-operator
 Version:        1.8.0~dev
@@ -37,7 +37,7 @@ BuildRequires:  make
 BuildRequires:  grep
 
 %if 0%{?suse_version}
-BuildRequires:  golang(API) >= 1.22
+BuildRequires:  golang(API) >= 1.23
 BuildRequires:  golang-packaging
 %{go_provides}
 %else
@@ -46,9 +46,9 @@ BuildRequires:  golang-packaging
 %global commit     25abcdc57b9409d4c5b2009cf0a2f9aa6ff647ad
 %gometa
 %if (0%{?centos_version} == 800) || (0%{?rhel_version} == 800)
-BuildRequires:  go1.22
+BuildRequires:  go1.23
 %else
-BuildRequires:  compiler(go-compiler) >= 1.22
+BuildRequires:  compiler(go-compiler) >= 1.23
 %endif
 %endif
 
