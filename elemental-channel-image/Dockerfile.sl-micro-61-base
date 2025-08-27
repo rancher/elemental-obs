@@ -3,9 +3,9 @@
 #!BuildTag: rancher/elemental-channel/sl-micro:6.1-base-%RELEASE%
 #!UseOBSRepositories
 
-ARG SLMICRO_VERSION
+ARG SL_VERSION
 
-FROM suse/sl-micro/${SLMICRO_VERSION}/toolbox:latest as toolbox
+FROM bci/bci-base:${SL_VERSION} as toolbox
 
 ARG CHANNEL_PREFIX="sl-micro-61-base"
 ARG CHANNEL_JSON_FILE="${CHANNEL_PREFIX}.json"
