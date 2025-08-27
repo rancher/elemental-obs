@@ -11,8 +11,6 @@ on:
         description: 'Source repositories to upgrade from'
         required: true
         default: 'all'
-  schedule:
-  - cron: "0 8-22/2 * * 1-5"
 
 concurrency:
   group: soucre-update-${{ inputs.target_branch }}
