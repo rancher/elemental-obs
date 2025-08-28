@@ -26,6 +26,7 @@ Prefer: docker-buildx
 
 # Docker requires the default kernel otherwise it fails applying iptables
 Required: kernel-default
+Prefer: SL-Micro-release
 
 Prefer: registries-conf-suse
 %endif
