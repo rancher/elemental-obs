@@ -19,13 +19,8 @@ Required: elemental-post-build-extract-iso
 Repotype: staticlinks
 
 Type: docker
-BuildEngine: docker
+BuildEngine: podman
 
-# Fix a choice between docker-stable-buildx
-Prefer: docker-buildx
-
-# Docker requires the default kernel otherwise it fails applying iptables
-Required: kernel-default
 Prefer: SL-Micro-release
 
 Prefer: registries-conf-suse
