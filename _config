@@ -31,7 +31,9 @@ Type: docker
 BuildEngine: docker
 
 Prefer: registries-conf-suse
-Prefer: kernel-default
+
+# Docker build env requires kernel default to apply iptables
+Required: kernel-default
 %endif
 
 %if %_repository == "containers" || "%_repository" == "charts"
