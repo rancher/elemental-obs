@@ -1,6 +1,20 @@
 [
     {
         "metadata": {
+            "name": "baremetal-v2.2.1-7.2-os"
+        },
+        "spec": {
+            "version": "v2.2.1-7.2",
+            "type": "container",
+            "metadata": {
+                "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/baremetal-os-container:2.2.1-7.2",
+                "displayName": "SL Micro Baremetal 6.1 OS",
+                "platforms": ["linux/x86_64","linux/aarch64"]
+            }
+        }
+    },
+    {
+        "metadata": {
             "name": "baremetal-v2.2.0-5.5-os"
         },
         "spec": {
@@ -29,27 +43,13 @@
     },
     {
         "metadata": {
-            "name": "baremetal-v2.2.0-5.3-os"
+            "name": "baremetal-v2.2.1-5.14-iso"
         },
         "spec": {
-            "version": "v2.2.0-5.3",
-            "type": "container",
-            "metadata": {
-                "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/baremetal-os-container:2.2.0-5.3",
-                "displayName": "SL Micro Baremetal 6.1 OS",
-                "platforms": ["linux/x86_64","linux/aarch64"]
-            }
-        }
-    },
-    {
-        "metadata": {
-            "name": "baremetal-v2.2.0-4.56-iso"
-        },
-        "spec": {
-            "version": "v2.2.0-4.56",
+            "version": "v2.2.1-5.14",
             "type": "iso",
             "metadata": {
-                "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.0-4.56",
+                "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.14",
                 "displayName": "SL Micro Baremetal 6.1 ISO",
                 "platforms": ["linux/x86_64","linux/aarch64"]
             }
@@ -57,13 +57,13 @@
     },
     {
         "metadata": {
-            "name": "baremetal-v2.2.0-4.55-iso"
+            "name": "baremetal-v2.2.0-4.40-iso"
         },
         "spec": {
-            "version": "v2.2.0-4.55",
+            "version": "v2.2.0-4.40",
             "type": "iso",
             "metadata": {
-                "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.0-4.55",
+                "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.0-4.40",
                 "displayName": "SL Micro Baremetal 6.1 ISO",
                 "platforms": ["linux/x86_64","linux/aarch64"]
             }
@@ -71,13 +71,13 @@
     },
     {
         "metadata": {
-            "name": "baremetal-v2.2.0-4.54-iso"
+            "name": "baremetal-v2.2.0-4.39-iso"
         },
         "spec": {
-            "version": "v2.2.0-4.54",
+            "version": "v2.2.0-4.39",
             "type": "iso",
             "metadata": {
-                "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.0-4.54",
+                "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:v2.2.0-4.39",
                 "displayName": "SL Micro Baremetal 6.1 ISO",
                 "platforms": ["linux/x86_64","linux/aarch64"]
             }
