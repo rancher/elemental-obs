@@ -1,7 +1,11 @@
 -------------------------------------------------------------------
-Thu Jul  3 10:22:34 UTC 2025 - Elemental Bot <elemental@suse.de>
+Tue Jul  8 17:08:24 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.3:
+  * 6a1d92b4 Revert "Do not delete ManagedOSVersions by default"
+  * a836fecf Set default channel variable names consistent with OS version
+  * 7d42ed20 Do not delete ManagedOSVersions by default
+  * 9426f088 Include -channel suffix to channel names
   * 6379fb06 OS channel: enable baremetal channel by default
 
 -------------------------------------------------------------------
