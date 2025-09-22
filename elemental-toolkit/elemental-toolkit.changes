@@ -1,7 +1,32 @@
 -------------------------------------------------------------------
-Tue Feb  4 12:28:15 UTC 2025 - Elemental Bot <elemental@suse.de>
+Mon Sep 22 09:18:24 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * c16e1d5b Bump github.com/jaypipes/ghw from 0.15.0 to 0.19.1
+  * 1fef8d1f Bump github.com/spf13/cobra from 1.9.1 to 1.10.1
+  * a19b7208 Bump github.com/spf13/pflag from 1.0.6 to 1.0.10
+  * d2d39d61 Bump github.com/onsi/ginkgo/v2 from 2.23.0 to 2.25.2
+  * ff4a09e4 Bump go version to 1.24 in Dockerfile
+  * 968784c6 Adapt tests to new build error
+  * 80ba8034 Bump k8s.io/mount-utils from 0.32.2 to 0.33.3
+  * cba157cc Bump github.com/containerd/containerd from 1.7.26 to 1.7.28
+  * 15432137 Permissive mode for green selinux
+  * ce35ae6c Adapt code and unit tests
+  * cb15d32d Minor change to lookup devices using blkid
+  * d8450e01 Avoid panic when MaxSnaps is set to 0
+  * 33f51def Bump github.com/jaypipes/ghw from 0.13.0 to 0.14.0
+  * 6ede64b7 Bump github.com/onsi/ginkgo/v2 from 2.22.2 to 2.23.0
+  * 6adf0b0c Bump golang.org/x/net from 0.34.0 to 0.36.0 in the go_modules
+            group
+  * 7b123bac Bump golang.org/x/crypto from 0.35.0 to 0.36.0
+  * 13703f6f Bump github.com/containerd/containerd from 1.7.25 to 1.7.26
+  * fc6611a8 Bump golang.org/x/crypto from 0.34.0 to 0.35.0
+  * c2a85f0b Bump golang.org/x/crypto from 0.33.0 to 0.34.0
+  * bc64b5af Bump k8s.io/mount-utils from 0.32.1 to 0.32.2
+  * ed97872b Bump github.com/spf13/cobra from 1.8.1 to 1.9.1
+  * c0722812 Bump github.com/sanity-io/litter from 1.5.6 to 1.5.8
+  * 32c199a9 golangci-lint: use new formats config property
+  * 50f6b4ec Bump golang.org/x/crypto from 0.32.0 to 0.33.0
   * d16cafcb Fix elemental-toolkit build for Dev env
   * 85f7130c Bump github.com/google/go-containerregistry from 0.20.2 to
             0.20.3
