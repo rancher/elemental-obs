@@ -25,6 +25,24 @@ dev:
 
 staging:
 - repo: rancher/elemental-toolkit
+  branch: v2.3.x
+  parseVersion: patch
+  versionOffset: no
+- repo: rancher/elemental-operator
+  branch: v1.8.x
+  parseVersion: patch
+  versionOffset: no
+- repo: rancher/elemental
+  branch: v2.3.x
+  parseVersion: patch
+  versionOffset: no
+- repo: rancher/elemental-channels
+  branch: v1.8
+  parseVersion: none
+  versionOffset: no
+
+maintenance_6.1:
+- repo: rancher/elemental-toolkit
   branch: v2.2.x
   parseVersion: patch
   versionOffset: no
