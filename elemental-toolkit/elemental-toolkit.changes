@@ -1,4 +1,12 @@
 -------------------------------------------------------------------
+Thu Aug  7 11:41:25 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.2.5:
+  * 5d0d6320 Permissive mode for green selinux
+  * 64638c8e Adapt code and unit tests
+  * 060e15e3 Minor change to lookup devices using blkid
+
+-------------------------------------------------------------------
 Thu Jul 31 15:49:46 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.4:
