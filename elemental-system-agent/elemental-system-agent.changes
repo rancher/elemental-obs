@@ -1,4 +1,23 @@
 -------------------------------------------------------------------
+Mon Sep 22 11:20:03 UTC 2025 - David Cassany <dcassany@suse.com>
+
+- Update to version 0.3.13:
+  * Bumped dependencies for k8s v1.33
+  * Add delete for plan.File
+  * fix dispatch
+  * fix: add retry logic for one time instruction
+  * Get UID/GID for current user in write file_test.go
+  * Update secrets for dispatch
+  * fix golangci
+  * support k8s 1.32.2
+  * Update CODEOWNERS
+  * Add GitHub App token generation and dispatch job for System Agent Upgrade workflow.
+  * Add ResetFailureCountOnServiceRestart, if true reset plan failure count after each restart of the system-agent
+  * Bump wharfie to v0.6.7
+  * Add tests and update CI
+  * Windows updates
+
+-------------------------------------------------------------------
 Mon Sep 30 08:57:03 UTC 2024 - fredrik.lonnegren@suse.com
 
 - Update to version 0.3.9:

@@ -18,7 +18,7 @@
 
 Name:           elemental-system-agent
 %define gitname system-agent
-Version:        0.3.9
+Version:        0.3.13
 Release:        0
 Summary:        Rancher system agent to apply 'plans' to a system
 License:        Apache-2.0
