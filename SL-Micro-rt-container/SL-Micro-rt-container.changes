@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Mon Sep 29 12:36:15 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.3.0:
+  * 6f8ca5a Fix specfile dependencies
+
+-------------------------------------------------------------------
 Mon Sep 29 09:56:07 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.0:
