@@ -2,8 +2,8 @@
 # Define the names/tags of the container
 #!BuildName: SL-Micro-base-container
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/base-os-container:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/base-os-container:2.3.0-dev
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/base-os-container:2.3.0-dev-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/base-os-container:2.3.0
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/base-os-container:2.3.0-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
 #!ExclusiveArch: x86_64 aarch64
 #!UseOBSRepositories
@@ -60,7 +60,7 @@ COPY --from=host /osimage /
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/base-os-container
-ARG IMAGE_TAG=2.3.0-dev-%RELEASE%
+ARG IMAGE_TAG=2.3.0-%RELEASE%
 
 # IMPORTANT: Setup elemental-release used for versioning/upgrade. The
 # values here should reflect the tag of the image being built

@@ -2,8 +2,8 @@
 # Define the names/tags of the container
 #!BuildName: SL-Micro-kvm-container
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:2.3.0-dev
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:2.3.0-dev-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:2.3.0
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:2.3.0-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
 #!ExclusiveArch: x86_64 aarch64
 #!UseOBSRepositories
@@ -12,7 +12,7 @@ ARG SLMICRO_VERSION
 
 FROM suse/sl-micro/${SLMICRO_VERSION}/base-os-container:latest
 
-# dummy zypper call to get elemental into the build context and extract 2.3.0-dev from it via _service
+# dummy zypper call to get elemental into the build context and extract 2.3.0 from it via _service
 RUN zypper in --no-recommends -y systemd-presets-branding-Elemental elemental
 
 # replace default kernel with smaller one, sufficient to run kvm guests
@@ -23,7 +23,7 @@ MAINTAINER SUSE LLC (https://www.suse.com/)
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container
-ARG IMAGE_TAG=2.3.0-dev-%RELEASE%
+ARG IMAGE_TAG=2.3.0-%RELEASE%
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=com.suse.sl.micro
