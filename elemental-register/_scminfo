@@ -1,5 +1,5 @@
-tag: v1.8.0-dev
+tag: v1.8.0
 mtime: 1758548190
 commit: ae69448f4ea19cfd4b1782b4a0486b981d742e0b
-versionRPM: 1.8.0~dev
-versionOCI: 1.8.0-dev
+versionRPM: 1.8.0
+versionOCI: 1.8.0
