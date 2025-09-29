@@ -22,6 +22,11 @@ Mon Sep 22 13:36:30 UTC 2025 - Elemental Bot <elemental@suse.de>
   * 5e14e968 Label Templates: add IP addresses to the Network variables
             (#885)
   * b3c9ef88 Update default channels to 6.1 images (#883)
+
+-------------------------------------------------------------------
+Fri Oct 25 11:13:41 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.0-dev:
   * 6372ec67 Only reset network if a network configurator is used (#874)
   * cf1a2d64 Do not include Config to MachineRegistration as pointer (#870)
   * fad205a5 Split elemental-operator and elemental-register at OBS level
