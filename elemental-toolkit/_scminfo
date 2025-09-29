@@ -1,5 +1,5 @@
-tag: v2.3.0-dev
+tag: v2.3.0
 mtime: 1758900412
 commit: a8982b16ce8be9c2b51054180cee2163bd14486c
-versionRPM: 2.3.0~dev
-versionOCI: 2.3.0-dev
+versionRPM: 2.3.0
+versionOCI: 2.3.0

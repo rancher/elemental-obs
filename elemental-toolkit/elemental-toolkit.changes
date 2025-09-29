@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Fri Sep 26 15:26:52 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.3.0-dev:
+- Update to v2.3.0:
   * a8982b16 Use chroot to label previously binded mountpoints
   * c16e1d5b Bump github.com/jaypipes/ghw from 0.15.0 to 0.19.1
   * 1fef8d1f Bump github.com/spf13/cobra from 1.9.1 to 1.10.1
