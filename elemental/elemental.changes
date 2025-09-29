@@ -15,7 +15,12 @@ Mon Sep 29 09:56:07 UTC 2025 - Elemental Bot <elemental@suse.de>
   * 2cef6d9 Merge ISO and OS container images
   * c52cc44 Remove no longer valid OBS workflow
   * 09c4ab9 Add documentation to test private CA renewal (#1606)
-  * 81c342e Add support to define CATTLE_AGENT_STRICT_VERIFY (#1616)
+
+-------------------------------------------------------------------
+Mon Oct  7 13:26:06 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.2.0:
+  * 2dfcbfd Add support to define CATTLE_AGENT_STRICT_VERIFY (#1616)
 
 -------------------------------------------------------------------
 Tue Oct  1 07:45:34 UTC 2024 - Elemental Bot <elemental@suse.de>
