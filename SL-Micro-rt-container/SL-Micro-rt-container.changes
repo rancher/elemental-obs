@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Mon Sep 22 09:43:02 UTC 2025 - Elemental Bot <elemental@suse.de>
+Mon Sep 29 09:56:07 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.3.0-dev:
+- Update to v2.3.0:
+  * 9460f98 Add policycoreutils-python-utils (bsc#1240623)
   * 8a07527 Set elemental images to only build for x86_64 and aarch64
   * e8e8161 Disable disk flavor
   * cf99f4b Include an empty /etc/machine-id file (bsc#1239623)

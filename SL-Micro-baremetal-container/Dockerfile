@@ -2,8 +2,8 @@
 # Define the names/tags of the container
 #!BuildName: SL-Micro-baremetal-container
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:latest
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.3.0-dev
-#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.3.0-dev-%RELEASE%
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.3.0
+#!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.3.0-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
 #!ExclusiveArch: x86_64 aarch64
 #!UseOBSRepositories
@@ -12,7 +12,7 @@ ARG SLMICRO_VERSION
 
 FROM suse/sl-micro/${SLMICRO_VERSION}/base-os-container:latest
 
-# dummy zypper call to get elemental into the build context and extract 2.3.0-dev from it via _service
+# dummy zypper call to get elemental into the build context and extract 2.3.0 from it via _service
 RUN zypper in --no-recommends -y systemd-presets-branding-Elemental elemental
 
 # extend -base with baremetal and usability packages
@@ -23,7 +23,7 @@ RUN zypper in --no-recommends -y procps openssh openssh-server \
     container-selinux ethtool fuse-overlayfs hdparm hostname iptables \
     issue-generator jq keyutils lshw lsof lsscsi mdadm multipath-tools \
     netcat-openbsd net-tools nfs-client \
-    nss-mdns open-iscsi open-vm-tools pciutils pciutils-ids podman policycoreutils \
+    nss-mdns open-iscsi open-vm-tools pciutils pciutils-ids podman policycoreutils policycoreutils-python-utils \
     procmail psmisc rpcbind runc selinux-policy selinux-policy-targeted \
     selinux-tools slirp4netns strace sudo sysstat system-user-nobody \
     timezone traceroute xtables-plugins
@@ -31,7 +31,7 @@ RUN zypper in --no-recommends -y procps openssh openssh-server \
 ARG SLMICRO_VERSION
 ARG BUILD_REPO=%%IMG_REPO%%
 ARG IMAGE_REPO=$BUILD_REPO/suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container
-ARG IMAGE_TAG=2.3.0-dev-%RELEASE%
+ARG IMAGE_TAG=2.3.0-%RELEASE%
 
 # IMPORTANT: Setup elemental-release used for versioning/upgrade. The
 # values here should reflect the tag of the image being built
