@@ -82,10 +82,22 @@ Fri Sep 26 15:26:52 UTC 2025 - Elemental Bot <elemental@suse.de>
   * 0fc05a94 Bump golang.org/x/crypto from 0.27.0 to 0.28.0
   * 55b78952 Bump github.com/canonical/go-efilib from 1.2.0 to 1.3.1
   * 55770a2f A couple of Dockerfile cleanups (#2200)
-  * 3d763bb7 Bump yip to v1.9.6
   * 95cdcb22 Add systemd-timesync user
-  * 3da515bd Disable audit package in example Dockerfile
   * 84a71b9e green: install xterm-resize (#2194)
+
+-------------------------------------------------------------------
+Thu Feb 20 09:14:15 UTC 2025 - Bernhard Wiedemann <bwiedemann@suse.com>
+
+- Add reproducible-tar.patch for reproducible builds (boo#1237212, jsc#PED-12137)
+
+-------------------------------------------------------------------
+Wed Oct  2 12:03:00 UTC 2024 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.2.1:
+  * a9f22910 Bump yip to v1.9.6
+  * 398c0e44 Disable audit package in example Dockerfile
+  * 92264f1e  Add cloud-init paths of the new root in 'after-*' hooks (#2192)
+  * 491e01b8 Expose max snapshots environment variable (#2193)
 
 -------------------------------------------------------------------
 Fri Sep 20 09:08:21 UTC 2024 - Elemental Bot <elemental@suse.de>
