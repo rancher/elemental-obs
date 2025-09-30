@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Sep 30 09:54:41 UTC 2025 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.3.1:
+  * b9202d3d Add snapshotter.type flag to build-disk command
+
+-------------------------------------------------------------------
 Fri Sep 26 15:26:52 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.0:
