@@ -16,11 +16,11 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit a8982b16ce8be9c2b51054180cee2163bd14486c
-%define c_date 20250926
+%define commit b9202d3d758c9b963be7c65827cf2000ec228130
+%define c_date 20250930
 
 Name:           elemental-toolkit
-Version:        2.3.0
+Version:        2.3.1
 Release:        0
 Summary:        The command line client for Elemental
 License:        Apache-2.0
