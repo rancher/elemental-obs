@@ -5,6 +5,7 @@
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:2.3.0-dev
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/kvm-os-container:2.3.0-dev-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
+#!ExclusiveArch: x86_64 aarch64
 #!UseOBSRepositories
 
 ARG SLMICRO_VERSION
