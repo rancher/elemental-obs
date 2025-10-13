@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Wed Aug 27 12:22:48 UTC 2025 - Elemental Bot <elemental@suse.de>
+Mon Sep 22 11:00:42 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.0-dev:
+  * 338f5668 Add maintenance case to elemental-airgap.sh
   * 5899edce Stop using toolbox image in favor of bci-base image
   * fda434de [ports  from 1.7.x] Update default channel data (#919)
   * 97608c0c OS channel: enable baremetal channel by default
