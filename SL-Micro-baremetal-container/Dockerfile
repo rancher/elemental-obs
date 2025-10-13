@@ -5,6 +5,7 @@
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.3.0-dev
 #!BuildTag: suse/sl-micro/%%SLMICRO_VERSION%%/baremetal-os-container:2.3.0-dev-%RELEASE%
 #!BuildConstraint: hardware:disk:size unit=G 8
+#!ExclusiveArch: x86_64 aarch64
 #!UseOBSRepositories
 
 ARG SLMICRO_VERSION
@@ -22,7 +23,7 @@ RUN zypper in --no-recommends -y procps openssh openssh-server \
     container-selinux ethtool fuse-overlayfs hdparm hostname iptables \
     issue-generator jq keyutils lshw lsof lsscsi mdadm multipath-tools \
     netcat-openbsd net-tools nfs-client \
-    nss-mdns open-iscsi open-vm-tools pciutils pciutils-ids podman policycoreutils \
+    nss-mdns open-iscsi open-vm-tools pciutils pciutils-ids podman policycoreutils policycoreutils-python-utils \
     procmail psmisc rpcbind runc selinux-policy selinux-policy-targeted \
     selinux-tools slirp4netns strace sudo sysstat system-user-nobody \
     timezone traceroute xtables-plugins

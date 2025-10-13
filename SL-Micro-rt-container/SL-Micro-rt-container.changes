@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Mon Sep  1 07:37:12 UTC 2025 - Elemental Bot <elemental@suse.de>
+Fri Oct 10 23:05:24 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.3.0-dev:
+  * bf38576 Add policycoreutils-python-utils (bsc#1240623)
+  * 8a07527 Set elemental images to only build for x86_64 and aarch64
   * e8e8161 Disable disk flavor
   * cf99f4b Include an empty /etc/machine-id file (bsc#1239623)
   * 5c12b2c cni and cni-plugins are no longer part of SL Micro 6.2
