@@ -1,7 +1,15 @@
 -------------------------------------------------------------------
-Thu Jul  3 10:22:34 UTC 2025 - Elemental Bot <elemental@suse.de>
+Thu Dec 18 15:58:12 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.7.3:
+  * 8a16085b Remove 'latest' tag as this overlaps with the 'latest' from the
+            latest branch
+  * d61ae375 Bump github.com/rancher-sandbox/go-tpm and its dependencies
+  * 87da5eab Install yip config files in before-install step
+  * 6a1d92b4 Revert "Do not delete ManagedOSVersions by default"
+  * a836fecf Set default channel variable names consistent with OS version
+  * 7d42ed20 Do not delete ManagedOSVersions by default
+  * 9426f088 Include -channel suffix to channel names
   * 6379fb06 OS channel: enable baremetal channel by default
 
 -------------------------------------------------------------------
