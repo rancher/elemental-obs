@@ -3,6 +3,14 @@ Wed Dec 17 13:36:19 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.2:
   * 051ecf04 Bump golang.org/x/crypto library
+             This includes few CVE fixes:
+              * bsc#1241826 (CVE-2025-22872)
+              * bsc#1241857 (CVE-2025-22872)
+              * bsc#1251511 (CVE-2025-47911)
+              * bsc#1251679 (CVE-2025-58190)
+              * bsc#1253581 (CVE-2025-47913)
+              * bsc#1253901 (CVE-2025-58181)
+              * bsc#1254079 (CVE-2025-47914)
 
 -------------------------------------------------------------------
 Tue Sep 30 09:54:41 UTC 2025 - Elemental Bot <elemental@suse.de>
