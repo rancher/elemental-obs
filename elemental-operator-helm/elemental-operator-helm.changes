@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Thu Dec 18 15:58:12 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.7.3:
+- Update to v1.7.4:
   * 8a16085b Remove 'latest' tag as this overlaps with the 'latest' from the
             latest branch
   * d61ae375 Bump github.com/rancher-sandbox/go-tpm and its dependencies
