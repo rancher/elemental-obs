@@ -1,32 +1,74 @@
 [
-    {
-        "metadata": {
-            "name": "base-v2.3.0-6.1-os"
-        },
-        "spec": {
-            "version": "v2.3.0-6.1",
-            "type": "container",
-            "metadata": {
-                "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/base-os-container:2.3.0-6.1",
-                "displayName": "SL Micro Base 6.2 OS",
-                "platforms": ["linux/x86_64","linux/aarch64"],
-                "created": 1759924798
-            }
-        }
+  {
+    "metadata": {
+      "name": "base-v2.3.0-6.20-os"
     },
-    {
-        "metadata": {
-            "name": "base-v2.3.0-6.1-iso"
-        },
-        "spec": {
-            "version": "v2.3.0-6.1",
-            "type": "iso",
-            "metadata": {
-                "uri": "registry.suse.com/suse/sl-micro/6.2/base-iso-image:2.3.0-6.1",
-                "displayName": "SL Micro Base 6.2 ISO",
-                "platforms": ["linux/x86_64","linux/aarch64"],
-                "created": 1759924919
-            }
-        }
+    "spec": {
+      "version": "v2.3.0-6.20",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/base-os-container:2.3.0-6.20",
+        "displayName": "SL Micro Base 6.2 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1765894575
+      }
     }
+  },
+  {
+    "metadata": {
+      "name": "base-v2.3.0-6.10-iso"
+    },
+    "spec": {
+      "version": "v2.3.0-6.10",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.2/base-iso-image:2.3.0-6.10",
+        "displayName": "SL Micro Base 6.2 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1765909723
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "base-v2.3.0-6.1-os"
+    },
+    "spec": {
+      "version": "v2.3.0-6.1",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/base-os-container:2.3.0-6.1",
+        "displayName": "SL Micro Base 6.2 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1759924798
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "base-v2.3.0-6.1-iso"
+    },
+    "spec": {
+      "version": "v2.3.0-6.1",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.2/base-iso-image:2.3.0-6.1",
+        "displayName": "SL Micro Base 6.2 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1759924919
+      }
+    }
+  }
 ]
