@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Dec 17 13:36:37 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.6:
+- Update to v2.2.7:
   * a7da7bda Bump toolkit build to go 1.24
   * ca3343d1 Bump golang.org/x/crypto library
 
