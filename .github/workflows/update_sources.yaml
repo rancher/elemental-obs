@@ -24,7 +24,7 @@ jobs:
   set-repositories:
     env:
       BRANCH: ${{ inputs.target_branch || 'dev' }}
-      SRC_REPOS: ${{ inputs.source_repositories || 'all' }} 
+      SRC_REPOS: ${{ inputs.source_repositories || 'all' }}
     runs-on: ubuntu-latest
     outputs:
       repos: ${{ steps.sources.outputs.repos }}
@@ -39,12 +39,12 @@ jobs:
       run: |
         [ ! -f config.yaml ] && exit 1
 
-        count=$(yq ".${{ env.BRANCH }} | length" config.yaml)
+        count=$(yq ".\"${{ env.BRANCH }}\" | length" config.yaml)
 
         output="repos=["
 
         for ((n=0;n<${count};n++)); do
-          repo="$(yq ".${{ env.BRANCH }}.[${n}].repo" config.yaml)"
+          repo="$(yq ".\"${{ env.BRANCH }}\".[${n}].repo" config.yaml)"
           if [[ "${{ env.SRC_REPOS }}" != "all" ]] && [[ "${{ env.SRC_REPOS }}" != "${repo}" ]]; then
             continue
           fi
@@ -65,7 +65,7 @@ jobs:
         fi
         echo "${output}" >> $GITHUB_OUTPUT
 
-    
+
   update-sources:
     needs:
     - set-repositories
@@ -93,24 +93,24 @@ jobs:
         git checkout ${{ github.ref_name }} -- scripts Makefile config.yaml
     - name: Run prepare-sources
       run: |
-        count=$(yq ".${{ env.BRANCH }} | length" config.yaml)
+        count=$(yq ".\"${{ env.BRANCH }}\" | length" config.yaml)
 
         for ((n=0;n<${count};n++)); do
-          repo="$(yq ".${{ env.BRANCH }}.[${n}].repo" config.yaml)"
+          repo="$(yq ".\"${{ env.BRANCH }}\".[${n}].repo" config.yaml)"
           if [[ "${{ matrix.repo }}" != "${repo}" ]]; then
             continue
           fi
 
           export REPO="${repo}"
-          export BRANCH="$(yq ".${{ env.BRANCH }}.[${n}].branch" config.yaml)"
-          export V_PARSE="$(yq ".${{ env.BRANCH }}.[${n}].parseVersion" config.yaml)"
-          export V_OFFSET="$(yq ".${{ env.BRANCH }}.[${n}].versionOffset" config.yaml)"
+          export BRANCH="$(yq ".\"${{ env.BRANCH }}\".[${n}].branch" config.yaml)"
+          export V_PARSE="$(yq ".\"${{ env.BRANCH }}\".[${n}].parseVersion" config.yaml)"
+          export V_OFFSET="$(yq ".\"${{ env.BRANCH }}\".[${n}].versionOffset" config.yaml)"
 
           make prepare-sources
         done
     - name: Update sources
       run: |
-        make update-sources 
+        make update-sources
     - name: Clean paths
       run: |
         rm -rf scripts
@@ -123,7 +123,7 @@ jobs:
       run: |
         git config --global user.email "elemental@suse.de"
         git config --global user.name "elementalbot"
-        
+
         branch="${BRANCH}_${SRC_REPO//\//_}"
 
         git checkout -b ${branch}
@@ -139,7 +139,7 @@ jobs:
 
         git commit -s -m "Automated commit from GHA workflow"
         git push origin ${branch} --force
-    - if: ${{ steps.commit.outputs.clean != 'true' }} 
+    - if: ${{ steps.commit.outputs.clean != 'true' }}
       name: Update/create PR
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
