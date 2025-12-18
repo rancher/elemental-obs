@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Thu Dec 18 14:04:00 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.8.0:
+- Update to v1.8.1:
   * bcbd09d2 Install yip config files in before-install step
   * 64505339 Bump github.com/rancher-sandbox/go-tpm and its dependencies
 
