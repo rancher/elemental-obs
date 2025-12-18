@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Dec 17 13:36:19 UTC 2025 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.3.1:
+- Update to v2.3.2:
   * 051ecf04 Bump golang.org/x/crypto library
 
 -------------------------------------------------------------------
