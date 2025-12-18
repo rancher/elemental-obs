@@ -1,6 +1,5 @@
 # SPDX-License-Identifier: Apache-2.0
 # Define the names/tags of the container
-#!BuildTag: rancher/elemental-operator:latest
 #!BuildTag: rancher/elemental-operator:1.7.3
 #!BuildTag: rancher/elemental-operator:1.7.3-%RELEASE%
 #!UseOBSRepositories
