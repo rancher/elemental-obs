@@ -19,7 +19,7 @@
 %define c_date 20251218
 
 Name:           elemental-operator
-Version:        1.7.3
+Version:        1.7.4
 Release:        0
 Summary:        Kubernetes operator to support OS management
 License:        Apache-2.0

@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: Apache-2.0
 # Define the names/tags of the container
-#!BuildTag: rancher/seedimage-builder:1.7.3
-#!BuildTag: rancher/seedimage-builder:1.7.3-%RELEASE%
+#!BuildTag: rancher/seedimage-builder:1.7.4
+#!BuildTag: rancher/seedimage-builder:1.7.4-%RELEASE%
 #!UseOBSRepositories
 
 ARG SLMICRO_VERSION
@@ -25,7 +25,7 @@ ARG IMAGE_REPO=$BUILD_REPO/rancher/elemental-seedimage-builder-image:latest
 # labelprefix=com.suse.elemental
 LABEL org.opencontainers.image.title="Rancher Elemental Seed Image Builder"
 LABEL org.opencontainers.image.description="Provides the tools needed to build Elemental Seed Images"
-LABEL org.opencontainers.image.version="1.7.3"
+LABEL org.opencontainers.image.version="1.7.4"
 LABEL org.opencontainers.image.url="https://github.com/rancher/elemental-operator"
 LABEL org.opencontainers.image.created="%BUILDTIME%"
 LABEL org.opencontainers.image.vendor="SUSE LLC"
