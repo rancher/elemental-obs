@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Jan  9 10:08:20 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.3.0:
+  * 88015da set to released-stage to released as SL Micro 6.2 is GA
+  * 6f8ca5a Fix specfile dependencies
+
+-------------------------------------------------------------------
 Mon Sep 29 09:56:07 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.0:
