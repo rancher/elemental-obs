@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Mon Sep 22 09:47:58 UTC 2025 - Elemental Bot <elemental@suse.de>
+Fri Jan  9 12:08:01 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.2.1:
+  * 0344142 set to released-stage to released as SL Micro 6.1 is GA
   * 11a34ee Add policycoreutils-python-utils (bsc#1240623)
   * 3990c68 Adding --force flag to init command for aarch64 as it is for
             x86_64
