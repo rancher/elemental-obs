@@ -24,6 +24,14 @@ BuildEngine: podman
 Prefer: SL-Micro-release
 
 Prefer: registries-conf-suse
+
+# This is to prevent pulling the base containers from SUSE:Registry
+# otherwise the devel project does not build derived images against
+# the latest base images from the current project
+Prefer: -container:suse-sl-micro-6.2-baremetal-os-container-latest
+Prefer: -container:suse-sl-micro-6.2-base-os-container-latest
+Prefer: -container:suse-sl-micro-6.2-rt-os-container-latest
+Prefer: -container:suse-sl-micro-6.2-kvm-os-container-latest
 %endif
 
 %if %_repository == "containers" || "%_repository" == "charts"
