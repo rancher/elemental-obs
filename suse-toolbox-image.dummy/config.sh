@@ -28,6 +28,6 @@ suseImportBuildKey
 #======================================
 # Include docs intallation
 #--------------------------------------
-sed -i 's/.*rpm.install.excludedocs.*/rpm.install.excludedocs = no/g' /etc/zypp/zypp.conf
+#sed -i 's/.*rpm.install.excludedocs.*/rpm.install.excludedocs = no/g' /etc/zypp/zypp.conf
 
 exit 0
