@@ -1,6 +1,38 @@
 [
   {
     "metadata": {
+      "name": "rt-v2.2.1-5.63-os"
+    },
+    "spec": {
+      "version": "v2.2.1-5.63",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/rt-os-container:2.2.1-5.63",
+        "displayName": "SL Micro RT 6.1 OS",
+        "platforms": [
+          "linux/x86_64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "rt-v2.2.1-5.63-iso"
+    },
+    "spec": {
+      "version": "v2.2.1-5.63",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.1/rt-iso-image:2.2.1-5.63",
+        "displayName": "SL Micro RT 6.1 ISO",
+        "platforms": [
+          "linux/x86_64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
       "name": "rt-v2.2.1-5.50-os"
     },
     "spec": {
@@ -49,22 +81,6 @@
   },
   {
     "metadata": {
-      "name": "rt-v2.2.1-5.7-os"
-    },
-    "spec": {
-      "version": "v2.2.1-5.7",
-      "type": "container",
-      "metadata": {
-        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/rt-os-container:2.2.1-5.7",
-        "displayName": "SL Micro RT 6.1 OS",
-        "platforms": [
-          "linux/x86_64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
       "name": "rt-v2.2.1-5.14-iso"
     },
     "spec": {
@@ -72,22 +88,6 @@
       "type": "iso",
       "metadata": {
         "uri": "registry.suse.com/suse/sl-micro/6.1/rt-iso-image:2.2.1-5.14",
-        "displayName": "SL Micro RT 6.1 ISO",
-        "platforms": [
-          "linux/x86_64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "rt-v2.2.1-5.12-iso"
-    },
-    "spec": {
-      "version": "v2.2.1-5.12",
-      "type": "iso",
-      "metadata": {
-        "uri": "registry.suse.com/suse/sl-micro/6.1/rt-iso-image:2.2.1-5.12",
         "displayName": "SL Micro RT 6.1 ISO",
         "platforms": [
           "linux/x86_64"

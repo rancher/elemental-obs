@@ -1,6 +1,40 @@
 [
   {
     "metadata": {
+      "name": "kvm-v2.2.1-5.72-os"
+    },
+    "spec": {
+      "version": "v2.2.1-5.72",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/kvm-os-container:2.2.1-5.72",
+        "displayName": "SL Micro KVM 6.1 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "kvm-v2.2.1-5.83-iso"
+    },
+    "spec": {
+      "version": "v2.2.1-5.83",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.1/kvm-iso-image:2.2.1-5.83",
+        "displayName": "SL Micro KVM 6.1 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
       "name": "kvm-v2.2.1-5.60-os"
     },
     "spec": {
@@ -52,23 +86,6 @@
   },
   {
     "metadata": {
-      "name": "kvm-v2.2.1-5.12-os"
-    },
-    "spec": {
-      "version": "v2.2.1-5.12",
-      "type": "container",
-      "metadata": {
-        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/kvm-os-container:2.2.1-5.12",
-        "displayName": "SL Micro KVM 6.1 OS",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
       "name": "kvm-v2.2.1-5.31-iso"
     },
     "spec": {
@@ -76,23 +93,6 @@
       "type": "iso",
       "metadata": {
         "uri": "registry.suse.com/suse/sl-micro/6.1/kvm-iso-image:2.2.1-5.31",
-        "displayName": "SL Micro KVM 6.1 ISO",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "kvm-v2.2.1-5.12-iso"
-    },
-    "spec": {
-      "version": "v2.2.1-5.12",
-      "type": "iso",
-      "metadata": {
-        "uri": "registry.suse.com/suse/sl-micro/6.1/kvm-iso-image:2.2.1-5.12",
         "displayName": "SL Micro KVM 6.1 ISO",
         "platforms": [
           "linux/x86_64",
