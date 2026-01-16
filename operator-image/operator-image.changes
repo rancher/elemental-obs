@@ -1,4 +1,11 @@
 -------------------------------------------------------------------
+Fri Jan 16 12:46:00 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.1:
+  * 49ebf0b7 Update headers to 2026
+  * fd13ba92 Update questions to include SL Micro 6.2
+
+-------------------------------------------------------------------
 Thu Dec 18 14:04:00 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.8.1:
