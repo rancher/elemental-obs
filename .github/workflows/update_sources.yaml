@@ -6,7 +6,7 @@ on:
       target_branch:
         description: 'Target branch to upgrade in OBS'
         required: true
-        default: 'dev'
+        default: 'maintenance_6.2'
       source_repositories:
         description: 'Source repositories to upgrade from'
         required: true
