@@ -1,7 +1,19 @@
 -------------------------------------------------------------------
-Fri Jan 16 12:46:00 UTC 2026 - Elemental Bot <elemental@suse.de>
+Fri Feb 20 09:56:11 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.8.1:
+- Update to v1.8.2-beta1:
+  * af030be6 Bump test environment tools in Makefile
+  * f565649b Run 'make vendor' to recreate vendor folder
+  * cddd8dbd Bump yip
+  * b3a8fe76 Fix unit tests after bumping libraries
+  * ff2e3ef3 Run 'make vendor' to recreate vendor folder
+  * 1c0654eb Bump wrangler from v2 to v3
+  * cc4ad116 Run 'make generate' to renew all generated code and config files
+  * c4a4a13d Bump controller generator to version 0.19
+  * 78d27c69 Update controller runtime options
+  * e2486d4b Run 'make vendor' to recreate vendor folder
+  * 10a2c858 Updated cluster-api, steve, rancher/apis, client-go and k8s/api
+            to the level they were at rancher v2.13
   * 49ebf0b7 Update headers to 2026
   * fd13ba92 Update questions to include SL Micro 6.2
 
