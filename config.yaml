@@ -7,7 +7,7 @@ staging:
   parseVersion: patch
   versionOffset: no
 - repo: rancher/elemental-operator
-  branch: updated_libraries
+  branch: updated_libraries_new_capi
   parseVersion: patch
   versionOffset: no
 - repo: rancher/elemental
