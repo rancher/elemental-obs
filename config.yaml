@@ -7,7 +7,11 @@ staging:
   parseVersion: patch
   versionOffset: no
 - repo: rancher/elemental-operator
-  branch: updated_libraries
+  branch: v1.9.x
+  parseVersion: patch
+  versionOffset: no
+- repo: rancher/elemental-operator
+  branch: v1.8.x
   parseVersion: patch
   versionOffset: no
 - repo: rancher/elemental
