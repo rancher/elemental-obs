@@ -39,32 +39,15 @@ jobs:
       run: |
         [ ! -f config.yaml ] && exit 1
 
-        count=$(yq ".\"${{ env.BRANCH }}\" | length" config.yaml)
-
-        output="repos=["
-
-        for ((n=0;n<${count};n++)); do
-          repo="$(yq ".\"${{ env.BRANCH }}\".[${n}].repo" config.yaml)"
-          if [[ "${{ env.SRC_REPOS }}" != "all" ]] && [[ "${{ env.SRC_REPOS }}" != "${repo}" ]]; then
-            continue
-          fi
-          if [[ "${output}" == "repos=[" ]]; then
-            output+="'${repo}'"
-          else
-            output+=", '${repo}'"
-          fi
-        done
-
-        output+="]"
+        output="repos=$(yq "[.\"${{ env.BRANCH }}\".[].repo ] | unique" config.yaml -o j -I=0)"
 
         echo "Computed result: ${output}"
 
         if [[ "${output}" == "repos=[]" ]]; then
-        echo "Could not find input repository: ${{ env.SRC_REPOS }}"
+          echo "Could not find input repository: ${{ env.SRC_REPOS }}"
           exit 1
         fi
         echo "${output}" >> $GITHUB_OUTPUT
-
 
   update-sources:
     needs:
