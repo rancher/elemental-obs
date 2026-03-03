@@ -1,10 +1,26 @@
 -------------------------------------------------------------------
-Thu Feb 26 21:35:02 UTC 2026 - Elemental Bot <elemental@suse.de>
+Tue Mar  3 09:06:27 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.8.2-beta1:
-  * 9899a752 Fix cluster api version in test environment
-  * 0aee723b Run 'make generate' to recreate generated code and vendor folder
-  * 493132e9 Bump to cluster API libraries to v1.12.x
+- Changes on top of v1.8.1:
+  * 9952ebe1 Update libraries based on dependency scan
+  * 5e128c5d Adapt OBS packages to a 1.9 version to coexist with 1.8 version
+  * f88219af Fix cluster api version in test environment
+  * ad937279 Run 'make generate' to recreate generated code and vendor folder
+  * 15bb505f Bump to cluster API libraries to v1.12.x
+  * 63369022 Bump test environment tools in Makefile
+  * 7b464802 Run 'make vendor' to recreate vendor folder
+  * 879b3464 Bump yip
+  * aeda10ac Fix unit tests after bumping libraries
+  * 33dcb61a Run 'make vendor' to recreate vendor folder
+  * 0ccd96af Bump wrangler from v2 to v3
+  * ff0190c4 Run 'make generate' to renew all generated code and config files
+  * b28d2f08 Bump controller generator to version 0.19
+  * 0bf7dc32 Update controller runtime options
+  * 549e720d Run 'make vendor' to recreate vendor folder
+  * 3f0f27e0 Updated cluster-api, steve, rancher/apis, client-go and k8s/api
+            to the level they were at rancher v2.13
+  * 49ebf0b7 Update headers to 2026
+  * fd13ba92 Update questions to include SL Micro 6.2
 
 -------------------------------------------------------------------
 Fri Feb 20 09:56:11 UTC 2026 - Elemental Bot <elemental@suse.de>

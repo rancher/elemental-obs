@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # Define the names/tags of the container
+#!BuildTag: rancher/seedimage-builder:latest
 #!BuildTag: rancher/seedimage-builder:1.8.1
 #!BuildTag: rancher/seedimage-builder:1.8.1-%RELEASE%
 #!UseOBSRepositories
@@ -9,7 +10,7 @@ ARG SL_VERSION
 FROM bci/bci-base:${SL_VERSION} as BASE
 
 RUN  mkdir -p /installroot && \
-    zypper --gpg-auto-import-keys --installroot /installroot in -y --no-recommends elemental-toolkit elemental-httpfy elemental-seedimage-hooks xorriso curl coreutils ca-certificates ca-certificates-mozilla gptfdisk squashfs util-linux dosfstools mtools e2fsprogs grub2
+    zypper --gpg-auto-import-keys --installroot /installroot in -y --no-recommends elemental-toolkit elemental-httpfy1.9 elemental-seedimage-hooks1.9 xorriso curl coreutils ca-certificates ca-certificates-mozilla gptfdisk squashfs util-linux dosfstools mtools e2fsprogs grub2
 
 
 FROM scratch as SEEDIMAGE_BUILDER
@@ -19,7 +20,7 @@ COPY --from=BASE /installroot /
 RUN /usr/sbin/update-ca-certificates
 
 ARG BUILD_REPO=%%IMG_REPO%%
-ARG IMAGE_REPO=$BUILD_REPO/rancher/elemental-seedimage-builder-image:1.8.1-%RELEASE%
+ARG IMAGE_REPO=$BUILD_REPO/rancher/elemental-seedimage-builder-image:latest
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=com.suse.elemental

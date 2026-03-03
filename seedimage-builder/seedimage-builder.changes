@@ -1,10 +1,13 @@
 -------------------------------------------------------------------
-Thu Feb 26 21:35:02 UTC 2026 - Elemental Bot <elemental@suse.de>
+Tue Mar  3 09:06:44 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.8.2-beta1:
-  * 9899a752 Fix cluster api version in test environment
-  * 0aee723b Run 'make generate' to recreate generated code and vendor folder
-  * 493132e9 Bump to cluster API libraries to v1.12.x
+- Changes on top of v1.8.1:
+  * 7da6252b Bump unit test environment artifacts
+  * ca805f37 Remove elemental-register as this will be taken form 1.9.x
+            branch
+  * 37ec9f41 Remove latest tag for 1.8.x image series
+  * 49ebf0b7 Update headers to 2026
+  * fd13ba92 Update questions to include SL Micro 6.2
 
 -------------------------------------------------------------------
 Fri Feb 20 09:56:11 UTC 2026 - Elemental Bot <elemental@suse.de>
