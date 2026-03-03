@@ -6,6 +6,11 @@ Tue Mar  3 09:06:44 UTC 2026 - Elemental Bot <elemental@suse.de>
   * ca805f37 Remove elemental-register as this will be taken form 1.9.x
             branch
   * 37ec9f41 Remove latest tag for 1.8.x image series
+
+-------------------------------------------------------------------
+Fri Jan 16 12:46:00 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.1:
   * 49ebf0b7 Update headers to 2026
   * fd13ba92 Update questions to include SL Micro 6.2
 
