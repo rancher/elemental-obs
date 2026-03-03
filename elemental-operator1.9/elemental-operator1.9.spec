@@ -1,7 +1,7 @@
 #
-# spec file for package elemental-register
+# spec file for package elemental-operator
 #
-# Copyright (c) 2025 SUSE LLC
+# Copyright (c) 2022 SUSE LLC
 #
 # All modifications and additions to the file contributed by third parties
 # remain the property of their copyright owners, unless otherwise agreed
@@ -18,14 +18,20 @@
 %define commit 9952ebe1524de62688db8a6e351e3c27e8025a50
 %define c_date 20260303
 
-Name:           elemental-register
+%define minorv 1.9
+
+Name:           elemental-operator%{minorv}
 Version:        1.8.1
 Release:        0
-Summary:        The Elemental Operator registration client
+Summary:        Kubernetes operator to support OS management
 License:        Apache-2.0
 Group:          System/Management
-URL:            https://github.com/rancher/elemental-operator
+URL:            https://github.com/rancher/%{name}
 Source:         %{name}.tar.xz
+
+# ensure it is not coinstallable with any previous elemental-operator package
+Provides: elemental-operator
+Conflicts: elemental-operator < %{minorv}
 
 # go-tpm-tools aren't _that_ portable :-(
 ExclusiveArch:  x86_64 aarch64
@@ -37,7 +43,7 @@ BuildRequires:  make
 BuildRequires:  grep
 
 %if 0%{?suse_version}
-BuildRequires:  golang(API) >= 1.22
+BuildRequires:  golang(API) >= 1.23
 BuildRequires:  golang-packaging
 %{go_provides}
 %else
@@ -46,24 +52,33 @@ BuildRequires:  golang-packaging
 %global commit     25abcdc57b9409d4c5b2009cf0a2f9aa6ff647ad
 %gometa
 %if (0%{?centos_version} == 800) || (0%{?rhel_version} == 800)
-BuildRequires:  go1.22
+BuildRequires:  go1.23
 %else
-BuildRequires:  compiler(go-compiler) >= 1.22
+BuildRequires:  compiler(go-compiler) >= 1.23
 %endif
 %endif
 
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
+%define systemdir /system
+%define oemdir %{systemdir}/oem
+
 %description
-The elemental-register command is responsible of the node registration
-against an elemental-operator instance running under Rancher.
+The Elemental operator is responsible for managing the OS
+versions and maintaining a machine inventory to assist with edge or
+baremetal installations.
 
-%package -n elemental-support
-Summary: Collect important logs for support
+%package -n elemental-httpfy%{minorv}
+Summary: Simple http server
 
-%description -n elemental-support
-This collects essential configuration files and logs to improve issue
-resolution.
+%description -n elemental-httpfy%{minorv}
+httpfy starts a simple http server, serving files from the current dir.
+
+%package -n elemental-seedimage-hooks%{minorv}
+Summary: Hooks used in SeedImage builder
+
+%description -n elemental-seedimage-hooks%{minorv}
+Hooks used in SeedImage builder to copy firmware when building disk-images.
 
 %prep
 %setup -q -n %{name}
@@ -94,9 +109,8 @@ export GIT_COMMIT=${GIT_COMMIT:0:8}
 export COMMITDATE="%{c_date}"
 
 # build binaries
-CGO_ENABLED=1 make register
-make support
-
+CGO_ENABLED=0 make operator
+make httpfy
 
 %install
 %if 0%{?suse_version}
@@ -106,19 +120,30 @@ make support
 # /usr/sbin
 %{__install} -d -m 755 %{buildroot}/%{_sbindir}
 
+
 # binary
-%{__install} -m 755 build/elemental-register %{buildroot}%{_sbindir}
-%{__install} -m 755 build/elemental-support %{buildroot}%{_sbindir}
+%{__install} -m 755 build/elemental-operator %{buildroot}%{_sbindir}
+%{__install} -m 755 build/elemental-httpfy %{buildroot}%{_sbindir}
+
+# hooks
+mkdir -p %{buildroot}%{oemdir}
+%{__install} -m 755 hooks/*.yaml %{buildroot}%{oemdir}/
 
 %files
 %defattr(-,root,root,-)
 %license LICENSE
-%{_sbindir}/elemental-register
+%{_sbindir}/elemental-operator
 
-%files -n elemental-support
+%files -n elemental-httpfy%{minorv}
 %defattr(-,root,root,-)
 %license LICENSE
-%{_sbindir}/elemental-support
+%{_sbindir}/elemental-httpfy
 
+%files -n elemental-seedimage-hooks%{minorv}
+%defattr(-,root,root,-)
+%license LICENSE
+%dir %{systemdir}
+%dir %{oemdir}
+%{oemdir}/*
 
 %changelog
