@@ -19,6 +19,11 @@ Tue Mar  3 09:06:27 UTC 2026 - Elemental Bot <elemental@suse.de>
   * 549e720d Run 'make vendor' to recreate vendor folder
   * 3f0f27e0 Updated cluster-api, steve, rancher/apis, client-go and k8s/api
             to the level they were at rancher v2.13
+
+-------------------------------------------------------------------
+Fri Jan 16 12:46:00 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.1:
   * 49ebf0b7 Update headers to 2026
   * fd13ba92 Update questions to include SL Micro 6.2
 
