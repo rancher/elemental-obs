@@ -21,7 +21,7 @@
 %define minorv 1.9
 
 Name:           elemental-operator%{minorv}
-Version:        1.8.1
+Version:        1.9.0~rc1
 Release:        0
 Summary:        Kubernetes operator to support OS management
 License:        Apache-2.0
