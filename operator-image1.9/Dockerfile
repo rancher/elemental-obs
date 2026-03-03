@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: Apache-2.0
 # Define the names/tags of the container
+#!BuildTag: rancher/elemental-operator:latest
 #!BuildTag: rancher/elemental-operator:1.8.1
 #!BuildTag: rancher/elemental-operator:1.8.1-%RELEASE%
 #!UseOBSRepositories
@@ -10,7 +11,7 @@ FROM bci/bci-base:${SL_VERSION} as BASE
 
 RUN mkdir /installroot
 RUN zypper --installroot /installroot in -y --no-recommends \
-      elemental-operator ca-certificates ca-certificates-mozilla
+      elemental-operator1.9 ca-certificates ca-certificates-mozilla
 
 FROM scratch as OPERATOR
 
@@ -19,7 +20,7 @@ COPY --from=BASE /installroot /
 RUN /usr/sbin/update-ca-certificates
 
 ARG BUILD_REPO=%%IMG_REPO%%
-ARG IMAGE_REPO=$BUILD_REPO/rancher/elemental-operator:1.8.1-%RELEASE%
+ARG IMAGE_REPO=$BUILD_REPO/rancher/elemental-operator:latest
 
 # Define labels according to https://en.opensuse.org/Building_derived_containers
 # labelprefix=com.suse.elemental
