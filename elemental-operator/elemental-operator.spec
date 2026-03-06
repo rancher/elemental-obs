@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 7da6252b667f69ccbb4ac8556912bc09f7273477
-%define c_date 20260303
+%define commit 6408eb58fc2a3dae9d9131fd6c8cfefdabb397bb
+%define c_date 20260306
 
 Name:           elemental-operator
 Version:        1.8.1
