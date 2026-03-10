@@ -1,6 +1,40 @@
 [
   {
     "metadata": {
+      "name": "baremetal-v2.2.1-7.63-os"
+    },
+    "spec": {
+      "version": "v2.2.1-7.63",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/baremetal-os-container:2.2.1-7.63",
+        "displayName": "SL Micro Baremetal 6.1 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "baremetal-v2.2.1-5.73-iso"
+    },
+    "spec": {
+      "version": "v2.2.1-5.73",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.73",
+        "displayName": "SL Micro Baremetal 6.1 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
       "name": "baremetal-v2.2.1-7.49-os"
     },
     "spec": {
@@ -59,40 +93,6 @@
       "type": "iso",
       "metadata": {
         "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.47",
-        "displayName": "SL Micro Baremetal 6.1 ISO",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "baremetal-v2.2.1-7.2-os"
-    },
-    "spec": {
-      "version": "v2.2.1-7.2",
-      "type": "container",
-      "metadata": {
-        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/baremetal-os-container:2.2.1-7.2",
-        "displayName": "SL Micro Baremetal 6.1 OS",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "baremetal-v2.2.1-5.14-iso"
-    },
-    "spec": {
-      "version": "v2.2.1-5.14",
-      "type": "iso",
-      "metadata": {
-        "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.14",
         "displayName": "SL Micro Baremetal 6.1 ISO",
         "platforms": [
           "linux/x86_64",
