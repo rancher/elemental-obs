@@ -1,6 +1,42 @@
 [
   {
     "metadata": {
+      "name": "base-v2.3.0-7.38-os"
+    },
+    "spec": {
+      "version": "v2.3.0-7.38",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/base-os-container:2.3.0-7.38",
+        "displayName": "SL Micro Base 6.2 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1772795743
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "base-v2.3.0-7.32-iso"
+    },
+    "spec": {
+      "version": "v2.3.0-7.32",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.2/base-iso-image:2.3.0-7.32",
+        "displayName": "SL Micro Base 6.2 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1772739570
+      }
+    }
+  },
+  {
+    "metadata": {
       "name": "base-v2.3.0-7.15-os"
     },
     "spec": {
@@ -55,24 +91,6 @@
   },
   {
     "metadata": {
-      "name": "base-v2.3.0-7.4-os"
-    },
-    "spec": {
-      "version": "v2.3.0-7.4",
-      "type": "container",
-      "metadata": {
-        "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/base-os-container:2.3.0-7.4",
-        "displayName": "SL Micro Base 6.2 OS",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ],
-        "created": 1768299355
-      }
-    }
-  },
-  {
-    "metadata": {
       "name": "base-v2.3.0-7.5-iso"
     },
     "spec": {
@@ -86,24 +104,6 @@
           "linux/aarch64"
         ],
         "created": 1768404620
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "base-v2.3.0-7.4-iso"
-    },
-    "spec": {
-      "version": "v2.3.0-7.4",
-      "type": "iso",
-      "metadata": {
-        "uri": "registry.suse.com/suse/sl-micro/6.2/base-iso-image:2.3.0-7.4",
-        "displayName": "SL Micro Base 6.2 ISO",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ],
-        "created": 1768311389
       }
     }
   }
