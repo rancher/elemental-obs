@@ -15,13 +15,13 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit b1d381a4237ea49d259fa9a679a20fb93e709880
-%define c_date 20260306
+%define commit b42116d4641cdda51cae4187dda07396d3dd9a50
+%define c_date 20260323
 
 %define minorv 1.9
 
 Name:           elemental-operator%{minorv}
-Version:        1.9.0
+Version:        1.9.1
 Release:        0
 Summary:        Kubernetes operator to support OS management
 License:        Apache-2.0
