@@ -30,7 +30,7 @@ jobs:
       repos: ${{ steps.sources.outputs.repos }}
     steps:
     - name: Checkout target branch
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         ref: ${{ github.ref_name }}
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -61,7 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout target branch
-      uses: actions/checkout@v4
+      uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       with:
         ref: ${{ env.BRANCH }}
         token: ${{ secrets.GITHUB_TOKEN }}
