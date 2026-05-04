@@ -1,6 +1,40 @@
 [
   {
     "metadata": {
+      "name": "baremetal-v2.2.1-7.103-os"
+    },
+    "spec": {
+      "version": "v2.2.1-7.103",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/baremetal-os-container:2.2.1-7.103",
+        "displayName": "SL Micro Baremetal 6.1 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "baremetal-v2.2.1-5.111-iso"
+    },
+    "spec": {
+      "version": "v2.2.1-5.111",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.111",
+        "displayName": "SL Micro Baremetal 6.1 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ]
+      }
+    }
+  },
+  {
+    "metadata": {
       "name": "baremetal-v2.2.1-7.63-os"
     },
     "spec": {
@@ -59,40 +93,6 @@
       "type": "iso",
       "metadata": {
         "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.59",
-        "displayName": "SL Micro Baremetal 6.1 ISO",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "baremetal-v2.2.1-7.37-os"
-    },
-    "spec": {
-      "version": "v2.2.1-7.37",
-      "type": "container",
-      "metadata": {
-        "upgradeImage": "registry.suse.com/suse/sl-micro/6.1/baremetal-os-container:2.2.1-7.37",
-        "displayName": "SL Micro Baremetal 6.1 OS",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ]
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "baremetal-v2.2.1-5.47-iso"
-    },
-    "spec": {
-      "version": "v2.2.1-5.47",
-      "type": "iso",
-      "metadata": {
-        "uri": "registry.suse.com/suse/sl-micro/6.1/baremetal-iso-image:2.2.1-5.47",
         "displayName": "SL Micro Baremetal 6.1 ISO",
         "platforms": [
           "linux/x86_64",
