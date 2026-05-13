@@ -1,4 +1,43 @@
 -------------------------------------------------------------------
+Wed May 13 15:13:07 UTC 2026 - David Cassany <dcassany@suse.com>
+
+- Update to version 0.3.16:
+  * setup for immutable releases (#274)
+  * align system-agent image publishing for signed releases (#270)
+  * Bumo github.com/docker/cli to v29.2.0 and go.opentelemetry.io/otel to v1.43.0
+  * run go mod tidy in /test folder
+  * Bump google.golang.org/grpc from 1.75.0 to 1.79.3 (bsc#1260277 CVE-2026-33186)
+  * Bump github.com/docker/cli in /test
+  * export CATTLE_NODE_NAME if SYSTEM_UPGRADE_NODE_NAME is set
+  * use correct prefix for system-agent binary (#273)
+  * checksum validation (#271)
+  * Add `validate` subcommand for configuration validation (#250)
+  * Update CODEOWNERS
+  * Pin GH Actions to commit sha
+  * chore: bump sles to 15.7
+  * Extend remote plan e2e tests
+  * Fix agent restart issue and introduce constants
+  * chore: bump go to v1.25
+  * Setup e2e test infrastructure
+  * chores(deps): Bump k8s dependencies
+  * Define linter rules
+  * Fix CI failures
+  * Introduce an extended Makefile
+  * Switch workflows to use name makefile
+  * Replace dapper with multi stage builds
+  * Remove dapper scripts
+  * Add multiple improvements for ignore files
+  * fix: remove umask command from the system-agent unit-file
+  * fix-system-agent-umask
+  * [1.34] bumped dependencies for 1.34 support (#242)
+  * Bump K8s patch level to 1.33.5 and Go patch level to 1.24.6
+  * fix: properly handle traps after unsuccessful SUC job execution
+  * fix: do not unconditionally reset failure-counts
+  * fix: remove resetFailureCountOnStartup, always reset failure counts on first start
+  * un-rc wrangler and lasso
+  * drop windows 2019 when running PR CI
+
+-------------------------------------------------------------------
 Mon Sep 22 11:20:03 UTC 2025 - David Cassany <dcassany@suse.com>
 
 - Update to version 0.3.13:
