@@ -1,5 +1,4 @@
 # SPDX-License-Identifier: Apache-2.0
-#!BuildTag: rancher/elemental-operator-chart:latest
 #!BuildTag: rancher/elemental-operator-chart:1.8.1
 #!BuildTag: rancher/elemental-operator-chart:1.8.1-%RELEASE%
 apiVersion: v2
