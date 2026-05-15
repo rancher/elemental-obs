@@ -1,4 +1,18 @@
 -------------------------------------------------------------------
+Mon May 11 14:12:44 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Update to v2.3.3:
+  * 8b4af274 Avoid pulling binaries with curl
+  * d46e30f4 Bump golangci/golangci-lint-action to v9
+  * 02caf200 Bump github.com/spf13/cobra library
+  * e29e1fbf Bump github.com/jaypipes/ghw library
+  * 652654e1 Bump github.com/bramvdbogaerde/go-scp library
+  * f94a0c58 Bump google.golang.org/grpc library (bsc#1260277 CVE-2026-33186)
+  * dc1a2056 Bump github.com/ulikunitz/xz library
+  * 337a986c Update headers to 2026
+  * d6aac085 Switch from TW to Leap 16.0 for green flavor
+
+-------------------------------------------------------------------
 Wed Dec 17 13:36:19 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.2:
