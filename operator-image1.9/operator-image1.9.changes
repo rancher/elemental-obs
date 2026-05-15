@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue May  5 12:40:10 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.9.1:
+  * 6dceb411 Deterministic endpoints for MachineRegistrations (#975)
+
+-------------------------------------------------------------------
 Mon Mar 23 12:21:38 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.9.1:
