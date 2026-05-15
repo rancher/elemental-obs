@@ -16,11 +16,11 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit a7da7bda75de87a524420acb8d827671b469ab1a
-%define c_date 20251217
+%define commit 3f38ae3e1e2577f2b09156120b9272918d5250b6
+%define c_date 20260511
 
 Name:           elemental-toolkit
-Version:        2.2.7
+Version:        2.2.8
 Release:        0
 Summary:        The command line client for Elemental
 License:        Apache-2.0
@@ -44,7 +44,7 @@ Requires:       util-linux
 Requires:       gptfdisk
 
 %if 0%{?suse_version}
-BuildRequires:  golang(API) >= 1.23
+BuildRequires:  golang(API) >= 1.25
 BuildRequires:  golang-packaging
 %{go_provides}
 %else
