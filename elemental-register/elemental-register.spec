@@ -19,7 +19,7 @@
 %define c_date 20260604
 
 Name:           elemental-register
-Version:        1.9.1
+Version:        1.9.2
 Release:        0
 Summary:        The Elemental Operator registration client
 License:        Apache-2.0
