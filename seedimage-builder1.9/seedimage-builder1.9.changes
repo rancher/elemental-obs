@@ -3,7 +3,8 @@ Thu Jun  4 09:09:46 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.9.1:
   * 71d1fb9c Local node labels (#984)
-  * ce6acda9 Bump golang.org/x/net to v0.55.0 (bsc#1266789 CVE-2026-39821)
+  * ce6acda9 Bump golang.org/x/net to v0.55.0 includes fixes for:
+    - bsc#1266789 bsc#1265921 bsc#1267197 bsc#1267168 bsc#1251679
   * 060958b7 Bump golangci/golangci-lint-action
   * 3b4b6699 use a real UUID for the machine registration ID
   * d33faa01 Bump google.golang.org/grpc library (bsc#1260277 CVE-2026-33186)
