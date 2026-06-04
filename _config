@@ -21,6 +21,9 @@ Repotype: staticlinks
 Type: docker
 BuildEngine: podman
 
+# include dependencies for SPDX generation
+Required: skopeo umoci
+
 Prefer: SL-Micro-release
 
 Prefer: registries-conf-suse
