@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Thu Jun  4 09:09:58 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.8.1:
+- Update to v1.8.2:
   * 7651e429 Local node labels (#984)
   * e7a5cf83 Deterministic endpoints for MachineRegistrations (#975) (#995)
   * a64e9316 Bump golang.org/x/net to v0.55.0 includes fixes for:
