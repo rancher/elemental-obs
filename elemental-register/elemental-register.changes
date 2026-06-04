@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Thu Jun  4 09:09:46 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.9.1:
+  * 71d1fb9c Local node labels (#984)
+  * ce6acda9 Bump golang.org/x/net to v0.55.0 (bsc#1266789 CVE-2026-39821)
+  * 060958b7 Bump golangci/golangci-lint-action
+  * 3b4b6699 use a real UUID for the machine registration ID
+  * d33faa01 Bump google.golang.org/grpc library (bsc#1260277 CVE-2026-33186)
+  * 6dceb411 Deterministic endpoints for MachineRegistrations (#975)
+
+-------------------------------------------------------------------
 Mon Mar 23 12:21:38 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.9.1:
