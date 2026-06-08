@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Jun  3 14:22:57 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.2.8:
+- Update to v2.2.9:
   * 0e33b2bc Bump golang.org/x/net to v0.55.0 (bsc#1267168)
   * 4f5423b9 Bump golang.org/x/crypto to v0.52.0 (bsc#1266187)
 
