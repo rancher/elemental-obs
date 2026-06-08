@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Mon Jun  8 07:24:03 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.7.4:
+- Update to v1.7.5:
   * ecfa8d9c Bump unit test environment artifacts
   * 03803c72 Bump test environment tools in Makefile
   * bc886323 Update auto-generated code (make generate)
