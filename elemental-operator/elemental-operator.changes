@@ -1,4 +1,18 @@
 -------------------------------------------------------------------
+Mon Jun  8 07:24:03 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.7.4:
+  * ecfa8d9c Bump unit test environment artifacts
+  * 03803c72 Bump test environment tools in Makefile
+  * bc886323 Update auto-generated code (make generate)
+  * f4d26385 Bump controller generator to version 0.19
+  * a7fe515d Bump golangci/golangci-lint-action
+  * b45c5e56 Bump to Dockerfiles and spec to go1.25
+  * a7d78295 Bump google.golang.org/grpc library (bsc#1260277 CVE-2026-33186)
+  * 2c012c2e Bump golang.org/x/net to v0.55.0
+  * 46e7c635 Update headers to 2026
+
+-------------------------------------------------------------------
 Thu Dec 18 15:58:12 UTC 2025 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.7.4:
