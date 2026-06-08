@@ -9,7 +9,8 @@ Mon Jun  8 07:24:03 UTC 2026 - Elemental Bot <elemental@suse.de>
   * a7fe515d Bump golangci/golangci-lint-action
   * b45c5e56 Bump to Dockerfiles and spec to go1.25
   * a7d78295 Bump google.golang.org/grpc library (bsc#1260277 CVE-2026-33186)
-  * 2c012c2e Bump golang.org/x/net to v0.55.0
+  * 2c012c2e Bump golang.org/x/net to v0.55.0, includes fixes for:
+    - bsc#1266789 bsc#1265921 bsc#1267197 bsc#1267168 bsc#1251679
   * 46e7c635 Update headers to 2026
 
 -------------------------------------------------------------------
