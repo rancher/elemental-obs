@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Tue Jun  9 09:50:56 UTC 2026 - Elemental Bot <elemental@suse.de>
+Tue Jun  9 11:20:04 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.2:
+  * 91ecc857 Fix reference in labels
   * 34dc5170 Adapt labels to pass OBS container checks
 
 -------------------------------------------------------------------
