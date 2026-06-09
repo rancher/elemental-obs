@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Tue Jun  9 09:50:34 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.3.0:
+- Update to v2.3.1:
   * c47d91b Adapt labels to pass containers checks in OBS
   * 88015da set to released-stage to released as SL Micro 6.2 is GA
   * 6f8ca5a Fix specfile dependencies
