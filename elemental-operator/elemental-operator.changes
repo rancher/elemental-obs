@@ -30,6 +30,11 @@ Thu Jun  4 09:09:58 UTC 2026 - Elemental Bot <elemental@suse.de>
   * 06d8a0bc Run 'make vendor' to recreate vendor folder
   * 0036e99e Updated cluster-api, steve, rancher/apis, client-go and k8s/api
             to the level they were at rancher v2.13
+
+-------------------------------------------------------------------
+Tue Mar  3 09:06:44 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.1:
   * 7da6252b Bump unit test environment artifacts
   * ca805f37 Remove elemental-register as this will be taken form 1.9.x
             branch
