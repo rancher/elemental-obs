@@ -1,8 +1,12 @@
 -------------------------------------------------------------------
-Fri Jun 19 11:34:15 UTC 2026 - Elemental Bot <elemental@suse.de>
+Fri Jul 24 13:07:09 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.9.2:
+  * 0c104e17 ⏺ fix(tpm): fix duplicate emulated TPM seeds on UUID suffix
+            collision (#1018)
   * 3605ef3f Change tags order to facilitate OBS builds
+  * 893fbf0f Fix reference in labels
+  * dfaf68ac Adapt labels to pass OBS container checks
 
 -------------------------------------------------------------------
 Tue Jun  9 11:20:17 UTC 2026 - Elemental Bot <elemental@suse.de>
