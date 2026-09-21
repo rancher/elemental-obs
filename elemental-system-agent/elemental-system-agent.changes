@@ -1,4 +1,39 @@
 -------------------------------------------------------------------
+Mon Sep 21 14:59:36 UTC 2026 - David Cassany <dcassany@suse.com>
+
+- Update to version 0.15.1:
+  * [2.15] Bump go toolchain to 1.26.7 (#426)
+  * Bump dependencies (#421)
+  * Update README (#404)
+  * add uninstall flag (#384)
+  * some cve fixes, notably x/net and kubectl versions (#359)
+  * Update actions/checkout action to v7
+  * Update actions/upload-artifact action to v7
+  * Update actions/setup-go action to v6.4.0
+  * Update rancher/renovate-config digest to fc79cf4
+  * Update registry.suse.com/bci/bci-micro Docker tag to v16
+  * switch renovate over to the newer configuration (#293)
+  * bump kubectl to 1.36.1 (#292)
+  * add release branches to renovate config (#289)
+  * Fix swapped kubectl checksums in SUC release image build (#286)
+  * Document versioning schema and branch strategy aligned with Rancher minor releases (#280)
+  * bumping CAPI to v1.13.2 and wrangler unrc version
+  * bump k8s v1.36
+  * fix logs collection
+  * test: add new Plan State integration tests
+  * chore: bump rancher/rancher/pkg/plan to consume Plan States
+  * test: add e2e tests for Plan States lifecycle
+  * feat: Adapt code to use Plan States
+  * Add README.md for integration tests
+  * Improve comments in scripts and logging
+  * Adapt test framework code to use new pkg/plan library from rancher/rancher
+  * Add test/vendor to .gitignore
+  * Utilize new pkg/plan library from rancher/rancher
+  * bump the fallback version to v0.3.16
+  * bump k8s v1.36
+  * add initial version of integration tests
+
+-------------------------------------------------------------------
 Wed May 13 15:13:07 UTC 2026 - David Cassany <dcassany@suse.com>
 
 - Update to version 0.3.16:
