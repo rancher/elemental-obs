@@ -1,4 +1,14 @@
 -------------------------------------------------------------------
+Mon Sep 21 14:19:03 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.3.4:
+  * 74b76a97 Move to go1.26
+  * c591fd27 Bump yip library
+  * 3aa381e5 Fix logging messages
+  * 661d3ae2 Bump ginkgo
+  * 04624721 Bump containerd
+
+-------------------------------------------------------------------
 Wed Jun  3 14:22:42 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.4:
