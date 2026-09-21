@@ -1,4 +1,4 @@
 <servicedata>
 <service name="tar_scm">
                 <param name="url">https://github.com/rancher/system-agent</param>
-              <param name="changesrevision">8608f91da39bf2efa0ac4952f3be1c9aa5a5f695</param></service></servicedata>
+              <param name="changesrevision">529229529671ac2b1908eff7f56097daaef3417b</param></service></servicedata>
