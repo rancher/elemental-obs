@@ -1,4 +1,17 @@
 -------------------------------------------------------------------
+Wed Sep 23 09:45:27 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.3.4:
+  * 61bb7271 use rsync checksum to reliably copy data
+  * a5e33158 Only consider global Boot#### variables when clearing stale
+            entries
+  * 74b76a97 Move to go1.26
+  * c591fd27 Bump yip library
+  * 3aa381e5 Fix logging messages
+  * 661d3ae2 Bump ginkgo
+  * 04624721 Bump containerd
+
+-------------------------------------------------------------------
 Wed Jun  3 14:22:42 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.3.4:
