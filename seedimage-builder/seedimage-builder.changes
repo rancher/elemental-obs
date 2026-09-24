@@ -1,7 +1,20 @@
 -------------------------------------------------------------------
-Fri Jul 24 13:07:18 UTC 2026 - Elemental Bot <elemental@suse.de>
+Thu Sep 24 08:39:18 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.2:
+  * 2cca6a72 Bump github.com/rancher-sandbox/go-tpm
+  * 37538453 Fix sporadic failures in unit tests
+  * 911a43d5 Bump github.com/rancher/yip
+  * 37a21085 User Rewrite function instead of a Director function in
+            ReverseProxy
+  * ff4faf6c Bump github.com/rancher-sandbox/go-tpm
+  * 79dda40a Bump google.golang.org/grpc
+  * 2042961d Bump to golang 1.26
+  * f508b932 Bump github.com/google/go-attestation
+  * f1217844 Bump test environment
+  * 74a7317c Bump generators
+  * b5bb4bdd Bump github.com/rancher/wrangler/v3
+  * 1736d9d6 Bump github.com/grpc-ecosystem/grpc-gateway/v2
   * e70002b0 ⏺ fix(tpm): fix duplicate emulated TPM seeds on UUID suffix
             collision (#1018)
   * 91ecc857 Fix reference in labels

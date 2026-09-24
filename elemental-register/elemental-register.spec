@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 717137bd5d609363e247ce44e42c525d3baf89b6
-%define c_date 20260921
+%define commit ee57a686c7bfd60174112e12b4d721accbc85650
+%define c_date 20260924
 
 Name:           elemental-register
 Version:        1.9.2
