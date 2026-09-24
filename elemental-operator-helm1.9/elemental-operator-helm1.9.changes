@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Mon Sep 21 14:18:05 UTC 2026 - Elemental Bot <elemental@suse.de>
+Thu Sep 24 08:39:33 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.9.2:
+  * ee57a686 Bump github.com/rancher-sandbox/go-tpm
+  * 2a6c4918 Fix sporadic failures in unit tests
   * 717137bd bump yip library
   * 9c08fcac User Rewrite function instead of a Director function in
             ReverseProxy
