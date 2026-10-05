@@ -1,4 +1,19 @@
 -------------------------------------------------------------------
+Mon Oct 05 09:15:24 UTC 2026 - David Cassany <dcassany@suse.com>
+
+- Update to version 0.15.2:
+  * fix: swap kubectl download to cowboy-builder rpm
+  * Update module golang.org/x/crypto to v0.56.0 [SECURITY]
+  * Update module google.golang.org/grpc to v1.83.2 [SECURITY]
+  * Update module golang.org/x/mod to v0.40.0 [SECURITY]
+  * Update module github.com/google/cel-go to v0.30.0 [SECURITY]
+  * Update module go.etcd.io/etcd/client/pkg/v3 to v3.6.14 [SECURITY]
+  * Update module github.com/klauspost/compress to v1.18.7 [SECURITY]
+
+This version includes fixes for:
+  - bsc#1279996 (CVE-2026-83530)
+
+-------------------------------------------------------------------
 Mon Sep 21 14:59:36 UTC 2026 - David Cassany <dcassany@suse.com>
 
 - Update to version 0.15.1:
