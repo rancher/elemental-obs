@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Thu Sep 24 08:39:33 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.9.2:
+- Update to v1.9.3:
   * ee57a686 Bump github.com/rancher-sandbox/go-tpm
   * 2a6c4918 Fix sporadic failures in unit tests
   * 717137bd bump yip library
