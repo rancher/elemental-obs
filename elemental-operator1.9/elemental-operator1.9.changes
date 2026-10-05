@@ -8,18 +8,24 @@ Thu Sep 24 08:39:33 UTC 2026 - Elemental Bot <elemental@suse.de>
   * 9c08fcac User Rewrite function instead of a Director function in
             ReverseProxy
   * 3073bcc1 Bump rancher-sandbox/go-tpm
-  * 0746e6be Bump grpc library to v1.83.2
+  * 0746e6be Bump grpc library to v1.83.2. Includes fixes for:
+      - bsc#1279213 (CVE-2026-84304)
   * 56c83652 Bump to golang 1.26
-  * f37b9d62 bump go-attestation
+  * f37b9d62 bump go-attestation. Includes fixes for:
+      - bsc#1279912 (CVE-2026-19201)
+      - bsc#1279911 (CVE-2026-19201)
   * 48e0352f Bump test environment
   * f78effcf Bump generators
-  * 6c7818a2 Bump wrangler to v3.6.1
-  * 0eeb3eac Bump grpc-ecosystem/grpc-gateway/v2
+  * 6c7818a2 Bump wrangler to v3.6.1. Includes fixes for:
+      - bsc#1272088 (CVE-2026-56852)
+      - bsc#1279312 (CVE-2026-84303)
+      - bsc#1266789 (CVE-2026-39821)
+      - bsc#1266622 (CVE-2026-39821)
+  * 0eeb3eac Bump grpc-ecosystem/grpc-gateway/v2. Includes fixes for:
+      - bsc#1277992 (CVE-2026-37236)
   * 0c104e17 ⏺ fix(tpm): fix duplicate emulated TPM seeds on UUID suffix
             collision (#1018)
   * 3605ef3f Change tags order to facilitate OBS builds
-  * 893fbf0f Fix reference in labels
-  * dfaf68ac Adapt labels to pass OBS container checks
 
 -------------------------------------------------------------------
 Tue Jun  9 11:20:17 UTC 2026 - Elemental Bot <elemental@suse.de>
