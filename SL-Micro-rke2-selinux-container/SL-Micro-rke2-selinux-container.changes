@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Wed Sep 23 09:45:03 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v2.3.1:
+- Update to v2.3.2:
   * 9e6df8e Update KVM flavor to include iptables
 
 -------------------------------------------------------------------
