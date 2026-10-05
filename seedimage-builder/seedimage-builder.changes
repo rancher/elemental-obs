@@ -8,15 +8,28 @@ Thu Sep 24 08:39:18 UTC 2026 - Elemental Bot <elemental@suse.de>
   * 37a21085 User Rewrite function instead of a Director function in
             ReverseProxy
   * ff4faf6c Bump github.com/rancher-sandbox/go-tpm
-  * 79dda40a Bump google.golang.org/grpc
+  * 79dda40a Bump google.golang.org/grpc. Includes fixes for:
+      - bsc#1279213 (CVE-2026-84304)
   * 2042961d Bump to golang 1.26
-  * f508b932 Bump github.com/google/go-attestation
+  * f508b932 Bump github.com/google/go-attestation. Includes fixes for:
+      - bsc#1279912 (CVE-2026-19201)
+      - bsc#1279911 (CVE-2026-19201)
   * f1217844 Bump test environment
   * 74a7317c Bump generators
-  * b5bb4bdd Bump github.com/rancher/wrangler/v3
-  * 1736d9d6 Bump github.com/grpc-ecosystem/grpc-gateway/v2
+  * b5bb4bdd Bump github.com/rancher/wrangler/v3. Includes fixes for:
+      - bsc#1272088 (CVE-2026-56852)
+      - bsc#1279312 (CVE-2026-84303)
+      - bsc#1266789 (CVE-2026-39821)
+      - bsc#1266622 (CVE-2026-39821)
+  * 1736d9d6 Bump github.com/grpc-ecosystem/grpc-gateway/v2. Includes fixes for:
+      - bsc#1277992 (CVE-2026-37236)
   * e70002b0 ⏺ fix(tpm): fix duplicate emulated TPM seeds on UUID suffix
             collision (#1018)
+
+-------------------------------------------------------------------
+Tue Jun  9 11:20:04 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.2:
   * 91ecc857 Fix reference in labels
   * 34dc5170 Adapt labels to pass OBS container checks
 
