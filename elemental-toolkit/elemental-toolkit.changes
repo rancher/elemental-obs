@@ -6,10 +6,12 @@ Wed Sep 23 09:45:27 UTC 2026 - Elemental Bot <elemental@suse.de>
   * a5e33158 Only consider global Boot#### variables when clearing stale
             entries
   * 74b76a97 Move to go1.26
-  * c591fd27 Bump yip library
+  * c591fd27 Bump yip library. Includes fixes for:
+      - bsc#1278164 (CVE-2026-79775)
   * 3aa381e5 Fix logging messages
   * 661d3ae2 Bump ginkgo
-  * 04624721 Bump containerd
+  * 04624721 Bump containerd. Includes fixes for:
+      - bsc#1272088 (CVE-2026-56852)
 
 -------------------------------------------------------------------
 Wed Jun  3 14:22:42 UTC 2026 - Elemental Bot <elemental@suse.de>
