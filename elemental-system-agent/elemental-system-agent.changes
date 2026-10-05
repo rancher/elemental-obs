@@ -12,6 +12,8 @@ Mon Oct 05 09:15:24 UTC 2026 - David Cassany <dcassany@suse.com>
 
 This version includes fixes for:
   - bsc#1279996 (CVE-2026-83530)
+  - bsc#1279312 (CVE-2026-84303)
+  - bsc#1279213 (CVE-2026-84304)
 
 -------------------------------------------------------------------
 Mon Sep 21 14:59:36 UTC 2026 - David Cassany <dcassany@suse.com>
@@ -47,6 +49,12 @@ Mon Sep 21 14:59:36 UTC 2026 - David Cassany <dcassany@suse.com>
   * bump the fallback version to v0.3.16
   * bump k8s v1.36
   * add initial version of integration tests
+
+This version includes fixes for:
+  - bsc#1277992 (CVE-2026-37236)
+  - bsc#1272088 (CVE-2026-56852)
+  - bsc#1265781 (CVE-2026-33814)
+  - bsc#1266622 (CVE-2026-39821)
 
 -------------------------------------------------------------------
 Wed May 13 15:13:07 UTC 2026 - David Cassany <dcassany@suse.com>
