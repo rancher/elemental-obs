@@ -1,7 +1,8 @@
 -------------------------------------------------------------------
-Tue Oct 13 11:05:50 UTC 2026 - Elemental Bot <elemental@suse.de>
+Tue Oct 13 15:40:40 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v2.2.9:
+  * b4749140 Revert "Update spec dependecies and dracut module dependencies"
   * ef7c40e7 Fix specfile on Micro 6.1 there is no grub2-common
   * 82e000aa Bump k8s.io/mount-utils v0.33.3
   * 35da0397 use rsync checksum to reliably copy data

@@ -16,7 +16,7 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit ef7c40e7a767633dd2be372712560584ee3c3de4
+%define commit b4749140b2c51a56629972567167299c289d5855
 %define c_date 20261013
 
 Name:           elemental-toolkit
@@ -42,10 +42,6 @@ Requires:       xorriso >= 1.5
 Requires:       mtools
 Requires:       util-linux
 Requires:       gptfdisk
-Requires:       dracut
-Requires:       grub2
-Requires:       squashfs
-Requires:       util-linux-systemd
 
 %if 0%{?suse_version}
 BuildRequires:  golang(API) == 1.26
