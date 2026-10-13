@@ -16,7 +16,7 @@
 #
 
 # These variables are coupled to builder scripts
-%define commit 82e000aa15aa6b75ff9d775b94803f88ba25cd52
+%define commit ef7c40e7a767633dd2be372712560584ee3c3de4
 %define c_date 20261013
 
 Name:           elemental-toolkit
@@ -43,7 +43,7 @@ Requires:       mtools
 Requires:       util-linux
 Requires:       gptfdisk
 Requires:       dracut
-Requires:       grub2-common
+Requires:       grub2
 Requires:       squashfs
 Requires:       util-linux-systemd
 
