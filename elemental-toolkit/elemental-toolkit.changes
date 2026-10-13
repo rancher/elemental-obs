@@ -1,4 +1,19 @@
 -------------------------------------------------------------------
+Tue Oct 13 09:20:46 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v2.2.9:
+  * 82e000aa Bump k8s.io/mount-utils v0.33.3
+  * 35da0397 use rsync checksum to reliably copy data
+  * c3589f8d Only consider global Boot#### variables when clearing stale
+            entries
+  * 1ccc8702 Move to go1.26
+  * a6e6700a Update spec dependecies and dracut module dependencies
+  * 8eb1a7ff bump github.com/rancher/yip v1.9.7
+  * d22698bf Fix logging messages
+  * 1ad64162 bump github.com/onsi/ginkgo/v2 v2.32.2
+  * 41301012 bump github.com/containerd/containerd v1.7.36
+
+-------------------------------------------------------------------
 Wed Jun  3 14:22:57 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v2.2.9:
