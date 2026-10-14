@@ -1,7 +1,7 @@
 -------------------------------------------------------------------
 Tue Oct 13 09:20:08 UTC 2026 - Elemental Bot <elemental@suse.de>
 
-- Changes on top of v1.7.5:
+- Update to v1.7.6:
   * c8a50f8d Bump k8s.io/kubernetes v1.34.2
   * 4bcb1775 Fix unit tests after bumping libraries
   * 4f5ba8f1 Fix sporadic failures in unit tests
