@@ -10,10 +10,13 @@ Tue Oct 13 15:40:40 UTC 2026 - Elemental Bot <elemental@suse.de>
             entries
   * 1ccc8702 Move to go1.26
   * a6e6700a Update spec dependecies and dracut module dependencies
-  * 8eb1a7ff bump github.com/rancher/yip v1.9.7
+  * 8eb1a7ff bump github.com/rancher/yip v1.9.7. Includes fixes for:
+      - bsc#1278164 (CVE-2026-79775)
   * d22698bf Fix logging messages
   * 1ad64162 bump github.com/onsi/ginkgo/v2 v2.32.2
-  * 41301012 bump github.com/containerd/containerd v1.7.36
+  * 41301012 bump github.com/containerd/containerd v1.7.36. Includes
+      fixes for:
+      - bsc#1272088 (CVE-2026-56852)
 
 -------------------------------------------------------------------
 Wed Jun  3 14:22:57 UTC 2026 - Elemental Bot <elemental@suse.de>
