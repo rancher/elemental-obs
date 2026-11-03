@@ -1,4 +1,10 @@
 -------------------------------------------------------------------
+Tue Nov  3 14:29:32 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.8.3:
+  * 28c5b340 Update CODEOWNERS
+
+-------------------------------------------------------------------
 Thu Sep 24 08:39:18 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.8.3:

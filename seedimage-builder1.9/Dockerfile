@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: Apache-2.0
+# Define the names/tags of the container
+#!BuildTag: rancher/seedimage-builder:1.9.3-%RELEASE%
+#!BuildTag: rancher/seedimage-builder:1.9.3
+#!BuildTag: rancher/seedimage-builder:latest
+#!UseOBSRepositories
+
+ARG SL_VERSION
+
+FROM bci/bci-base:${SL_VERSION} as BASE
+
+RUN  mkdir -p /installroot && \
+    zypper --gpg-auto-import-keys --installroot /installroot in -y --no-recommends elemental-toolkit elemental-httpfy1.9 elemental-seedimage-hooks1.9 xorriso curl coreutils ca-certificates ca-certificates-mozilla gptfdisk squashfs util-linux dosfstools mtools e2fsprogs grub2
+
+
+FROM scratch as SEEDIMAGE_BUILDER
+
+COPY --from=BASE /installroot /
+
+RUN /usr/sbin/update-ca-certificates
+
+ARG IMAGE_REPO=registry.suse.com/rancher/seedimage-builder:1.9.3-%RELEASE%
+
+# Define labels according to https://en.opensuse.org/Building_derived_containers
+# labelprefix=com.suse.elemental
+LABEL org.opencontainers.image.title="Rancher Elemental Seed Image Builder"
+LABEL org.opencontainers.image.description="Provides the tools needed to build Elemental Seed Images"
+LABEL org.opencontainers.image.version="1.9.3"
+LABEL org.opencontainers.image.url="https://github.com/rancher/elemental-operator"
+LABEL org.opencontainers.image.created="%BUILDTIME%"
+LABEL org.opencontainers.image.vendor="SUSE LLC"
+LABEL org.opensuse.reference=$IMAGE_REPO
+LABEL org.openbuildservice.disturl="%DISTURL%"
+LABEL com.suse.supportlevel="techpreview"
+# endlabelprefix
+
+ENTRYPOINT ["elemental-httpfy"]
