@@ -1,4 +1,15 @@
 -------------------------------------------------------------------
+Tue Nov  3 14:38:30 UTC 2026 - Elemental Bot <elemental@suse.de>
+
+- Changes on top of v1.9.3:
+  * 4b31133f Update imagepullsecrets docs message
+  * 795eb36b Add ImagePullSecrets field in the relevant CRDs
+  * 1ebe37d2 Support imagePullSecrets in elemental-operator chart
+  * 76589486 Bump github.com/rancher/yip v1.9.8
+  * af578aab Switch from gopkg.in/yaml.v3 to go.yaml.in/yaml/v3
+  * 389e2da1 Update CODEOWNERS
+
+-------------------------------------------------------------------
 Thu Sep 24 08:39:33 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Update to v1.9.3:
