@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Tue Nov  3 14:38:30 UTC 2026 - Elemental Bot <elemental@suse.de>
+Wed Nov  4 13:41:06 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.9.3:
+  * bcb5c6e2 honor Rancher setting defaults when reading settings
+  * c85cb529 fix: do not fall back to internal-cacerts when cacerts is empty
   * 4b31133f Update imagepullsecrets docs message
   * 795eb36b Add ImagePullSecrets field in the relevant CRDs
   * 1ebe37d2 Support imagePullSecrets in elemental-operator chart
