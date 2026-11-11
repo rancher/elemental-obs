@@ -15,8 +15,8 @@
 # Please submit bugfixes or comments via https://bugs.opensuse.org/
 #
 
-%define commit 4b31133f155b26e8b49978ecf05c529dca01af9c
-%define c_date 20261103
+%define commit bcb5c6e25b84080c5473996b985803b03ddbce6e
+%define c_date 20261104
 
 %define minorv 1.9
 

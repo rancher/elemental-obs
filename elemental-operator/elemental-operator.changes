@@ -1,7 +1,9 @@
 -------------------------------------------------------------------
-Tue Nov  3 14:29:32 UTC 2026 - Elemental Bot <elemental@suse.de>
+Thu Nov  5 11:42:51 UTC 2026 - Elemental Bot <elemental@suse.de>
 
 - Changes on top of v1.8.3:
+  * 08c6fa12 honor Rancher setting defaults when reading settings
+  * d2c09337 fix: do not fall back to internal-cacerts when cacerts is empty
   * 28c5b340 Update CODEOWNERS
 
 -------------------------------------------------------------------
