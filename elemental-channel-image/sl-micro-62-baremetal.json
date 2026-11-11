@@ -1,6 +1,42 @@
 [
   {
     "metadata": {
+      "name": "baremetal-v2.3.2-9.30-os"
+    },
+    "spec": {
+      "version": "v2.3.2-9.30",
+      "type": "container",
+      "metadata": {
+        "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/baremetal-os-container:2.3.2-9.30",
+        "displayName": "SL Micro Baremetal 6.2 OS",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1794330086
+      }
+    }
+  },
+  {
+    "metadata": {
+      "name": "baremetal-v2.3.2-9.29-iso"
+    },
+    "spec": {
+      "version": "v2.3.2-9.29",
+      "type": "iso",
+      "metadata": {
+        "uri": "registry.suse.com/suse/sl-micro/6.2/baremetal-iso-image:2.3.2-9.29",
+        "displayName": "SL Micro Baremetal 6.2 ISO",
+        "platforms": [
+          "linux/x86_64",
+          "linux/aarch64"
+        ],
+        "created": 1794348574
+      }
+    }
+  },
+  {
+    "metadata": {
       "name": "baremetal-v2.3.1-8.118-os"
     },
     "spec": {
@@ -68,42 +104,6 @@
           "linux/aarch64"
         ],
         "created": 1781393485
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "baremetal-v2.3.0-7.168-os"
-    },
-    "spec": {
-      "version": "v2.3.0-7.168",
-      "type": "container",
-      "metadata": {
-        "upgradeImage": "registry.suse.com/suse/sl-micro/6.2/baremetal-os-container:2.3.0-7.168",
-        "displayName": "SL Micro Baremetal 6.2 OS",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ],
-        "created": 1780103293
-      }
-    }
-  },
-  {
-    "metadata": {
-      "name": "baremetal-v2.3.0-7.140-iso"
-    },
-    "spec": {
-      "version": "v2.3.0-7.140",
-      "type": "iso",
-      "metadata": {
-        "uri": "registry.suse.com/suse/sl-micro/6.2/baremetal-iso-image:2.3.0-7.140",
-        "displayName": "SL Micro Baremetal 6.2 ISO",
-        "platforms": [
-          "linux/x86_64",
-          "linux/aarch64"
-        ],
-        "created": 1780124383
       }
     }
   }
